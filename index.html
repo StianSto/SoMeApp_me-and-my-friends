@@ -10,16 +10,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="dist/js/components/nav.js" defer></script>
+    <script src="/dist/js/components/nav.js" defer></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="bg-primary">
 
-    <header>
-        
-    </header>
-
-    <main></main>
+    <main class="h-100">
+        <div class="container col-md-4 h-100">
+            <div class="row px-4 d-flex flex-column align-items-center h-100">
+                <div class="mt-5 mb-3 mx-auto d-flex justify-content-center">
+                    <img src="/dist/assets/logo.svg" style="max-width: 150px;" alt="">
+                </div>
+                <div class="mx-auto col-12">
+                    <div class="input-group mx-auto row-cols-2 justify-content-center" style="max-width: 800px;">
+                        <button class="btn col-auto fs-4 text-white fw-light">Log In</button>
+                        <button class="btn col-auto fs-4 text-white text-opacity-50 fw-light">Sign Up</button>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <form id="log-in-form" class="d-flex flex-column" style="gap: 1rem;">
+                        <div class="form-floating ">
+                            <input id="username-log-in" type="text" class="form-control bg-white border-dark border-opacity-25" style="--bs-bg-opacity: .5;" placeholder="Username">
+                            <label for="username-log-in">Username</label>
+                        </div>
+                        <div class="form-floating">
+                            <input id="password-log-in" type="password" class="form-control bg-white border-dark border-opacity-25" style="--bs-bg-opacity: .5;" placeholder="Password">
+                            <label for="password-log-in">Password</label>
+                        </div>
+                        <button class="btn bg-secondary align-self-center px-4 py-2 text-light">Log In</button>
+                    </form>
+                </div>
+                <div class="col mt-5 d-flex justify-content-center">
+                    <div class="btn-group">
+                        <button class="btn btn-secondary col-auto">G</button>
+                        <button class="btn btn-secondary bg-white text-bg-light">Log in with Google</button>
+                    </div>
+                </div>
+                <form id="sign-up-form"></form>
+            </div>
+        </div>
+    </main>
 
     <footer></footer>
 
