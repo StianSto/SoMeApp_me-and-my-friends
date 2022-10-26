@@ -1,0 +1,32 @@
+{
+  "name": "someapp_me-and-my-friends",
+  "version": "0.0.1",
+  "description": "\"Me & My Friends\" is a social media website where the user has more control over customization. The user can set their own theme that appears on their banner when posting. This project is a project made das a school project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StianSto/SoMeApp_me-and-my-friends.git"
+  },
+  "keywords": [
+    "social",
+    "media",
+    "friends",
+    "customization"
+  ],
+  "author": "Stian Stordal <stordalstian@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StianSto/SoMeApp_me-and-my-friends/issues"
+  },
+  "homepage": "https://github.com/StianSto/SoMeApp_me-and-my-friends#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.55.0"
+  }
+}
