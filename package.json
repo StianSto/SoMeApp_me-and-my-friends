@@ -4,7 +4,9 @@
   "description": "\"Me & My Friends\" is a social media website where the user has more control over customization. The user can set their own theme that appears on their banner when posting. This project is a project made das a school project.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "repository": {
     "type": "git",
