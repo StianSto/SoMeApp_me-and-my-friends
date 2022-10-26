@@ -1,1 +1,67 @@
+@use "./mixins/mixins" as m;
+// imports 
+@import "../../node_modules/bootstrap/scss/functions";
+@import "./variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
+//code 
+$gap-bars: 25%;
+$height-bars: calc((100% - (2 * $gap-bars)) / 3 );
+
+
+.bar {
+    background: $white;
+    width: 100%;
+    height: $height-bars;
+    border-radius: 100px;
+    @include m.vendor-prefix(transition, all 200ms ease-in-out);
+    
+    &-rotate {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+    }
+
+    [aria-expanded=true] &:not(&-rotate) { opacity: 0; }
+    [aria-expanded=true] &-rotate { transform: rotate(45deg); }
+    [aria-expanded=true] &-rotate:nth-of-type(2) { transform: rotate(-45deg); }
+}
+
+#site-search {
+    position: relative;
+    color: $gray-200;
+
+    & * {color: inherit;}
+
+    &:hover, &:focus-within {
+        @include m.pseudo(after, 100%, 2px) {
+            width: 100%;
+        }
+
+        & .form-control{ 
+            @include media-breakpoint-up(lg) {width: 25ch;} 
+        }
+    }
+
+    @include m.pseudo(after, 0%, 2px) {
+        background-color: currentColor;
+        opacity: 0.5;
+        bottom: 0;
+        transition: all 200ms ease;
+    }; 
+
+    & .form-control {
+        background: transparent;
+        border: none;
+        transition: all 200ms ease;
+        
+        @include media-breakpoint-up(lg) { 
+            width: calc(8ch + $input-padding-x); 
+        }
+        
+        &::placeholder {color: currentColor;}
+    }
+    & .fa-solid:hover {color: white;}
+}

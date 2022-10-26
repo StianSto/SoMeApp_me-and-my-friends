@@ -1,12 +1,21 @@
 const nav = `
 
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary">
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="#">ME & MY <br> FRIENDS</a>
+        <a class="navbar-brand" href="#">
+            <img src="/dist/assets/logo.svg" height="50"> 
+        </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon py-1" style="background-image: url('')" width="100%" >
+                <div class="d-flex w-100 h-100 flex-column justify-content-between" style="position: relative;">
+                    <div class="bar"></div>
+                    <div class="bar bar-rotate"></div>
+                    <div class="bar bar-rotate"></div>
+                    <div class="bar"></div>
+                </div>
+            </span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,9 +41,9 @@ const nav = `
                 <a class="nav-link disabled">Disabled</a>
                 </li> -->
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+            <form id="site-search" class="d-flex" role="search">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn" type="submit"><i style="font-size: 1.2em" class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
     </div>
