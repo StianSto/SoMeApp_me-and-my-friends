@@ -31,9 +31,6 @@ $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
 
 #site-search {
     position: relative;
-    color: $gray-200;
-
-    & * {color: inherit;}
 
     &:hover, &:focus-within {
         @include m.pseudo(after, 100%, 2px) {
@@ -42,12 +39,12 @@ $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
 
         & .form-control{ 
             @include media-breakpoint-up(lg) {width: 25ch;} 
+            box-shadow: none;
         }
     }
 
-    @include m.pseudo(after, 0%, 2px) {
+    @include m.pseudo(after, 0%, 1px) {
         background-color: currentColor;
-        opacity: 0.5;
         bottom: 0;
         transition: all 200ms ease;
     }; 
