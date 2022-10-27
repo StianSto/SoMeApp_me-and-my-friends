@@ -10,6 +10,8 @@
 
 //code 
 
+$font-family: "open sans";
+
 // menu icon nav bar
 $gap-bars: 25%;
 $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
@@ -72,3 +74,15 @@ $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
 }
 // end-- search field navbar
 
+/* form labels */
+.form-label{
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    & > span {
+        flex: 1;
+        height: 1px;
+        background-color: currentColor;
+    }
+}

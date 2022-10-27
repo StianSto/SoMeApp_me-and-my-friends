@@ -23,7 +23,7 @@ $colors: (
   "green":      $green,
   "teal":       $teal,
   "cyan":       $cyan,
-) !default;
+);
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
@@ -40,3 +40,8 @@ $grid-breakpoints: (
   xxl: 1400px
 ) !default;
 // scss-docs-end grid-breakpoints
+
+// font family
+
+$font-family-sans-serif: "open sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+// font family end
