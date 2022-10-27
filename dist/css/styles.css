@@ -10859,7 +10859,6 @@ textarea.form-control-lg {
   color: white;
 }
 
-/* form labels */
 .form-label {
   display: flex;
   position: relative;
@@ -10869,6 +10868,53 @@ textarea.form-control-lg {
   flex: 1;
   height: 1px;
   background-color: currentColor;
+}
+
+.post {
+  max-width: 675px;
+  /* $user-color: #005371; */
+}
+.post .card-header {
+  background-color: rgb(224, 227, 237);
+  color: #000;
+}
+.post .profile-img img {
+  object-fit: cover;
+  object-position: center;
+}
+.post .card-footer {
+  background-color: rgba(224, 227, 237, 0.1);
+}
+.post .card-footer .comment-content {
+  min-width: min(200px, 100%);
+}
+.post .card-footer .comment textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid currentColor;
+}
+.post .card-footer .comment textarea::placeholder {
+  translate: 0 100%;
+}
+.post .card-footer .comment .submit-comment {
+  background: rgb(224, 227, 237);
+  color: #000;
+}
+.post-comments .comment:not(:nth-child(1)) {
+  position: relative;
+}
+.post-comments .comment:not(:nth-child(1))::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.2509803922);
+  top: 0;
+  left: 0;
+}
+
+.liked {
+  color: rgb(224, 57, 38);
 }
 
 /*# sourceMappingURL=styles.css.map */
