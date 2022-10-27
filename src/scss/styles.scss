@@ -93,7 +93,7 @@ $user-color: rgb(224, 227, 237) !default;
 
 .post {
     max-width: 675px;
-    /* $user-color: #005371; */
+    $user-color: #005371;
 
     & .card-header {
         background-color: $user-color;

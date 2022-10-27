@@ -10872,18 +10872,17 @@ textarea.form-control-lg {
 
 .post {
   max-width: 675px;
-  /* $user-color: #005371; */
 }
 .post .card-header {
-  background-color: rgb(224, 227, 237);
-  color: #000;
+  background-color: #005371;
+  color: #fff;
 }
 .post .profile-img img {
   object-fit: cover;
   object-position: center;
 }
 .post .card-footer {
-  background-color: rgba(224, 227, 237, 0.1);
+  background-color: rgba(0, 83, 113, 0.1);
 }
 .post .card-footer .comment-content {
   min-width: min(200px, 100%);
@@ -10897,8 +10896,8 @@ textarea.form-control-lg {
   translate: 0 100%;
 }
 .post .card-footer .comment .submit-comment {
-  background: rgb(224, 227, 237);
-  color: #000;
+  background: #005371;
+  color: #fff;
 }
 .post-comments .comment:not(:nth-child(1)) {
   position: relative;
