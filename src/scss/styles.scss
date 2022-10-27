@@ -65,7 +65,7 @@ $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
         transition: all 200ms ease;
         
         @include media-breakpoint-up(lg) { 
-            width: calc(8ch + $input-padding-x); 
+            width: calc(10ch + $input-padding-x); 
         }
         
         &::placeholder {color: currentColor;}

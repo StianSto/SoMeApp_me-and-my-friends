@@ -10849,7 +10849,7 @@ textarea.form-control-lg {
 }
 @media (min-width: 992px) {
   #site-search .form-control {
-    width: calc(8ch + 0.75rem);
+    width: calc(10ch + 0.75rem);
   }
 }
 #site-search .form-control::placeholder {
