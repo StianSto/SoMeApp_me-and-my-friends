@@ -10815,10 +10815,6 @@ textarea.form-control-lg {
 
 #site-search {
   position: relative;
-  color: #e9ecef;
-}
-#site-search * {
-  color: inherit;
 }
 #site-search:hover::after, #site-search:focus-within::after {
   position: absolute;
@@ -10826,6 +10822,9 @@ textarea.form-control-lg {
   width: 100%;
   height: 2px;
   width: 100%;
+}
+#site-search:hover .form-control, #site-search:focus-within .form-control {
+  box-shadow: none;
 }
 @media (min-width: 992px) {
   #site-search:hover .form-control, #site-search:focus-within .form-control {
@@ -10836,9 +10835,8 @@ textarea.form-control-lg {
   position: absolute;
   content: "";
   width: 0%;
-  height: 2px;
+  height: 1px;
   background-color: currentColor;
-  opacity: 0.5;
   bottom: 0;
   transition: all 200ms ease;
 }
