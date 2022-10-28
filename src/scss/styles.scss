@@ -11,6 +11,7 @@
 
 //code 
 
+body{ overflow-x: hidden; }
 $font-family: "open sans";
 
 // menu icon nav bar
@@ -227,4 +228,30 @@ $user-color: #650761;
             background-color: $user-color;
         }
     }
+}
+
+#friend-list {
+    & .scroll-list {
+        overflow-x: auto;
+        padding-inline: 20px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    @include m.pseudo(before, 20px, 100%) {
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, #fff, #ffffff00);
+    }
+    
+    @include m.pseudo(after, 20px, 100%) {
+        top: 0;
+        right: 0;
+        background: linear-gradient(-90deg, #fff, #ffffff00);
+    }
+    
+       
+        
 }

@@ -10788,6 +10788,10 @@ textarea.form-control-lg {
   --bs-bg-opacity: 1;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .bar {
   background: #fff;
   width: 100%;
@@ -10961,6 +10965,32 @@ textarea.form-control-lg {
 #profile-bio .carousel-indicators .btn.active {
   color: #fff !important;
   background-color: #650761;
+}
+
+#friend-list .scroll-list {
+  overflow-x: auto;
+  padding-inline: 20px;
+}
+#friend-list .scroll-list::-webkit-scrollbar {
+  display: none;
+}
+#friend-list::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0));
+}
+#friend-list::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(-90deg, #fff, rgba(255, 255, 255, 0));
 }
 
 /*# sourceMappingURL=styles.css.map */
