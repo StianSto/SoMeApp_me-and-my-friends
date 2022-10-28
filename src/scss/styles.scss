@@ -65,7 +65,7 @@ $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
         transition: all 200ms ease;
         
         @include media-breakpoint-up(lg) { 
-            width: calc(8ch + $input-padding-x); 
+            width: calc(10ch + $input-padding-x); 
         }
         
         &::placeholder {color: currentColor;}
@@ -74,7 +74,7 @@ $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
 }
 // end-- search field navbar
 
-/* form labels */
+// form labels
 .form-label{
     display: flex;
     position: relative;
@@ -86,3 +86,69 @@ $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
         background-color: currentColor;
     }
 }
+// form labels end
+
+// posts 
+$user-color: rgb(224, 227, 237) !default; 
+
+.post {
+    max-width: 675px;
+    $user-color: #005371;
+
+    & .card-header {
+        background-color: $user-color;
+        color: color-contrast($user-color)
+    }
+
+    & .profile-img {
+        & img {
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    & .card-footer {
+        background-color: rgba($user-color, 0.1);
+
+        & .comment {
+
+
+            &-content {
+                min-width: min(200px, 100%);
+            }
+            & textarea {
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid currentColor;
+
+                &::placeholder {
+                    translate: 0 100%;
+                }
+            }
+
+            & .submit-comment {
+                background: $user-color;
+                color: color-contrast($user-color);
+            }
+        }
+    }
+
+    &-comments {
+        & .comment {
+            &:not(:nth-child(1)) {
+                
+                position: relative;
+                @include m.pseudo(after, 100%, 1px) {
+                    background-color: #00000040;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.liked {
+    color: rgb(224, 57, 38)
+}
+

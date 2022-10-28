@@ -1,7 +1,7 @@
 const nav = `
 
 <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
-    <div class="container-fluid">
+    <div class="container">
 
         <a class="navbar-brand" href="#">
             <img src="/dist/assets/logo.svg" height="50"> 
