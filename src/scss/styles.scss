@@ -4,12 +4,17 @@
 @import "./variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+@import "./login.scss";
+
 
 
 //code 
+
+$font-family: "open sans";
+
+// menu icon nav bar
 $gap-bars: 25%;
 $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
-
 
 .bar {
     background: $white;
@@ -28,7 +33,9 @@ $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
     [aria-expanded=true] &-rotate { transform: rotate(45deg); }
     [aria-expanded=true] &-rotate:nth-of-type(2) { transform: rotate(-45deg); }
 }
+// end-- menu icon navbar
 
+// search field navbar
 #site-search {
     position: relative;
     color: $gray-200;
@@ -64,4 +71,18 @@ $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
         &::placeholder {color: currentColor;}
     }
     & .fa-solid:hover {color: white;}
+}
+// end-- search field navbar
+
+/* form labels */
+.form-label{
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    & > span {
+        flex: 1;
+        height: 1px;
+        background-color: currentColor;
+    }
 }
