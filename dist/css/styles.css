@@ -10767,11 +10767,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-#LogOrSignInCarousel .carousel-indicators {
+#LogOrSignInCarousel .carousel-indicators, #profile-bio .carousel-indicators {
   /*override default Bootstrap styles*/
   position: relative;
 }
-#LogOrSignInCarousel .carousel-indicators [data-bs-target] {
+#LogOrSignInCarousel .carousel-indicators [data-bs-target], #profile-bio .carousel-indicators [data-bs-target] {
   width: auto;
   height: auto;
   text-indent: 0;
@@ -10872,15 +10872,15 @@ textarea.form-control-lg {
   max-width: 675px;
 }
 .post .card-header {
-  background-color: #ed94e8;
-  color: #000;
+  background-color: #650761;
+  color: #fff;
 }
 .post .profile-img img {
   object-fit: cover;
   object-position: center;
 }
 .post .card-footer {
-  background-color: rgba(237, 148, 232, 0.1);
+  background-color: rgba(101, 7, 97, 0.1);
 }
 .post .card-footer .comment-content {
   min-width: min(200px, 100%);
@@ -10894,8 +10894,8 @@ textarea.form-control-lg {
   translate: 0 100%;
 }
 .post .card-footer .comment .submit-comment {
-  background: #ed94e8;
-  color: #000;
+  background: #650761;
+  color: #fff;
 }
 .post-comments .comment:not(:nth-child(1)) {
   position: relative;
@@ -10913,13 +10913,54 @@ textarea.form-control-lg {
   resize: none;
 }
 .post--create .btn[type=submit] {
-  background-color: #ed94e8;
-  color: #000;
-  border-color: #ed94e8;
+  background-color: #650761;
+  color: #fff;
+  border-color: #650761;
 }
 
 .liked {
   color: rgb(224, 57, 38);
+}
+
+.profile-page__user {
+  position: relative;
+  height: clamp(250px, 75vmin, 400px);
+}
+.profile-page__user .banner {
+  position: absolute;
+  z-index: -1;
+}
+.profile-page__user .banner__img {
+  height: calc(100% - clamp(min(175px, 50%), 20vw + 0.25rem, 200px) / 3);
+  background: #650761;
+}
+.profile-page__user .banner__spacer {
+  height: calc(clamp(min(175px, 50%), 20vw + 0.25rem, 200px) / 3);
+}
+.profile-page__user-img img {
+  width: clamp(min(175px, 50%), 20vw + 0.25rem, 200px);
+  min-width: 100px;
+  border-color: #650761;
+}
+.profile-page h1, .profile-page .h1 {
+  max-width: min(350px, 60vw) !important;
+  text-align: center;
+}
+.profile-page .banner {
+  height: 300px;
+}
+
+#profile-bio img {
+  background-color: grey;
+  width: 100px;
+  aspect-ratio: 1;
+}
+#profile-bio .carousel-indicators .btn {
+  background-color: white;
+}
+#profile-bio .carousel-indicators .btn.active {
+  color: #fff !important;
+  background-color: #650761;
 }
 
 /*# sourceMappingURL=styles.css.map */

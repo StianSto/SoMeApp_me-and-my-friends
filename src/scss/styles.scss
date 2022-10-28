@@ -8,6 +8,7 @@
 
 
 
+
 //code 
 
 $font-family: "open sans";
@@ -87,10 +88,10 @@ $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
 
 // posts 
 $user-color: rgb(224, 227, 237) !default; 
+// user-color will be the way to adjust each users post to their color. some JS will be needed, but for now this will be a template. will be fully functional with the api. 
+$user-color: #650761;
 
 .post {
-    // user-color will be the way to adjust each users post to their color. some JS will be needed, but for now this will be a template. will be fully functional with the api. 
-    $user-color: #ed94e8;
 
     &--container {
         max-width:675px
@@ -165,3 +166,63 @@ $user-color: rgb(224, 227, 237) !default;
     color: rgb(224, 57, 38)
 }
 
+
+.profile-page {
+    &__user {
+        position: relative;
+        height: clamp(250px, 75vmin, 400px);
+
+        & .banner {
+            $calc-img-translate: calc( clamp(min(175px, 50%), 20vw + 0.25rem, 200px)  /  3);
+
+            position: absolute;
+            z-index: -1;
+            &__img {
+                height: calc(100% - $calc-img-translate);
+                background: $user-color;
+            }
+            &__spacer {
+                height: $calc-img-translate;
+            }
+        }
+
+        
+        &-img {
+            & img {
+                width: clamp(min(175px, 50%), 20vw + 0.25rem, 200px);
+                min-width: 100px;
+                border-color: $user-color;
+            }
+        }
+    }
+    h1 {
+        max-width: min(350px, 60vw) !important;
+        text-align: center;
+    }
+
+
+    & .banner {
+        height: 300px;
+    }
+
+}
+
+#profile-bio {
+
+
+
+    & img {
+        background-color: grey;
+        width: 100px;
+        aspect-ratio: 1;
+    }
+
+    & .carousel-indicators .btn {
+        background-color: white;
+        
+        &.active {
+            color: color-contrast($user-color) !important;
+            background-color: $user-color;
+        }
+    }
+}
