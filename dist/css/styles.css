@@ -10868,19 +10868,19 @@ textarea.form-control-lg {
   background-color: currentColor;
 }
 
-.post {
+.post--container {
   max-width: 675px;
 }
 .post .card-header {
-  background-color: #005371;
-  color: #fff;
+  background-color: #ed94e8;
+  color: #000;
 }
 .post .profile-img img {
   object-fit: cover;
   object-position: center;
 }
 .post .card-footer {
-  background-color: rgba(0, 83, 113, 0.1);
+  background-color: rgba(237, 148, 232, 0.1);
 }
 .post .card-footer .comment-content {
   min-width: min(200px, 100%);
@@ -10894,8 +10894,8 @@ textarea.form-control-lg {
   translate: 0 100%;
 }
 .post .card-footer .comment .submit-comment {
-  background: #005371;
-  color: #fff;
+  background: #ed94e8;
+  color: #000;
 }
 .post-comments .comment:not(:nth-child(1)) {
   position: relative;
@@ -10908,6 +10908,14 @@ textarea.form-control-lg {
   background-color: rgba(0, 0, 0, 0.2509803922);
   top: 0;
   left: 0;
+}
+.post--create textarea {
+  resize: none;
+}
+.post--create .btn[type=submit] {
+  background-color: #ed94e8;
+  color: #000;
+  border-color: #ed94e8;
 }
 
 .liked {
