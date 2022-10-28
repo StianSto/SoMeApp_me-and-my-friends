@@ -1,10 +1,8 @@
 const nav = `
-
-
 <nav class="navbar navbar-light navbar-expand-lg bg-light">
     <div class="container">
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/wall.html">
             <img src="/dist/assets/logo.svg" height="50"> 
         </a>
 
@@ -22,7 +20,7 @@ const nav = `
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/wall.html">Home</a>
                 </li>
                 <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -52,5 +50,4 @@ const nav = `
 
 `
 
-const header = document.querySelector("header");
-header.innerHTML = nav;
+export default nav;

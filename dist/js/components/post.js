@@ -14,7 +14,7 @@ const post = `
             <p class="post-content">
                 Text content goes in here. a statement of sort, or maybe a joke. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae autem ex omnis eos necessitatibus ea voluptatibus iure aliquid ullam officia?
             </p>
-            <div >
+            <div>
                 <button class="btn"><i class="fa-solid fa-heart fs-4 liked"></i><span class="likes ms-2">8</span></button>
                 <button class="btn"><i class="fa-solid fa-comment fs-4"></i><span class="comments ms-2">14</span></button>
             </div>
@@ -54,3 +54,5 @@ const post = `
         </div>
     </div>
 `
+
+export default post;
