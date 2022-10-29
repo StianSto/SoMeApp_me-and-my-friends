@@ -1,12 +1,12 @@
 const post = `
     <div class="card post my-5 row mx-1 mx-md-auto">
         <div class="card-header col p-3">
-            <div class="profile-header row m-0 align-items-center flex-nowrap" style="height: 70px;">
-                <div class="profile-img h-100 col-auto p-0"style="aspect-ratio: 1;">
-                    <img class="w-100 h-100 rounded-2" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
+            <a href="/profile.html" class="profile-header row m-0 align-items-center flex-nowrap" style="height: 70px;">
+                <div class="profile__img | h-100 col-auto p-0"style="aspect-ratio: 1;">
+                    <img class="w-100 h-100 rounded-2" src="/dist/assets/images/temp/craig-mckay-jmURdhtm7Ng-unsplash.jpg" alt="">
                 </div>
-                <p class="col m-0 fs-5">Name Nameson</p>
-            </div>
+                <p class="profile__name | col m-0 fs-5">Name Nameson</p>
+            </a>
         </div>
         
         <div class="card-body px-4 px-md-5">
@@ -15,8 +15,8 @@ const post = `
                 Text content goes in here. a statement of sort, or maybe a joke. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae autem ex omnis eos necessitatibus ea voluptatibus iure aliquid ullam officia?
             </p>
             <div>
-                <button class="btn"><i class="fa-solid fa-heart fs-4 liked"></i><span class="likes ms-2">8</span></button>
-                <button class="btn"><i class="fa-solid fa-comment fs-4"></i><span class="comments ms-2">14</span></button>
+                <button class="btn btn__like"><i class="fa-solid fa-heart fs-4 liked"></i><span class="likes ms-2">8</span></button>
+                <button class="btn btn__comment"><i class="fa-solid fa-comment fs-4"></i><span class="comments ms-2">14</span></button>
             </div>
         </div>
         
@@ -32,7 +32,7 @@ const post = `
                 
                 <div class="comment pt-3">
                     <div class="profile d-flex align-items-center gap-2" style="height: 50px;">
-                        <div class="profile-img h-100 col-auto p-0"style="aspect-ratio: 1;">
+                        <div class="profile__img h-100 col-auto p-0"style="aspect-ratio: 1;">
                             <img class="w-100 h-100 rounded-2" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
                         </div>
                         <p class="col m-0 fs-5">Name Nameson</p>
@@ -42,7 +42,7 @@ const post = `
                 
                 <div class="comment pt-3">
                     <div class="profile d-flex align-items-center gap-2" style="height: 50px;">
-                        <div class="profile-img h-100 col-auto p-0"style="aspect-ratio: 1;">
+                        <div class="profile__img h-100 col-auto p-0"style="aspect-ratio: 1;">
                             <img class="w-100 h-100 rounded-2" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
                         </div>
                         <p class="col m-0 fs-5">Name Nameson</p>

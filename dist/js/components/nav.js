@@ -1,5 +1,5 @@
 const nav = `
-<nav class="navbar navbar-light navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-primary shadow-sm">
     <div class="container">
 
         <a class="navbar-brand" href="/wall.html">
@@ -42,7 +42,7 @@ const nav = `
             </ul>
             <form id="site-search" class="d-flex" role="search">
                 <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn" type="submit"><i style="font-size: 1.2em" class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="btn" type="submit"><i style="font-size: 1.2em" class="fa-solid fa-magnifying-glass text-dark"></i></button>
             </form>
         </div>
     </div>

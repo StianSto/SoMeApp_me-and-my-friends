@@ -1,0 +1,84 @@
+.post {
+    &--container {max-width:675px}
+    & .card-header {
+        background-color: $user-color;
+        color: color-contrast($user-color)
+    }
+
+    & .profile {
+        &__img {
+            & img {
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        &__name {color: color-contrast($user-color);}
+    }
+
+    & .card-footer {
+        background-color: rgba($user-color, 0.1);
+
+        & .comment {
+            &-content {
+                min-width: min(200px, 100%);
+            }
+            
+            & textarea {
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid currentColor;
+                height: 1em;
+                transition: height 250ms ease-in-out;
+
+                &::placeholder {
+                    transition: opacity 100ms 200ms ease;
+                }
+
+                &:focus-within{
+                    height: 5em;
+
+                    
+                    &::placeholder {
+                        opacity: 0;
+                        transition-delay: 0ms;
+                    }
+                }
+            }
+
+            & .submit-comment {
+                background: $user-color;
+                color: color-contrast($user-color);
+            }
+        }
+    }
+
+    &-comments {
+        & .comment {
+            &:not(:nth-child(1)) {
+                
+                position: relative;
+                @include pseudo(after, 100%, 1px) {
+                    background-color: #00000040;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+
+    &--create {
+        & textarea {
+            resize: none;
+        } 
+        & .btn {
+            color: color-contrast($user-color);
+            border-color: $user-color;
+
+            &[type='submit'] {
+                background-color: $user-color;
+            }
+        }
+    }
+}
+
