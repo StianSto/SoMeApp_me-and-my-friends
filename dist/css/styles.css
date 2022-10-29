@@ -10788,6 +10788,85 @@ textarea.form-control-lg {
   --bs-bg-opacity: 1;
 }
 
+:root {
+  --sidebar-width: clamp(200px, 20vw, 450px);
+}
+
+main {
+  position: relative;
+}
+main .main-content {
+  transition: margin-right 200ms ease;
+  margin-right: 0;
+}
+main .main-content.show-sidebar {
+  margin-right: var(--sidebar-width);
+}
+main #sidebar {
+  display: none;
+  --sidebar-width-closed: 60px;
+  position: fixed;
+  padding-top: 100px;
+  height: 100%;
+  right: 100%;
+  top: 0;
+  right: 0;
+  width: calc(var(--sidebar-width-closed) + 0.5rem);
+  background: rgb(238, 241, 241);
+  transition: all 200ms ease;
+}
+@media (min-width: 992px) {
+  main #sidebar {
+    display: block;
+  }
+}
+main #sidebar h3, main #sidebar .h3 {
+  display: none;
+}
+main #sidebar .btn {
+  width: calc(var(--sidebar-width-closed) + 0.5rem);
+  margin-left: auto;
+  aspect-ratio: 1.5;
+}
+main #sidebar .friend {
+  height: var(--sidebar-width-closed) !important;
+}
+main #sidebar .friend__img {
+  width: var(--sidebar-width-closed);
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+main #sidebar .friend__name {
+  /* display: none; */
+  opacity: 0;
+  transition: all 500ms ease;
+}
+main #sidebar.show-sidebar {
+  width: var(--sidebar-width);
+}
+main #sidebar.show-sidebar h3, main #sidebar.show-sidebar .h3 {
+  display: block;
+}
+main #sidebar.show-sidebar ~ .main-content {
+  background-color: red;
+}
+main #sidebar.show-sidebar .friend__name {
+  /* display: block; */
+  opacity: 1;
+}
+
+.show ~ .main-content {
+  background-color: red !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.navbar {
+  z-index: 1000;
+}
+
 .bar {
   background: #fff;
   width: 100%;
@@ -10872,15 +10951,15 @@ textarea.form-control-lg {
   max-width: 675px;
 }
 .post .card-header {
-  background-color: #650761;
-  color: #fff;
+  background-color: rgb(224, 227, 237);
+  color: #000;
 }
 .post .profile-img img {
   object-fit: cover;
   object-position: center;
 }
 .post .card-footer {
-  background-color: rgba(101, 7, 97, 0.1);
+  background-color: rgba(224, 227, 237, 0.1);
 }
 .post .card-footer .comment-content {
   min-width: min(200px, 100%);
@@ -10894,8 +10973,8 @@ textarea.form-control-lg {
   translate: 0 100%;
 }
 .post .card-footer .comment .submit-comment {
-  background: #650761;
-  color: #fff;
+  background: rgb(224, 227, 237);
+  color: #000;
 }
 .post-comments .comment:not(:nth-child(1)) {
   position: relative;
@@ -10913,9 +10992,9 @@ textarea.form-control-lg {
   resize: none;
 }
 .post--create .btn[type=submit] {
-  background-color: #650761;
-  color: #fff;
-  border-color: #650761;
+  background-color: rgb(224, 227, 237);
+  color: #000;
+  border-color: rgb(224, 227, 237);
 }
 
 .liked {
@@ -10932,7 +11011,7 @@ textarea.form-control-lg {
 }
 .profile-page__user .banner__img {
   height: calc(100% - clamp(min(175px, 50%), 20vw + 0.25rem, 200px) / 3);
-  background: #650761;
+  background: rgb(224, 227, 237);
 }
 .profile-page__user .banner__spacer {
   height: calc(clamp(min(175px, 50%), 20vw + 0.25rem, 200px) / 3);
@@ -10940,7 +11019,7 @@ textarea.form-control-lg {
 .profile-page__user-img img {
   width: clamp(min(175px, 50%), 20vw + 0.25rem, 200px);
   min-width: 100px;
-  border-color: #650761;
+  border-color: rgb(224, 227, 237);
 }
 .profile-page h1, .profile-page .h1 {
   max-width: min(350px, 60vw) !important;
@@ -10959,8 +11038,34 @@ textarea.form-control-lg {
   background-color: white;
 }
 #profile-bio .carousel-indicators .btn.active {
-  color: #fff !important;
-  background-color: #650761;
+  color: #000 !important;
+  background-color: rgb(224, 227, 237);
+}
+
+#friend-list .scroll-list {
+  overflow-x: auto;
+  padding-inline: 20px;
+}
+#friend-list .scroll-list::-webkit-scrollbar {
+  display: none;
+}
+#friend-list::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0));
+}
+#friend-list::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: linear-gradient(-90deg, #fff, rgba(255, 255, 255, 0));
 }
 
 /*# sourceMappingURL=styles.css.map */
