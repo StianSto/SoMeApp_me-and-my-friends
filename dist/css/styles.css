@@ -11064,16 +11064,16 @@ main #sidebar.show-sidebar .friend__name {
   --bs-bg-opacity: 1;
 }
 
+.root {
+  --user-color: $user-color;
+}
+
 body {
   overflow-x: hidden;
 }
 
 .navbar {
   z-index: 1000;
-}
-
-.root {
-  --user-color: $user-color;
 }
 
 /*# sourceMappingURL=styles.css.map */
