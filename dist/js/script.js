@@ -12,3 +12,6 @@ const allPost = document.querySelectorAll(".post--example");
 allPost.forEach( postContainer => postContainer.innerHTML = post);
 //
 
+//import sidebar toggle function
+import toggleSideBar from "./components/sidebar.js";
+setTimeout(toggleSideBar(), 200) 
