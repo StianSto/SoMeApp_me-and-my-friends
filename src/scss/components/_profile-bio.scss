@@ -1,0 +1,15 @@
+
+#profile-bio {
+    & img {
+        background-color: grey;
+        width: 100px;
+        aspect-ratio: 1;
+    }
+    
+    & .carousel-indicators .btn {
+        background-color: white;
+        
+        &.active {
+            color: color-contrast($user-color) !important;
+            background-color: $user-color;
+}}}

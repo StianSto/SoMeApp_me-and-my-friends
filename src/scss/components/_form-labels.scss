@@ -1,0 +1,11 @@
+.form-label{
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    & > span {
+        flex: 1;
+        height: 1px;
+        background-color: currentColor;
+    }
+}

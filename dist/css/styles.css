@@ -10799,9 +10799,12 @@ textarea.form-control-lg {
   background-color: #FF9E2C;
   color: #000;
 }
-.post .profile-img img {
+.post .profile__img img {
   object-fit: cover;
   object-position: center;
+}
+.post .profile__name {
+  color: #000;
 }
 .post .card-footer {
   background-color: rgba(255, 158, 44, 0.1);
@@ -10853,104 +10856,43 @@ textarea.form-control-lg {
   background-color: #FF9E2C;
 }
 
-:root {
-  --sidebar-width: clamp(200px, 20vw, 450px);
+#friend-list .scroll-list {
+  overflow-x: auto;
+  padding-inline: 20px;
 }
-
-main {
-  position: relative;
-}
-main .main-content {
-  transition: margin-right 200ms ease;
-  margin-right: 0;
-}
-main .main-content.show-sidebar {
-  margin-right: var(--sidebar-width);
-}
-main #sidebar {
+#friend-list .scroll-list::-webkit-scrollbar {
   display: none;
-  --sidebar-width-closed: 60px;
-  position: fixed;
-  padding-top: 100px;
+}
+#friend-list::before {
+  position: absolute;
+  content: "";
+  width: 20px;
   height: 100%;
-  right: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0));
+}
+#friend-list::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 100%;
   top: 0;
   right: 0;
-  width: calc(var(--sidebar-width-closed) + 0.5rem);
-  background: rgb(238, 241, 241);
-  transition: all 200ms ease;
+  background: linear-gradient(-90deg, #fff, rgba(255, 255, 255, 0));
 }
-@media (min-width: 992px) {
-  main #sidebar {
-    display: block;
-  }
-}
-main #sidebar h3, main #sidebar .h3 {
-  display: none;
-}
-main #sidebar .btn {
-  width: calc(var(--sidebar-width-closed) + 0.5rem);
-  margin-left: auto;
-  aspect-ratio: 1.5;
-}
-main #sidebar .friend {
-  height: var(--sidebar-width-closed) !important;
-}
-main #sidebar .friend__img {
-  width: var(--sidebar-width-closed);
+
+#profile-bio img {
+  background-color: grey;
+  width: 100px;
   aspect-ratio: 1;
-  object-fit: cover;
 }
-main #sidebar .friend__name {
-  /* display: none; */
-  opacity: 0;
-  transition: all 500ms ease;
+#profile-bio .carousel-indicators .btn {
+  background-color: white;
 }
-main #sidebar.show-sidebar {
-  width: var(--sidebar-width);
-}
-main #sidebar.show-sidebar h3, main #sidebar.show-sidebar .h3 {
-  display: block;
-}
-main #sidebar.show-sidebar ~ .main-content {
-  background-color: red;
-}
-main #sidebar.show-sidebar .friend__name {
-  /* display: block; */
-  opacity: 1;
-}
-
-.show ~ .main-content {
-  background-color: red !important;
-}
-
-#LogOrSignInCarousel .carousel-indicators, #profile-bio .carousel-indicators {
-  /*override default Bootstrap styles*/
-  position: relative;
-}
-#LogOrSignInCarousel .carousel-indicators [data-bs-target], #profile-bio .carousel-indicators [data-bs-target] {
-  width: auto;
-  height: auto;
-  text-indent: 0;
-  background: transparent;
-  border: none;
-}
-
-#log-in-form .form-control,
-#sign-up-form .form-control {
-  --bs-bg-opacity: 0.8;
-}
-#log-in-form .form-control:focus,
-#sign-up-form .form-control:focus {
-  --bs-bg-opacity: 1;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-.navbar {
-  z-index: 1000;
+#profile-bio .carousel-indicators .btn.active {
+  color: #000 !important;
+  background-color: #FF9E2C;
 }
 
 #site-search {
@@ -10997,23 +10939,84 @@ body {
   color: white;
 }
 
-.form-label {
-  display: flex;
-  position: relative;
-  align-items: center;
-}
-.form-label > span {
-  flex: 1;
-  height: 1px;
-  background-color: currentColor;
-}
-
-.root {
-  --user-color: $user-color;
-}
-
-.liked {
+.btn__like .liked {
   color: rgb(224, 57, 38);
+}
+
+:root {
+  --sidebar-width-open: clamp(200px, 20vw, 450px);
+  --sidebar-width-closed: 60px;
+  --sidebar-width: var(--sidebar-width-closed) ;
+}
+
+main {
+  position: relative;
+}
+main .main-content {
+  transition: margin-right 200ms ease;
+}
+@media (min-width: 992px) {
+  main .main-content {
+    margin-right: var(--sidebar-width);
+  }
+}
+main .main-content.show-sidebar {
+  --sidebar-width: var(--sidebar-width-open);
+}
+main #sidebar {
+  display: none;
+  position: fixed;
+  padding-top: 100px;
+  height: 100%;
+  right: 100%;
+  top: 0;
+  right: 0;
+  width: calc(var(--sidebar-width) + 0.5rem);
+  background: rgb(238, 241, 241);
+  transition: all 200ms ease;
+}
+@media (min-width: 992px) {
+  main #sidebar {
+    display: block;
+  }
+}
+main #sidebar h3, main #sidebar .h3 {
+  display: none;
+}
+main #sidebar .btn {
+  width: calc(var(--sidebar-width-closed) + 0.5rem);
+  margin-left: auto;
+  aspect-ratio: 1.5;
+}
+main #sidebar .friend {
+  height: var(--sidebar-width-closed) !important;
+}
+main #sidebar .friend__img {
+  width: var(--sidebar-width-closed);
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+main #sidebar .friend__name {
+  /* display: none; */
+  opacity: 0;
+  transition: all 500ms ease;
+}
+main #sidebar.show-sidebar {
+  --sidebar-width: var(--sidebar-width-open);
+}
+main #sidebar.show-sidebar h3, main #sidebar.show-sidebar .h3 {
+  display: block;
+}
+main #sidebar.show-sidebar ~ .main-content {
+  background-color: red;
+}
+main #sidebar.show-sidebar .friend__name {
+  /* display: block; */
+  opacity: 1;
+}
+
+.show ~ .main-content {
+  background-color: red !important;
 }
 
 .profile-page__user {
@@ -11021,6 +11024,7 @@ body {
   height: clamp(250px, 75vmin, 400px);
 }
 .profile-page__user .banner {
+  height: 300px;
   position: absolute;
   z-index: -1;
 }
@@ -11034,53 +11038,42 @@ body {
 .profile-page__user-img img {
   width: clamp(min(175px, 50%), 20vw + 0.25rem, 200px);
   min-width: 100px;
-  border-color: #FF9E2C;
 }
 .profile-page h1, .profile-page .h1 {
   max-width: min(350px, 60vw) !important;
-  text-align: center;
-}
-.profile-page .banner {
-  height: 300px;
 }
 
-#profile-bio img {
-  background-color: grey;
-  width: 100px;
-  aspect-ratio: 1;
+#LogOrSignInCarousel .carousel-indicators, #profile-bio .carousel-indicators {
+  /*override default Bootstrap styles*/
+  position: relative;
 }
-#profile-bio .carousel-indicators .btn {
-  background-color: white;
-}
-#profile-bio .carousel-indicators .btn.active {
-  color: #000 !important;
-  background-color: #FF9E2C;
+#LogOrSignInCarousel .carousel-indicators [data-bs-target], #profile-bio .carousel-indicators [data-bs-target] {
+  width: auto;
+  height: auto;
+  text-indent: 0;
+  background: transparent;
+  border: none;
 }
 
-#friend-list .scroll-list {
-  overflow-x: auto;
-  padding-inline: 20px;
+#log-in-form .form-control,
+#sign-up-form .form-control {
+  --bs-bg-opacity: 0.8;
 }
-#friend-list .scroll-list::-webkit-scrollbar {
-  display: none;
+#log-in-form .form-control:focus,
+#sign-up-form .form-control:focus {
+  --bs-bg-opacity: 1;
 }
-#friend-list::before {
-  position: absolute;
-  content: "";
-  width: 20px;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0));
+
+body {
+  overflow-x: hidden;
 }
-#friend-list::after {
-  position: absolute;
-  content: "";
-  width: 20px;
-  height: 100%;
-  top: 0;
-  right: 0;
-  background: linear-gradient(-90deg, #fff, rgba(255, 255, 255, 0));
+
+.navbar {
+  z-index: 1000;
+}
+
+.root {
+  --user-color: $user-color;
 }
 
 /*# sourceMappingURL=styles.css.map */

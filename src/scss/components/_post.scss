@@ -5,11 +5,14 @@
         color: color-contrast($user-color)
     }
 
-    & .profile-img {
-        & img {
-            object-fit: cover;
-            object-position: center;
+    & .profile {
+        &__img {
+            & img {
+                object-fit: cover;
+                object-position: center;
+            }
         }
+        &__name {color: color-contrast($user-color);}
     }
 
     & .card-footer {
@@ -78,3 +81,4 @@
         }
     }
 }
+

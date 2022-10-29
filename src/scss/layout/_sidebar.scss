@@ -1,6 +1,8 @@
 
 :root {
-    --sidebar-width: clamp(200px, 20vw, 450px);
+    --sidebar-width-open: clamp(200px, 20vw, 450px);
+    --sidebar-width-closed: 60px;
+    --sidebar-width: var(--sidebar-width-closed)
 }
 
 
@@ -9,17 +11,18 @@ main {
     
     .main-content {
         transition: margin-right 200ms ease;
-        margin-right: 0;
+        @include media-breakpoint-up(lg) {   
+            margin-right: var(--sidebar-width);
+        }
 
         &.show-sidebar {
-            margin-right: var(--sidebar-width);
+            --sidebar-width: var(--sidebar-width-open);
         }
     }
 
     #sidebar {
 
         display: none;
-        --sidebar-width-closed: 60px;
 
         position: fixed;
         padding-top: 100px;
@@ -27,7 +30,7 @@ main {
         right: 100%;
         top: 0;
         right: 0;
-        width: calc(var(--sidebar-width-closed) + 0.5rem);
+        width: calc(var(--sidebar-width) + 0.5rem);
         background: rgb(238, 241, 241);
         transition: all 200ms ease;
 
@@ -61,7 +64,7 @@ main {
         }
 
         &.show-sidebar {
-            width: var(--sidebar-width);
+            --sidebar-width: var(--sidebar-width-open);
         
             & h3 {
                 display: block ;

@@ -1,0 +1,31 @@
+.profile-page {
+    &__user {
+        position: relative;
+        height: clamp(250px, 75vmin, 400px);
+
+        & .banner {
+            $calc-img-translate: calc( clamp(min(175px, 50%), 20vw + 0.25rem, 200px)  /  3);
+            height: 300px;
+            position: absolute;
+            z-index: -1;
+
+            &__img {
+                height: calc(100% - $calc-img-translate);
+                background: $user-color;
+            }
+            &__spacer {
+                height: $calc-img-translate;
+            }
+        }
+
+        
+        &-img {
+            & img {
+                width: clamp(min(175px, 50%), 20vw + 0.25rem, 200px);
+                min-width: 100px;
+            }
+        }
+    }
+
+    h1 {max-width: min(350px, 60vw) !important;
+}}

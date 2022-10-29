@@ -1,0 +1,35 @@
+// search field navbar
+#site-search {
+    position: relative;
+
+    &:hover, &:focus-within {
+        @include pseudo(after, 100%, 2px) {
+            width: 100%;
+        }
+
+        & .form-control{ 
+            @include media-breakpoint-up(lg) {width: 25ch;} 
+            box-shadow: none;
+        }
+    }
+
+    @include pseudo(after, 0%, 1px) {
+        background-color: currentColor;
+        bottom: 0;
+        transition: all 200ms ease;
+    }; 
+
+    & .form-control {
+        background: transparent;
+        border: none;
+        transition: all 200ms ease;
+        
+        @include media-breakpoint-up(lg) { 
+            width: calc(10ch + $input-padding-x); 
+        }
+        
+        &::placeholder {color: currentColor;}
+    }
+    & .fa-solid:hover {color: white;}
+}
+// end-- search field navbar
