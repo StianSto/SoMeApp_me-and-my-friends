@@ -1,0 +1,22 @@
+// menu icon nav bar
+$gap-bars: 25%;
+$height-bars: calc((100% - (2 * $gap-bars)) / 3 );
+
+.bar {
+    background: color-contrast($user-color);
+    width: 100%;
+    height: $height-bars;
+    border-radius: 100px;
+    @include vendor-prefix(transition, all 200ms ease-in-out);
+    
+    &-rotate {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+    }
+
+    [aria-expanded=true] &:not(&-rotate) { opacity: 0; }
+    [aria-expanded=true] &-rotate { transform: rotate(45deg); }
+    [aria-expanded=true] &-rotate:nth-of-type(2) { transform: rotate(-45deg); }
+}
+// end-- menu icon navbar
