@@ -10767,6 +10767,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  overflow-x: hidden;
+}
+
 .bar {
   background: #000;
   width: 100%;
@@ -10893,6 +10897,10 @@ textarea.form-control-lg {
 #profile-bio .carousel-indicators .btn.active {
   color: #000 !important;
   background-color: #FF9E2C;
+}
+
+.navbar {
+  z-index: 1000;
 }
 
 #site-search {
@@ -11066,14 +11074,6 @@ main #sidebar.show-sidebar .friend__name {
 
 .root {
   --user-color: $user-color;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-.navbar {
-  z-index: 1000;
 }
 
 /*# sourceMappingURL=styles.css.map */
