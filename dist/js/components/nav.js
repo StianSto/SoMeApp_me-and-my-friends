@@ -1,5 +1,5 @@
 const nav = `
-<nav class="navbar navbar-expand-lg bg-primary shadow-sm">
+<nav class="navbar navbar-expand-lg bg-primary shadow-sm h-100  ">
     <div class="container">
 
         <a class="navbar-brand" href="/wall.html">

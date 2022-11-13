@@ -1,5 +1,8 @@
-// navbar on top
-.navbar {z-index: 1000;}
+//navbar
+header {
+    height: var(--header-height);
+}
+
 
 // search field navbar
 #site-search {

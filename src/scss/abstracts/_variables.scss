@@ -53,4 +53,4 @@ $gap-bars: 25%;
 $height-bars: calc((100% - (2 * $gap-bars)) / 3 );
 
 //header
-$header-height: 100px;
+$header-height: --header-height;

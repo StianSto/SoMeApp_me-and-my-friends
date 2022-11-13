@@ -10895,8 +10895,8 @@ textarea.form-control-lg {
   background-color: #FF9E2C;
 }
 
-.navbar {
-  z-index: 1000;
+header {
+  height: var(--header-height);
 }
 
 #site-search {
@@ -10970,7 +10970,7 @@ main .main-content.show-sidebar {
 main #sidebar {
   display: none;
   position: fixed;
-  padding-top: 100px;
+  margin-top: var(--header-height);
   height: 100%;
   right: 100%;
   top: 0;
@@ -11069,11 +11069,12 @@ main #sidebar.show-sidebar .friend__name {
 }
 
 :root {
+  --header-height: 80px;
   --user-color: $user-color;
 }
 
 .push-down {
-  margin-top: 100px;
+  margin-top: calc(var(--header-height) + 30px);
 }
 
 /*# sourceMappingURL=styles.css.map */
