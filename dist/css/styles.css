@@ -11068,8 +11068,12 @@ main #sidebar.show-sidebar .friend__name {
   --bs-bg-opacity: 1;
 }
 
-.root {
+:root {
   --user-color: $user-color;
+}
+
+.push-down {
+  margin-top: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -13,7 +13,12 @@
 @import "./page";
 
 //code 
-.root {
+:root {
     --user-color: $user-color;
     // user-color will be the way to adjust each users post to their color. some JS will be needed, but for now this will be a template. will be fully functional with the api. 
 } 
+
+.push-down {
+    
+    margin-top: $header-height;
+}
