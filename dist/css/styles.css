@@ -11077,4 +11077,18 @@ main #sidebar.show-sidebar .friend__name {
   margin-top: calc(var(--header-height) + 30px);
 }
 
+#navbarSupportedContent {
+  height: 100vh;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+}
+@media (min-width: 992px) {
+  #navbarSupportedContent {
+    height: auto;
+    position: static;
+    top: initial;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

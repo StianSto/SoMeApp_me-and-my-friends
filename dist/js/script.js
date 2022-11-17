@@ -2,6 +2,10 @@
 import nav from "../js/components/nav.js";
 
 const header = document.querySelector("header");
+
+const body = document.body;
+
+
 header.innerHTML = nav;
 //
 
