@@ -22,8 +22,6 @@ const signUpForm = document.querySelector("#sign-up-form")
 signUpForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-
-
   let firstName = document.getElementById("first-name-sign-up");
   let lastName = document.getElementById("last-name-sign-up");
   let name = `${firstName.value}_${lastName.value}`
