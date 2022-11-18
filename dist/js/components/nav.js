@@ -47,7 +47,5 @@ const nav = `
         </div>
     </div>
 </nav>
-
 `
-
 export default nav;

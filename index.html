@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="/dist/js/components/nav.js" defer></script>
+    <script src="/dist/js/pages/login.js" type="module"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
 </head>
@@ -40,7 +40,7 @@
 
                             <div class="row my-4">
                                 <div class="col-auto mx-auto">
-                                    <a href="wall.html"  class="text-decoration-none">
+                                    <a href=""  class="text-decoration-none">
                                         <button class="btn btn-light d-flex align-items-center" >
                                             <div style="height: 2em;">
                                                 <img class="me-2 h-100" src="https://img.icons8.com/color/28/000000/google-logo.png">
@@ -54,16 +54,17 @@
                             </div>
 
 
-                            <form id="log-in-form" action="/profile.html" class="d-flex flex-column has-validation gap-2">
+                            <form id="log-in-form" class="d-flex flex-column has-validation gap-2">
                                 <div class="form-floating ">
-                                    <input id="username-log-in" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="Username" required>
-                                    <label for="username-log-in">Username</label>
+                                    <input id="email-log-in" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="email" required>
+                                    <label for="email-log-in">email</label>
                                 </div>
                                 <div class="form-floating">
                                     <input id="password-log-in" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" required>
                                     <label for="password-log-in">Password</label>
                                 </div>
-                                <button class="btn bg-secondary align-self-center px-4 py-2 text-light">Log In</button>
+                                <p class="error-msg-login | bg-danger bg-opacity-25 border-danger border p-1 rounded-1 d-none">! invalid email</p>
+                                <button type="submit" class="btn bg-secondary align-self-center px-4 py-2 text-light">Log In</button>
                             </form>
                             
                         </div>
@@ -71,7 +72,7 @@
                         <div class="px-4 carousel-item" id="sign-up">
                             <div class="row my-4">
                                 <div class="col-auto mx-auto">
-                                    <a href="#"  class="text-decoration-none">
+                                    <a href=""  class="text-decoration-none">
                                         <button class="btn btn-light d-flex align-items-center" >
                                             <div style="height: 2em;">
                                                 <img class="me-2 h-100" src="https://img.icons8.com/color/28/000000/google-logo.png">
@@ -83,7 +84,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <form id="sign-up-form" action="/profile.html">
+                            <form id="sign-up-form" class="d-flex flex-column">
                                 <div class="d-flex flex-column mb-3 gap-2">
                                     <div class="mx-auto form-label w-100 text-light">
                                         <span></span>
@@ -91,16 +92,12 @@
                                         <span></span>
                                     </div> 
                                     <div class="form-floating">
-                                        <input id="first-name-sign-up" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="First Name" required>
+                                        <input id="first-name-sign-up" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="First Name" value="Stian" required>
                                         <label for="first-name-sign-up">First Name</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input id="last-name-sign-up" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="Last Name" required>
+                                        <input id="last-name-sign-up" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="Last Name" value="Stordal" required>
                                         <label for="last-name-sign-up">Last Name</label>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input id="email-sign-up" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="Email" required>
-                                        <label for="email-sign-up">Email</label>
                                     </div>
                                 </div>
                                 <div class="d-flex flex-column mb-3 gap-2">
@@ -111,11 +108,11 @@
                                     </div> 
                                     
                                     <div class="form-floating">
-                                        <input id="username-sign-up" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="Password">
-                                        <label for="usernam-sign-up">Username</label>
+                                        <input id="email-sign-up" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" value="StiSto84480@stud.noroff.no">
+                                        <label for="email-sign-up">email</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input id="password-sign-up" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password">
+                                        <input id="password-sign-up" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" value="4og20Hæstekræfta">
                                         <label for="password-sign-up">Password</label>
                                     </div>
                                 </div>
