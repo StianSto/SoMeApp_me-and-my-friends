@@ -1,7 +1,8 @@
-const API_BASE_URL = "https://nf-api.onrender.com/api/v1/social"
+import * as constants from "../api/constants.mjs";
 
+console.log(constants.API_SOCIAL_URL);
 //log in
-import login from "../forms/login.js";
+import login from "../forms/login.mjs";
 const logInForm = document.querySelector("#log-in-form")
 
 logInForm.addEventListener("submit", (event) => {
@@ -10,13 +11,13 @@ logInForm.addEventListener("submit", (event) => {
   let email = document.getElementById("email-log-in")
   let password = document.getElementById("password-log-in")
 
-  login(email.value, password.value, API_BASE_URL + "/auth/login")
-})  
+  login(email.value, password.value, API_SOCIAL_URL + "/auth/login")
+})
 
 
 //sign up
 
-import signUp from "../forms/signUp.js";
+import signUp from "../forms/signup.mjs";
 
 const signUpForm = document.querySelector("#sign-up-form")
 signUpForm.addEventListener("submit", (event) => {
@@ -25,7 +26,7 @@ signUpForm.addEventListener("submit", (event) => {
   let firstName = document.getElementById("first-name-sign-up");
   let lastName = document.getElementById("last-name-sign-up");
   let name = `${firstName.value}_${lastName.value}`
-  let nameString = name.replace(/\s+/g,"_");
+  let nameString = name.replace(/\s+/g, "_");
   console.log(nameString)
 
   let email = document.getElementById("email-sign-up");
