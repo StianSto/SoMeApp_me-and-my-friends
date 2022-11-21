@@ -1,3 +1,8 @@
+(function checktoken() {
+  const token = localStorage.getItem("token") ;
+  if(!token) {location.replace("/login")}
+})();
+
 // import and add nav 
 import nav from "../js/components/nav.js";
 const header = document.querySelector("header");
