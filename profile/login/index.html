@@ -56,11 +56,11 @@
 
                             <form id="log-in-form" class="d-flex flex-column has-validation gap-2">
                                 <div class="form-floating ">
-                                    <input id="email-log-in" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="email" required>
+                                    <input id="email-log-in" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="email" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="email must be a noroff email. ex: 'john@noroff.no' or daisy_123@stud.noroff.no " required>
                                     <label for="email-log-in">email</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input id="password-log-in" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" required>
+                                    <input id="password-log-in" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" minlength="8" title="password must be minimum 8 characters" required>
                                     <label for="password-log-in">Password</label>
                                 </div>
                                 <p class="error-msg-login | bg-danger bg-opacity-25 border-danger border p-1 rounded-1 d-none">! invalid email</p>
