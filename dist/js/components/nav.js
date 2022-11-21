@@ -2,7 +2,7 @@ const nav = `
 <nav class="navbar navbar-expand-lg bg-primary shadow-sm h-100  ">
     <div class="container p-0">
 
-        <a class="navbar-brand" href="/wall.html">
+        <a class="navbar-brand" href="/">
             <img src="/dist/assets/logo.svg" height="50"> 
         </a>
 
@@ -20,7 +20,7 @@ const nav = `
         <div class="collapse navbar-collapse bg-primary w-100" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/wall.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>

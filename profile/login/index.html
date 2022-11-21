@@ -92,11 +92,11 @@
                                         <span></span>
                                     </div> 
                                     <div class="form-floating">
-                                        <input id="first-name-sign-up" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="First Name" value="Stian" required>
+                                        <input id="first-name-sign-up" name="firstName" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="First Name"  pattern="^[\w\s]+$" title="please use only lowercase and uppercase letters, numbers and underscores. ex: John or Daisy_123" required>
                                         <label for="first-name-sign-up">First Name</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input id="last-name-sign-up" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="Last Name" value="Stordal" required>
+                                        <input id="last-name-sign-up" type="text" name="lastName" class="form-control bg-white border-dark border-opacity-25" placeholder="Last Name"  pattern="^[\w\s]+$" title="please use only lowercase and uppercase letters, numbers and underscores. ex: John or Daisy_123" required>
                                         <label for="last-name-sign-up">Last Name</label>
                                     </div>
                                 </div>
@@ -108,11 +108,11 @@
                                     </div> 
                                     
                                     <div class="form-floating">
-                                        <input id="email-sign-up" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" value="StiSto84480@stud.noroff.no">
+                                        <input id="email-sign-up" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="email must be a noroff email. ex: 'john@noroff.no' or daisy_123@stud.noroff.no " required>
                                         <label for="email-sign-up">email</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input id="password-sign-up" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" value="4og20Hæstekræfta">
+                                        <input id="password-sign-up" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" minlength="8" title="password must be minimum 8 characters" required>
                                         <label for="password-sign-up">Password</label>
                                     </div>
                                 </div>
