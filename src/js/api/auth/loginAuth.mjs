@@ -1,3 +1,5 @@
+import errMsg from "../../functions/errMsg.mjs";
+
 /**
  * user log in. needs valid email and password. 
  * @param {text} email valid email
@@ -5,7 +7,8 @@
  * @param {url to api login endpoint} APIUrl url to api login endpoint
  */
 export default async function login(email, password, APIUrl) {  
-  const errMsg = document.querySelector(".error-msg-login")
+  const errMsgContainer = document.querySelector(".error-msg-login"); 
+
   const fetchOptions = {
     method: 'POST',
       body: JSON.stringify({
@@ -20,15 +23,15 @@ export default async function login(email, password, APIUrl) {
   try {
     const response = await fetch(APIUrl, fetchOptions);
     const result = await response.json();
+    const responseError = result.errors;
+    console.log(responseError)
+  
+    errMsg(errMsgContainer, responseError);
 
-    const responseError = result.errors[0].message;
-    if(typeof responseError === "string") { 
-      errMsg.classList.remove("d-none")
-      errMsg.innerText = "! " + responseError; 
-    }
+    // if(result.status)
     
   } catch(error){
     console.log(error)
-    errMsg.innerText += error;
+    errMsgContainer.innerText += error;
   }
 }

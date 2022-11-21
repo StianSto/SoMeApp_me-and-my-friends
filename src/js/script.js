@@ -21,3 +21,5 @@ allPost.forEach(postContainer => postContainer.innerHTML = post);
 //import sidebar toggle function
 import toggleSideBar from "./components/sidebar.mjs";
 setTimeout(toggleSideBar(), 200) 
+
+sign

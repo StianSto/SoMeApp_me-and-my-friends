@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/dist/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="/src/js/pages/login.js" type="module"></script>
+    <script src="/src/js/pages/login.mjs" type="module"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
 </head>
@@ -56,14 +56,14 @@
 
                             <form id="log-in-form" class="d-flex flex-column has-validation gap-2">
                                 <div class="form-floating ">
-                                    <input id="email-log-in" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="email" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="email must be a noroff email. ex: 'john@noroff.no' or daisy_123@stud.noroff.no " required>
+                                    <input id="email-log-in" name="email" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="email" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="email must be a noroff email. ex: 'john@noroff.no' or daisy_123@stud.noroff.no " required>
                                     <label for="email-log-in">email</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input id="password-log-in" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" minlength="8" title="password must be minimum 8 characters" required>
+                                    <input id="password-log-in" name="password" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" minlength="8" title="password must be minimum 8 characters" required>
                                     <label for="password-log-in">Password</label>
                                 </div>
-                                <p class="error-msg-login | bg-danger bg-opacity-25 border-danger border p-1 rounded-1 d-none">! invalid email</p>
+                                <p class="error-msg-login | bg-danger bg-opacity-25 border-danger border p-1 rounded-1 d-none"></p>
                                 <button type="submit" class="btn bg-secondary align-self-center px-4 py-2 text-light">Log In</button>
                             </form>
                             
@@ -116,6 +116,7 @@
                                         <label for="password-sign-up">Password</label>
                                     </div>
                                 </div>
+                                <p class="error-msg-signup | bg-danger bg-opacity-25 border-danger border p-1 rounded-1 d-none"></p>
                                 <button class="btn bg-info align-self-center px-4 py-2 text-light">Sign Up</button>
                             </form>
                         </div>

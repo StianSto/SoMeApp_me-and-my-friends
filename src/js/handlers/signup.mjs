@@ -8,6 +8,7 @@
 
 export default async function signUp(name, email, password, APIUrl) {  
   const errMsg = document.querySelector(".error-msg-signup")
+  errMsg = ""
   try {
     const response = await fetch(APIUrl, {
       method: 'POST',
@@ -21,10 +22,18 @@ export default async function signUp(name, email, password, APIUrl) {
       },
     });
     const result = await response.json();
-    console.log(response)
-    console.log(result)
-    
-    errMsg.innerText = "! " + result.errors[0].message;
+    const responseError = result.errors;
+
+    console.log(responseError)
+  
+    if(responseError.length > 0) { 
+      errMsg.classList.remove("d-none");
+      
+      responseError.forEach(err => {
+        errMsg.innerText += "! " + err.message; 
+      })
+    }
+
 
   } catch(error){
     console.log(error)
