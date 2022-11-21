@@ -1,0 +1,22 @@
+#LogOrSignInCarousel .carousel-indicators, #profile-bio .carousel-indicators {
+    /*override default Bootstrap styles*/
+    position: relative;
+
+    & [data-bs-target] {
+        width: auto;
+        height: auto;
+        text-indent: 0;
+        background:transparent;
+        border: none;
+    }
+}
+
+#log-in-form, 
+#sign-up-form {
+    & .form-control {
+        --bs-bg-opacity: 0.8;
+        &:focus {
+            --bs-bg-opacity: 1;
+        }
+    }
+}

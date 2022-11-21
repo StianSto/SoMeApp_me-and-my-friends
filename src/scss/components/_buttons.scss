@@ -1,0 +1,6 @@
+//like
+.btn__like {
+    & .liked {
+        color: $red;
+    }
+}

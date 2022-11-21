@@ -1,0 +1,22 @@
+#friend-list {
+    & .scroll-list {
+        overflow-x: auto;
+        padding-inline: 20px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    @include pseudo(before, 20px, 100%) {
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, #fff, #ffffff00);
+    }
+    
+    @include pseudo(after, 20px, 100%) {
+        top: 0;
+        right: 0;
+        background: linear-gradient(-90deg, #fff, #ffffff00);
+    }       
+}
