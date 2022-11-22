@@ -1,7 +1,7 @@
 import * as constants from "../api/constants.mjs";
 import loginAuth from "../api/auth/loginAuth.mjs"
 
-export async function setLoginFormListener() {
+export default async function setLoginFormListener() {
   const logInForm = document.querySelector("#log-in-form");
   const loginURL = constants.API_SOCIAL_URL + "/auth/login";
  

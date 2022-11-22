@@ -1,3 +1,5 @@
+import errMsg from "../../functions/errMsg.mjs";
+
 /**
  * register user
  * @param {string} name no punctuation symbols except "_"
@@ -6,9 +8,9 @@
  * @param {string} APIUrl 
  */
 
-export default async function signUp(name, email, password, APIUrl) {  
-  const errMsg = document.querySelector(".error-msg-signup")
-  errMsg = ""
+export default async function signupAuth(name, email, password, APIUrl) {  
+  const errMsgContainer = document.querySelector(".error-msg-signup")
+
   try {
     const response = await fetch(APIUrl, {
       method: 'POST',
@@ -24,19 +26,10 @@ export default async function signUp(name, email, password, APIUrl) {
     const result = await response.json();
     const responseError = result.errors;
 
-    console.log(responseError)
-  
-    if(responseError.length > 0) { 
-      errMsg.classList.remove("d-none");
-      
-      responseError.forEach(err => {
-        errMsg.innerText += "! " + err.message; 
-      })
-    }
-
+    errMsg(errMsgContainer, responseError);
 
   } catch(error){
     console.log(error)
-    errMsg.innerText += error;
+    errMsg.innerText = error;
   }
 }

@@ -24,14 +24,14 @@ export default async function login(email, password, APIUrl) {
     const response = await fetch(APIUrl, fetchOptions);
     const result = await response.json();
     const responseError = result.errors;
-    console.log(responseError)
   
     errMsg(errMsgContainer, responseError);
 
-    // if(result.status)
+
+
     
   } catch(error){
     console.log(error)
-    errMsgContainer.innerText += error;
+    errMsgContainer.innerText = error;
   }
 }
