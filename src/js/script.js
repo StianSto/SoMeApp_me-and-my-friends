@@ -1,8 +1,8 @@
 /* temporary auth check*/
-(function checktoken() {
-  const token = localStorage.getItem("token");
-  if (!token) { location.replace("/profile/login") }
-})();
+// (function checktoken() {
+//   const token = localStorage.getItem("token");
+//   if (!token) { location.replace("/profile/login") }
+// })();
 
 
 // import and add nav 
