@@ -10895,8 +10895,8 @@ textarea.form-control-lg {
   background-color: #FF9E2C;
 }
 
-.navbar {
-  z-index: 1000;
+header {
+  height: var(--header-height);
 }
 
 #site-search {
@@ -10970,7 +10970,7 @@ main .main-content.show-sidebar {
 main #sidebar {
   display: none;
   position: fixed;
-  padding-top: 100px;
+  margin-top: var(--header-height);
   height: 100%;
   right: 100%;
   top: 0;
@@ -11068,8 +11068,27 @@ main #sidebar.show-sidebar .friend__name {
   --bs-bg-opacity: 1;
 }
 
-.root {
+:root {
+  --header-height: 80px;
   --user-color: $user-color;
+}
+
+.push-down {
+  margin-top: calc(var(--header-height) + 30px);
+}
+
+#navbarSupportedContent {
+  height: 100vh;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+}
+@media (min-width: 992px) {
+  #navbarSupportedContent {
+    height: auto;
+    position: static;
+    top: initial;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/dist/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="/dist/js/script.js" type="module"></script>
+    <script src="/src/js/script.js" type="module"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header></header>
+    <header class="fixed-top"></header>
 
     <main class="">
 
@@ -49,13 +49,13 @@
                         
                         
                         <div class="p-0 mx-auto mt-4" style="max-width: 400px;">
-                            <div class="btn-group row p-0 m-0 carousel-indicators border">
+                            <div class="btn-group row p-0 m-0 carousel-indicators">
                                 <div class=" col-6 p-0">
-                                    <button type="button" class="btn active text-dark py-2 fs-4 w-100 m-0 rounded-2" data-bs-target="#profile-bio" data-bs-slide-to="0" aria-current="true" aria-label="Bio">Bio
+                                    <button type="button" class="btn active text-dark py-2 fs-4 w-100 m-0 rounded-0 rounded-start btn-outline-dark" data-bs-target="#profile-bio" data-bs-slide-to="0" aria-current="true" aria-label="Bio">Bio
                                     </button>
                                 </div>
                                 <div class="col-6 p-0">
-                                    <button class="btn text-dark fs-4 py-2 w-100" data-bs-target="#profile-bio" data-bs-slide-to="1" class="" aria-label="Friends">
+                                    <button class="btn text-dark fs-4 py-2 w-100 rounded-0 rounded-end" data-bs-target="#profile-bio" data-bs-slide-to="1" class="" aria-label="Friends">
                                         Friends
                                     </button>
                                 </div>
@@ -163,7 +163,7 @@
 
 
         <div id="sidebar" class="sidebar flex-column">
-            <div class="container">
+            <div class="container mt-2">
                 <div class="row flex-nowrap justify-content-between align-content-center">
                     <h3 class="col-auto m-0 my-auto">Friends</h3>
                     

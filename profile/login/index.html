@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Me & My Friends</title>
+    <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="/src/js/pages/login.mjs" type="module"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-primary">
+
+    <main class="">
+        <div class="container" style="max-width: 600px;">
+            <div class="row px-4 d-flex flex-column align-items-center">
+
+
+                <div class="col mt-2 mb-3 mx-auto d-flex justify-content-center">
+                    <img src="/dist/assets/logo.svg" style="max-width: 150px;" alt="">
+                </div>
+
+                
+
+                <div id="LogOrSignInCarousel" class="carousel slide col" data-bs-ride="false">
+                    <div class="mx-auto col-12 carousel-indicators">
+                        <div class="input-group mx-auto row-cols-2 justify-content-center gap-4" >
+                            <button class="btn col-auto fs-4 text-white fw-light active" data-bs-target="#LogOrSignInCarousel" id="log-in-btn" data-bs-slide-to="0" aria-label="0" aria-current="true">Log In</button>
+                            <button class="btn col-auto fs-4 text-white fw-light" data-bs-target="#LogOrSignInCarousel" id="sign-up-btn"  data-bs-slide-to="1" aria-label="1" >Sign Up</button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active px-4" id="log-in">
+
+                            <div class="row my-4">
+                                <div class="col-auto mx-auto">
+                                    <a href=""  class="text-decoration-none">
+                                        <button class="btn btn-light d-flex align-items-center" >
+                                            <div style="height: 2em;">
+                                                <img class="me-2 h-100" src="https://img.icons8.com/color/28/000000/google-logo.png">
+                                            </div>
+                                            <span>
+                                                Log In with Google
+                                            </span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            <form id="log-in-form" class="d-flex flex-column has-validation gap-2">
+                                <div class="form-floating ">
+                                    <input id="email-log-in" name="email" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="email" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="email must be a noroff email. ex: 'john@noroff.no' or daisy_123@stud.noroff.no " required>
+                                    <label for="email-log-in">email</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input id="password-log-in" name="password" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" minlength="8" title="password must be minimum 8 characters" required>
+                                    <label for="password-log-in">Password</label>
+                                </div>
+                                <p class="error-msg-login | bg-danger bg-opacity-25 border-danger border p-1 rounded-1 d-none"></p>
+                                <button type="submit" class="btn bg-secondary align-self-center px-4 py-2 text-light">Log In</button>
+                            </form>
+                            
+                        </div>
+    
+                        <div class="px-4 carousel-item" id="sign-up">
+                            <div class="row my-4">
+                                <div class="col-auto mx-auto">
+                                    <a href=""  class="text-decoration-none">
+                                        <button class="btn btn-light d-flex align-items-center" >
+                                            <div style="height: 2em;">
+                                                <img class="me-2 h-100" src="https://img.icons8.com/color/28/000000/google-logo.png">
+                                            </div>
+                                            <span>
+                                                Sign Up with Google
+                                            </span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                            <form id="sign-up-form" class="d-flex flex-column">
+                                <div class="d-flex flex-column mb-3 gap-2">
+                                    <div class="mx-auto form-label w-100 text-light">
+                                        <span></span>
+                                        <p class="m-0 px-2 px-md-3 px-lg-4"> Personal Info </p>
+                                        <span></span>
+                                    </div> 
+                                    <div class="form-floating">
+                                        <input id="first-name-sign-up" name="firstName" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="First Name"  pattern="^[\w\s]+$" title="please use only lowercase and uppercase letters, numbers and underscores. ex: John or Daisy_123" required>
+                                        <label for="first-name-sign-up">First Name</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input id="last-name-sign-up" type="text" name="lastName" class="form-control bg-white border-dark border-opacity-25" placeholder="Last Name"  pattern="^[\w\s]+$" title="please use only lowercase and uppercase letters, numbers and underscores. ex: John or Daisy_123" required>
+                                        <label for="last-name-sign-up">Last Name</label>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column mb-3 gap-2">
+                                    <div class="mx-auto form-label w-100 text-light">
+                                        <span></span>
+                                        <p class="m-0 px-2 px-md-3 px-lg-4"> Account Info </p>
+                                        <span></span>
+                                    </div> 
+                                    
+                                    <div class="form-floating">
+                                        <input id="email-sign-up" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="email must be a noroff email. ex: 'john@noroff.no' or daisy_123@stud.noroff.no " required>
+                                        <label for="email-sign-up">email</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input id="password-sign-up" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" minlength="8" title="password must be minimum 8 characters" required>
+                                        <label for="password-sign-up">Password</label>
+                                    </div>
+                                </div>
+                                <p class="error-msg-signup | bg-danger bg-opacity-25 border-danger border p-1 rounded-1 d-none"></p>
+                                <button class="btn bg-info align-self-center px-4 py-2 text-light">Sign Up</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -4,134 +4,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Me & My Friends</title>
+    <title>My Wall | Me & My Friends</title>
     <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="dist/css/styles.css">
+    <link rel="stylesheet" href="/dist/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="/dist/js/components/nav.js" defer></script>
+    <script src="/src/js/script.js" type="module"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-primary">
+<body>
+    <header class="fixed-top"></header>
 
-    <main class="">
-        <div class="container" style="max-width: 600px;">
-            <div class="row px-4 d-flex flex-column align-items-center">
-
-
-                <div class="col mt-2 mb-3 mx-auto d-flex justify-content-center">
-                    <img src="/dist/assets/logo.svg" style="max-width: 150px;" alt="">
-                </div>
-
-                
-
-                <div id="LogOrSignInCarousel" class="carousel slide col" data-bs-ride="false">
-                    <div class="mx-auto col-12 carousel-indicators">
-                        <div class="input-group mx-auto row-cols-2 justify-content-center gap-4" >
-                            <button class="btn col-auto fs-4 text-white fw-light active" data-bs-target="#LogOrSignInCarousel" id="log-in-btn" data-bs-slide-to="0" aria-label="0" aria-current="true">Log In</button>
-                            <button class="btn col-auto fs-4 text-white fw-light" data-bs-target="#LogOrSignInCarousel" id="sign-up-btn"  data-bs-slide-to="1" aria-label="1" >Sign Up</button>
-                        </div>
-                    </div>
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active px-4" id="log-in">
-
-                            <div class="row my-4">
-                                <div class="col-auto mx-auto">
-                                    <a href="wall.html"  class="text-decoration-none">
-                                        <button class="btn btn-light d-flex align-items-center" >
-                                            <div style="height: 2em;">
-                                                <img class="me-2 h-100" src="https://img.icons8.com/color/28/000000/google-logo.png">
-                                            </div>
-                                            <span>
-                                                Log In with Google
-                                            </span>
-                                        </button>
-                                    </a>
+    <main class="push-down">
+        <div class="main-content">
+            <div class="container post--container">
+                <form class="post--create row gx-0 p-0  mt-5">
+                    <div class="card post mb-2 row mx-1 mx-md-auto p-0">
+                        
+                        <div class="card-header col p-3">
+                            <div class="profile-header row m-0 align-items-center flex-nowrap" style="height: 50px;">
+                                <div class="profile__img h-100 col-auto p-0"style="aspect-ratio: 1;">
+                                    <img class="w-100 h-100 rounded-2" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
                                 </div>
+                                <p class="profile__name | col m-0 fs-6">Name Nameson</p>
                             </div>
-
-
-                            <form id="log-in-form" action="/profile.html" class="d-flex flex-column has-validation gap-2">
-                                <div class="form-floating ">
-                                    <input id="username-log-in" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="Username" required>
-                                    <label for="username-log-in">Username</label>
-                                </div>
-                                <div class="form-floating">
-                                    <input id="password-log-in" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password" required>
-                                    <label for="password-log-in">Password</label>
-                                </div>
-                                <button class="btn bg-secondary align-self-center px-4 py-2 text-light">Log In</button>
-                            </form>
-                            
                         </div>
+                        
+                        <div class="card body p-0 rounded-0 border-0 border-bottom">
+                            <textarea class="w-100 m-0 border-0 px-4 px-md-5 py-3 py-md-4" name="" rows="3" id="post--create__textarea"></textarea>
+                        </div>
+                        
+                        <div class="card-footer p-0">
+                            <div class="btn-group d-flex">
+                                <button type="button" class="btn btn-outline-primary border-0 border-end">
+                                    <i class="fa-solid fa-image"></i> Add Image
+                                </button>
+                                <button type="button" class="btn btn-outline-primary border-0">
+                                    <i class="fa-solid fa-gear"></i> Other Settings
+                                </button>
+                            </div>
+                        </div>                    
     
-                        <div class="px-4 carousel-item" id="sign-up">
-                            <div class="row my-4">
-                                <div class="col-auto mx-auto">
-                                    <a href="#"  class="text-decoration-none">
-                                        <button class="btn btn-light d-flex align-items-center" >
-                                            <div style="height: 2em;">
-                                                <img class="me-2 h-100" src="https://img.icons8.com/color/28/000000/google-logo.png">
-                                            </div>
-                                            <span>
-                                                Sign Up with Google
-                                            </span>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <form id="sign-up-form" action="/profile.html">
-                                <div class="d-flex flex-column mb-3 gap-2">
-                                    <div class="mx-auto form-label w-100 text-light">
-                                        <span></span>
-                                        <p class="m-0 px-2 px-md-3 px-lg-4"> Personal Info </p>
-                                        <span></span>
-                                    </div> 
-                                    <div class="form-floating">
-                                        <input id="first-name-sign-up" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="First Name" required>
-                                        <label for="first-name-sign-up">First Name</label>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input id="last-name-sign-up" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="Last Name" required>
-                                        <label for="last-name-sign-up">Last Name</label>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input id="email-sign-up" type="email" class="form-control bg-white border-dark border-opacity-25" placeholder="Email" required>
-                                        <label for="email-sign-up">Email</label>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-column mb-3 gap-2">
-                                    <div class="mx-auto form-label w-100 text-light">
-                                        <span></span>
-                                        <p class="m-0 px-2 px-md-3 px-lg-4"> Account Info </p>
-                                        <span></span>
-                                    </div> 
-                                    
-                                    <div class="form-floating">
-                                        <input id="username-sign-up" type="text" class="form-control bg-white border-dark border-opacity-25" placeholder="Password">
-                                        <label for="usernam-sign-up">Username</label>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input id="password-sign-up" type="password" class="form-control bg-white border-dark border-opacity-25" placeholder="Password">
-                                        <label for="password-sign-up">Password</label>
-                                    </div>
-                                </div>
-                                <button class="btn bg-info align-self-center px-4 py-2 text-light">Sign Up</button>
-                            </form>
-                        </div>
-
                     </div>
+                    <button type="submit" class="btn btn-primary px-4 py-2 col-auto ms-auto">Create Post</button>
+                </form>
+            </div>
+            
+            <div class="container post--container post--example"></div>
+            <div class="container post--container post--example"></div>            
+        </div>
 
-
+        <div id="sidebar" class="sidebar flex-column">
+            <div class="container mt-2">
+                <div class="row flex-nowrap justify-content-between align-content-center">
+                    <h3 class="col-auto m-0 my-auto">Friends</h3>
+                    
+                    <button 
+                        class="btn d-flex justify-content-center py-0 px-auto"
+                        id="sidebar-btn"
+                        aria-expanded="true" 
+                        aria-controls="sidebar"
+                    >
+                        <i class="fa-solid fa-bars fs-3 my-auto"></i>
+                    </button>
                 </div>
 
             </div>
+            <ul class="col p-0 ps-1 list-unstyled">
+
+                <li class="w-100 ">
+                    <a href="/profile" class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none">
+                        <div class="friend__img p-0">
+                            <img class="h-100" style="object-fit: cover; aspect-ratio: 1;" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
+                        </div>
+                        <span class="friend__name col-auto my-auto px-2">Name Nameson</span>
+                    </a>
+                </li>
+                <li class="w-100 ">
+                    <a href="/profile" class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none">
+                        <div class="friend__img p-0">
+                            <img class="h-100" style="object-fit: cover; aspect-ratio: 1;" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
+                        </div>
+                        <span class="friend__name col-auto my-auto px-2">Name Nameson</span>
+                    </a>
+                </li>
+                <li class="w-100 ">
+                    <a href="/profile" class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none">
+                        <div class="friend__img p-0">
+                            <img class="h-100" style="object-fit: cover; aspect-ratio: 1;" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
+                        </div>
+                        <span class="friend__name col-auto my-auto px-2">Name Nameson</span>
+                    </a>
+                </li>
+
+            </ul>
         </div>
-
     </main>
-
+    <footer></footer>
 </body>
 </html>
