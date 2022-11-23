@@ -1,25 +1,21 @@
-// import and add nav
 import nav from "./components/nav.mjs";
+import toggleSideBar from "./components/sidebar.mjs";
+import * as posts from "./api/posts/index.mjs";
+import * as templates from "./templates/index.mjs";
+
+// import and add nav
 const header = document.querySelector("header");
 header.innerHTML = nav;
 
-// import and add posts
-import post from "./components/post.mjs";
-
-const allPost = document.querySelectorAll(".post--example");
-allPost.forEach((postContainer) => (postContainer.innerHTML = post));
-
 //import sidebar toggle function
-import toggleSideBar from "./components/sidebar.mjs";
 setTimeout(toggleSideBar(), 200);
 
-// test create post
-
-import * as posts from "./api/posts/index.mjs";
-
-// createPost({
-//   title: "why are oranges called orange?",
-//   body: "it is weird, why not call oranges for 'juicy sour apples'?"
-// })
-
 const formCreatePost = document.getElementById("form-create-post");
+
+const postData = await posts.getPost(3949);
+console.log(postData);
+
+let postContainer = document.getElementById("posts-wall");
+const testPost = templates.postTemplate(postData, postContainer);
+
+console.log(postData);
