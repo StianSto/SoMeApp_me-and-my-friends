@@ -14,9 +14,28 @@ const formCreatePost = document.getElementById("form-create-post");
 
 //temp
 import { examplePosts } from "../../temp/examplePosts.mjs";
+import createFlagString from "./functions/createFlagString.mjs";
 
 let postContainer = document.getElementById("posts-wall");
 examplePosts.forEach((post) => templates.postTemplate(post, postContainer));
 
 // const myPost = posts.getPost(4055);
 // templates.postTemplate(myPost, postContainer);
+
+const flagOptionsTest = {
+  _author: true,
+  _comments: true,
+  _reactions: false,
+};
+
+const flagstring = createFlagString(flagOptionsTest);
+
+console.log(flagstring);
+
+// const loadPosts = await posts.getPosts(flagstring);
+// console.log(typeof loadPosts);
+// console.log(loadPosts);
+
+// loadPosts.forEach((post) => {
+//   templates.postTemplate(post, postContainer);
+// });
