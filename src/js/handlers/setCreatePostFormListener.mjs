@@ -8,7 +8,6 @@ export default async function setCreatePostFormListener() {
     const form = event.target;
     const formData = new FormData(form);
     const profileData = Object.fromEntries(formData.entries());
-    const { email, password } = profileData;
 
     createPost(profileData);
     console.log(profileData);
