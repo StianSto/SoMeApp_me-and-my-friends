@@ -33,7 +33,8 @@
                         </div>
                         
                         <div class="card body p-0 rounded-0 border-0 border-bottom">
-                            <textarea class="w-100 m-0 border-0 px-4 px-md-5 py-3 py-md-4" name="" rows="3" id="post--create__textarea"></textarea>
+                            <input class="w-100 m-0 border-0 p-2 px-4 px-md-5 fs-5" name="title" rows="1" id="create-post-title" placeholder="Title"></input>
+                            <textarea class="w-100 m-0 border-0 px-4 px-md-5 pb-3 pb-md-4" name="body" rows="3" id="post--create__textarea" placeholder="write your post here"></textarea>
                         </div>
                         
                         <div class="card-footer p-0">
@@ -48,7 +49,10 @@
                         </div>                    
     
                     </div>
-                    <button type="submit" class="btn btn-primary px-4 py-2 col-auto ms-auto">Create Post</button>
+                    <div class="btn-group w-50">
+                        <button type="button" class="btn px-4 py-2 col-4 ms-auto">preview</button>
+                        <button type="submit" class="btn btn-primary px-4 py-2 col-4 ms-auto">Create Post</button>
+                    </div>
                 </form>
             </div>
             
