@@ -28,9 +28,7 @@ const flagOptionsTest = {
   _reactions: false,
 };
 
-const flagstring = createFlagString(flagOptionsTest);
-
-console.log(flagstring);
+// const flagstring = createFlagString(flagOptionsTest);
 
 // const loadPosts = await posts.getPosts(flagstring);
 // console.log(typeof loadPosts);

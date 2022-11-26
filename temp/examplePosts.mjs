@@ -1,15 +1,16 @@
 const fakePostData = {
-  id: 12345,
+  id: 1234,
   title: "What a wonderful world",
   body: "i see trees of green <br> red soses too. <br>i see them bloom. <br>for me and you. <br>and i think to myself. <br><br> what a wonderful world",
   tags: ["fake", "random"],
-  media: "https://source.unsplash.com/random/600x400",
+  media:
+    "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=800",
   created: "2022-09-04T08:08:38.830Z",
   updated: "2022-11-10T08:08:38.830Z",
   author: {
     name: "George R. R. Martin",
     email: "user@example.com",
-    avatar: "https://source.unsplash.com/random/400x400",
+    avatar: "",
     banner: "https://source.unsplash.com/random/1920x600",
   },
   reactions: [
@@ -48,13 +49,13 @@ const fakePostData2 = {
   title: "Fake Post",
   body: "i made this fake post to test my JavaScript without making a 1000 calls to the Noroff API",
   tags: ["fake", "random"],
-  media: "https://source.unsplash.com/random/600x400",
+  media: "",
   created: "2022-09-04T08:08:38.830Z",
   updated: "2022-11-10T08:08:38.830Z",
   author: {
     name: "Mr Melk",
     email: "user@example.com",
-    avatar: "https://source.unsplash.com/random",
+    avatar: "https://source.unsplash.com/random/200x200",
     banner: "https://source.unsplash.com/random/1920x600",
   },
   reactions: [
