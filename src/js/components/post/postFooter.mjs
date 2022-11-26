@@ -11,7 +11,7 @@ export function templatePostFooter(comments) {
             </div>
             <button type="submit" class=" col-auto btn submit-comment shadow-sm mt-4">Comment</button>
         </form>
-        <div class="post-comments col mt-4 d-none"></div>
+        <div class="post-comments col mt-4"></div>
     </div>
     `,
     "text/html"

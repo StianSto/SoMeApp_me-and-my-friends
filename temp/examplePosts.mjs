@@ -29,14 +29,12 @@ const fakePostData = {
       postId: 0,
       owner: "Bjarne",
       created: "2022-09-04T08:17:59.383Z",
-    },
-    {
-      body: "this is another comment",
-      replyToId: null, // or number if comment is reply to another comment
-      id: 4,
-      postId: 2,
-      owner: "Bjørnar",
-      created: "2022-09-04T08:17:59.383Z",
+      author: {
+        name: "noobMaster69",
+        email: "user@example.com",
+        avatar: "",
+        banner: "",
+      },
     },
   ],
   _count: {
@@ -75,6 +73,12 @@ const fakePostData2 = {
       postId: 0,
       owner: "Bjarne",
       created: "2022-09-04T08:17:59.383Z",
+      author: {
+        name: "commentator",
+        email: "user@example.com",
+        avatar: "",
+        banner: "",
+      },
     },
     {
       body: "this is another comment",
@@ -83,6 +87,13 @@ const fakePostData2 = {
       postId: 2,
       owner: "Bjørnar",
       created: "2022-09-04T08:17:59.383Z",
+      author: {
+        name: "fanboy127",
+        email: "user@example.com",
+        avatar:
+          "https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_80,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/traversecity/Crystal-Lake-Alpaca-Farm-Boutique-c9afa0185056a34_c9afa176-5056-a348-3a0501841f32b030.jpg",
+        banner: "",
+      },
     },
   ],
   _count: {
