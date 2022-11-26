@@ -46,8 +46,8 @@ const fakePostData = {
 };
 const fakePostData2 = {
   id: 12345,
-  title: "Fake Post",
-  body: "i made this fake post to test my JavaScript without making a 1000 calls to the Noroff API",
+  title: "Milk is good for you",
+  body: "Drink your milk, every day!",
   tags: ["fake", "random"],
   media: "",
   created: "2022-09-04T08:08:38.830Z",
@@ -55,7 +55,8 @@ const fakePostData2 = {
   author: {
     name: "Mr Melk",
     email: "user@example.com",
-    avatar: "https://source.unsplash.com/random/200x200",
+    avatar:
+      "https://labrador-www.kk.no/images/76978605.jpg?imageId=76978605&panow=99.893674641148&panoh=60.493829059829&panox=0&panoy=6.8376068376068&heightw=100&heighth=100&heightx=0&heighty=0&width=1200&height=1200",
     banner: "https://source.unsplash.com/random/1920x600",
   },
   reactions: [

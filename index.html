@@ -39,7 +39,7 @@
                         
                         <div class="card-footer p-0">
                             <div class="btn-group d-flex">
-                                <button type="button" class="btn btn-outline-primary border-0 border-end">
+                                <button type="button" class="btn btn-outline-primary border-0 border-end" data-bs-toggle="modal" data-bs-target="#modalAddMedia">
                                     <i class="fa-solid fa-image"></i> Add Image
                                 </button>
                                 <button type="button" class="btn btn-outline-primary border-0">
@@ -48,15 +48,35 @@
                             </div>
                         </div>                    
     
+
+                        <div class="modal fade" id="modalAddMedia" tabindex="-1" aria-labelledby="#modalAddMediaLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="modalAddMediaLabel">Add Media</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <input type="text" name="media" id="createPostAddMedia" class="form-control" placeholder="image url" aria-label="Recipient's username" aria-describedby="">
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
                     </div>
-                    <div class="btn-group w-50">
-                        <button type="button" class="btn px-4 py-2 col-4 ms-auto">preview</button>
-                        <button type="submit" class="btn btn-primary px-4 py-2 col-4 ms-auto">Create Post</button>
+                    <div class=" ms-auto d-inline-flex" style="max-width: 300px;" id="submitPost" >
+                        <button type="button" class="btn border-0 px-4 py-2 col-4 ms-auto w-auto">preview</button>
+                        <button type="submit" class="btn btn-primary px-4 py-2 col-4 w-auto">Create Post</button>
                     </div>
                 </form>
             </div>
             
-            <div id="posts-wall" class="container post--container post--example"></div>      
+            <div id="posts-wall" class="container post--container post--example | mt-5"><h1>The Global Wall</h1></div>      
         </div>
 
         <div id="sidebar" class="sidebar flex-column">
