@@ -42,3 +42,7 @@ const flagstring = createFlagString(flagOptionsTest);
 // loadPosts.forEach((post) => {
 //   templates.postTemplate(post, postContainer);
 // });
+
+import { createPostTemplate } from "./templates/createPostTemplate.mjs";
+
+createPostTemplate();

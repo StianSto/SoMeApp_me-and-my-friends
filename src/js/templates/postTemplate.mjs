@@ -1,5 +1,5 @@
 import * as postComponents from "../components/post/index.mjs";
-import { templatePostHeader } from "../components/post/index.mjs";
+// import { templatePostHeader } from "../components/post/index.mjs";
 
 /**
  * creates a template for a post that will be inserted into a parent element
