@@ -35,10 +35,10 @@ const flagOptionsTest = {
 
 const flagstring = createFlagString(flagOptionsTest);
 
-const loadPosts = await posts.getPosts(flagstring);
-console.log(typeof loadPosts);
-console.log(loadPosts);
+// const loadPosts = await posts.getPosts(flagstring);
+// console.log(typeof loadPosts);
+// console.log(loadPosts);
 
-loadPosts.forEach((post) => {
-  templates.postTemplate(post, postContainer);
-});
+// loadPosts.forEach((post) => {
+//   templates.postTemplate(post, postContainer);
+// });
