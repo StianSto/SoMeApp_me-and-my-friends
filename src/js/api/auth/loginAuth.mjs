@@ -25,8 +25,6 @@ export default async function login(email, password, APIUrl) {
     const response = await fetch(APIUrl, fetchOptions);
     const result = await response.json();
 
-    console.log(response);
-    console.log(result);
     if (result.errors) {
       errMsg(errMsgContainer, result.errors);
     }

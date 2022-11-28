@@ -10850,9 +10850,12 @@ textarea.form-control-lg {
 }
 .post--create .btn {
   color: #000;
+}
+.post--create #submitPost .btn {
+  color: #000;
   border-color: #FF9E2C;
 }
-.post--create .btn[type=submit] {
+.post--create #submitPost .btn[type=submit] {
   background-color: #FF9E2C;
 }
 
