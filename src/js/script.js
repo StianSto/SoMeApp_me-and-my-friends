@@ -45,9 +45,9 @@ const flagstring = createFlagString(flagOptionsTest);
 // });
 
 import { createPostTemplate } from "./templates/createPostTemplate.mjs";
-import filterPosts from "./functions/filterPosts.mjs";
+import setFilterPostsListener from "./handlers/setFilterPostsListener.mjs";
 import { reactToPost } from "./api/posts/index.mjs";
 
 createPostTemplate();
 
-filterPosts();
+setFilterPostsListener();

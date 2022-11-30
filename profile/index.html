@@ -1,78 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Wall | Me & My Friends</title>
-    <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/dist/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="/src/js/script.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/48de792fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="/src/js//pages/profile.mjs" type="module"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header class="fixed-top"></header>
 
     <main class="">
-
-        <div class="main-content">
-            
-
-
-            <div class="container-fluid profile-page p-0 w-100">
-                <div class="profile-page__user row m-0">
-
-
-                    <div class="banner col-12 h-100 p-0">
-                        <div class="banner__img"></div>
-                        <div class="banner__spacer"></div>
-                    </div>
-
-
-                    <div class="profile-page__user-img | col-auto mx-auto mt-auto d-flex flex-column align-items-center">
-                        <img src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" class="rounded-2 shadow" style="object-fit: cover; aspect-ratio: 1;" alt="">
-                    </div>
-                </div>
-                <div class="row justify-content-center name m-0">
-                    <h1 class="p-0 m-0 text-center">Name Nameson</h1>
-                </div>
+      <div class="main-content">
+        <div class="container-fluid profile-page p-0 w-100">
+          <div class="profile-page__user row m-0">
+            <div class="banner col-12 h-100 p-0">
+              <div class="banner__img" id="userBanner"></div>
+              <div class="banner__spacer"></div>
             </div>
 
-            <div class="container" >
+            <div
+              class="profile-page__user-img | col-auto mx-auto mt-auto d-flex flex-column align-items-center"
+              id="userAvatar"
+            >
+              <!-- <img src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" class="rounded-2 shadow" style="object-fit: cover; aspect-ratio: 1;" alt=""> -->
+            </div>
+          </div>
+          <div class="row justify-content-center name m-0">
+            <h1 class="p-0 m-0 text-center">Name Nameson</h1>
+          </div>
+        </div>
 
-                <div id="profile-bio" class="carousel slide row" data-bs-touch="false">
-                    <div class="col mx-auto col-md-8 col-lg-7 col-xl-6">
-                        
-                        
-                        <div class="p-0 mx-auto mt-4" style="max-width: 400px;">
-                            <div class="btn-group row p-0 m-0 carousel-indicators">
-                                <div class=" col-6 p-0">
-                                    <button type="button" class="btn active text-dark py-2 fs-4 w-100 m-0 rounded-0 rounded-start btn-outline-dark" data-bs-target="#profile-bio" data-bs-slide-to="0" aria-current="true" aria-label="Bio">Bio
-                                    </button>
-                                </div>
-                                <div class="col-6 p-0">
-                                    <button class="btn text-dark fs-4 py-2 w-100 rounded-0 rounded-end" data-bs-target="#profile-bio" data-bs-slide-to="1" class="" aria-label="Friends">
-                                        Friends
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="carousel-inner">
-                            <div class="carousel-item active py-3" id="bio">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis velit quasi accusamus illum, a ducimus repellendus quos sit in minima!</p>
-                                <p>Age: 20</p>
-                                <p>Gender: Female</p>
-                                <p>City: Kristiansand</p>
-                            </div>
-                            <div class="carousel-item py-3" id="friend-list">
-                                <div class="scroll-list">
-                                    <div class="d-flex gap-1">
-                                        <div>
+        <div class="container">
+          <div
+            id="profile-bio"
+            class="carousel slide row"
+            data-bs-touch="false"
+          >
+            <div class="col mx-auto col-md-8 col-lg-7 col-xl-6">
+              <div class="p-0 mx-auto mt-4" style="max-width: 400px">
+                <div class="btn-group row p-0 m-0 carousel-indicators">
+                  <div class="col-6 p-0">
+                    <button
+                      type="button"
+                      class="btn active text-dark py-2 fs-4 w-100 m-0 rounded-0 rounded-start btn-outline-dark"
+                      data-bs-target="#profile-bio"
+                      data-bs-slide-to="0"
+                      aria-current="true"
+                      aria-label="Bio"
+                    >
+                      Bio
+                    </button>
+                  </div>
+                  <div class="col-6 p-0">
+                    <button
+                      class="btn text-dark fs-4 py-2 w-100 rounded-0 rounded-end"
+                      data-bs-target="#profile-bio"
+                      data-bs-slide-to="1"
+                      class=""
+                      aria-label="Friends"
+                    >
+                      Friends
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-inner">
+                <div class="carousel-item active py-3" id="bio">
+                  <div class="d-flex">
+                    <p class="mx-auto">coming soon</p>
+                  </div>
+                </div>
+                <div class="carousel-item py-3" id="friend-list">
+                  <div class="scroll-list">
+                    <div class="d-flex gap-1">
+                      <p class="mx-auto">coming soon</p>
+                      <!-- <div>
                                             <img class="" src="https://source.unsplash.com/random/100x100?spiderman" alt="">
                                             Peter Parker
                                         </div>
@@ -106,114 +122,156 @@
                                         </div>
                                         <div class="my-auto">
                                             <button class="btn btn-secondary mx-4">View Friends</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-
+                                        </div> -->
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-
-            <div class="container post--container">
-                <form class="post--create row gx-0 p-0  mt-5">
-                    <div class="card post mb-2 row mx-1 mx-md-auto p-0">
-                        
-                        <div class="card-header col p-3">
-                            <div class="profile-header row m-0 align-items-center flex-nowrap" style="height: 50px;">
-                                <div class="profile__img h-100 col-auto p-0"style="aspect-ratio: 1;">
-                                    <img class="w-100 h-100 rounded-2" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
-                                </div>
-                                <p class="col m-0 fs-6 profile__name">Name Nameson</p>
-                            </div>
-                        </div>
-                        
-                        <div class="card body p-0 rounded-0 border-0 border-bottom">
-                            <textarea class="w-100 m-0 border-0 px-4 px-md-5 py-3 py-md-4" name="" rows="3" id="post--create__textarea"></textarea>
-                        </div>
-                        
-                        <div class="card-footer p-0">
-                            <div class="btn-group d-flex">
-                                <button type="button" class="btn btn-outline-primary border-0 border-end">
-                                    <i class="fa-solid fa-image"></i> Add Image
-                                </button>
-                                <button type="button" class="btn btn-outline-primary border-0">
-                                    <i class="fa-solid fa-gear"></i> Other Settings
-                                </button>
-                            </div>
-                        </div>                    
-    
-                    </div>
-                    <button type="submit" class="btn btn-primary px-4 py-2 col-auto ms-auto">Create Post</button>
-                </form>
-            </div>
-
-            <div class="container post--container">
-                <div class="mx-auto mt-5">
-                    <h2>My Friends's Wall</h2>
-                </div>
-                
-                <div class="post--example"></div>
-                <div class="post--example"></div>
-            </div>
+          </div>
         </div>
 
-
-        <div id="sidebar" class="sidebar flex-column">
-            <div class="container mt-2">
-                <div class="row flex-nowrap justify-content-between align-content-center">
-                    <h3 class="col-auto m-0 my-auto">Friends</h3>
-                    
-                    <button 
-                        class="btn d-flex justify-content-center py-0 px-auto"
-                        id="sidebar-btn"
-                        aria-expanded="true" 
-                        aria-controls="sidebar"
-                    >
-                        <i class="fa-solid fa-bars fs-3 my-auto"></i>
-                    </button>
+        <div class="container post--container">
+          <form class="post--create row gx-0 p-0 mt-5">
+            <div class="card post mb-2 row mx-1 mx-md-auto p-0">
+              <div class="card-header col p-3">
+                <div
+                  class="profile-header row m-0 align-items-center flex-nowrap"
+                  style="height: 50px"
+                >
+                  <div
+                    class="profile__img h-100 col-auto p-0"
+                    style="aspect-ratio: 1"
+                  >
+                    <img
+                      class="w-100 h-100 rounded-2"
+                      src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <p class="col m-0 fs-6 profile__name">Name Nameson</p>
                 </div>
+              </div>
 
+              <div class="card body p-0 rounded-0 border-0 border-bottom">
+                <textarea
+                  class="w-100 m-0 border-0 px-4 px-md-5 py-3 py-md-4"
+                  name=""
+                  rows="3"
+                  id="post--create__textarea"
+                ></textarea>
+              </div>
+
+              <div class="card-footer p-0">
+                <div class="btn-group d-flex">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary border-0 border-end"
+                  >
+                    <i class="fa-solid fa-image"></i> Add Image
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary border-0"
+                  >
+                    <i class="fa-solid fa-gear"></i> Other Settings
+                  </button>
+                </div>
+              </div>
             </div>
-            <ul class="col p-0 ps-1 list-unstyled">
-
-                <li class="w-100 ">
-                    <a href="/profile.html" class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none">
-                        <div class="friend__img p-0">
-                            <img class="h-100" style="object-fit: cover; aspect-ratio: 1;" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
-                        </div>
-                        <span class="friend__name col-auto my-auto px-2">Name Nameson</span>
-                    </a>
-                </li>
-                <li class="w-100 ">
-                    <a href="/profile.html" class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none">
-                        <div class="friend__img p-0">
-                            <img class="h-100" style="object-fit: cover; aspect-ratio: 1;" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
-                        </div>
-                        <span class="friend__name col-auto my-auto px-2">Name Nameson</span>
-                    </a>
-                </li>
-                <li class="w-100 ">
-                    <a href="/profile.html" class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none">
-                        <div class="friend__img p-0">
-                            <img class="h-100" style="object-fit: cover; aspect-ratio: 1;" src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="">
-                        </div>
-                        <span class="friend__name col-auto my-auto px-2">Name Nameson</span>
-                    </a>
-                </li>
-
-
-            </ul>
+            <button
+              type="submit"
+              class="btn btn-primary px-4 py-2 col-auto ms-auto"
+            >
+              Create Post
+            </button>
+          </form>
         </div>
 
+        <div class="container post--container">
+          <div class="mx-auto mt-5">
+            <h2>My Friends's Wall</h2>
+            <div id="posts-wall"></div>
+          </div>
+        </div>
+      </div>
 
+      <div id="sidebar" class="sidebar flex-column">
+        <div class="container mt-2">
+          <div
+            class="row flex-nowrap justify-content-between align-content-center"
+          >
+            <h3 class="col-auto m-0 my-auto">Friends</h3>
 
-
+            <button
+              class="btn d-flex justify-content-center py-0 px-auto"
+              id="sidebar-btn"
+              aria-expanded="true"
+              aria-controls="sidebar"
+            >
+              <i class="fa-solid fa-bars fs-3 my-auto"></i>
+            </button>
+          </div>
+        </div>
+        <ul class="col p-0 ps-1 list-unstyled">
+          <li class="w-100">
+            <a
+              href="/profile.html"
+              class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none"
+            >
+              <div class="friend__img p-0">
+                <img
+                  class="h-100"
+                  style="object-fit: cover; aspect-ratio: 1"
+                  src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+                  alt=""
+                />
+              </div>
+              <span class="friend__name col-auto my-auto px-2"
+                >Name Nameson</span
+              >
+            </a>
+          </li>
+          <li class="w-100">
+            <a
+              href="/profile.html"
+              class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none"
+            >
+              <div class="friend__img p-0">
+                <img
+                  class="h-100"
+                  style="object-fit: cover; aspect-ratio: 1"
+                  src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+                  alt=""
+                />
+              </div>
+              <span class="friend__name col-auto my-auto px-2"
+                >Name Nameson</span
+              >
+            </a>
+          </li>
+          <li class="w-100">
+            <a
+              href="/profile.html"
+              class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none"
+            >
+              <div class="friend__img p-0">
+                <img
+                  class="h-100"
+                  style="object-fit: cover; aspect-ratio: 1"
+                  src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+                  alt=""
+                />
+              </div>
+              <span class="friend__name col-auto my-auto px-2"
+                >Name Nameson</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
     </main>
 
     <footer></footer>
-</body>
+  </body>
 </html>

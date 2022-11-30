@@ -5,7 +5,7 @@
  * @param {string} author.avatar author's profile image / avatar
  * @returns element
  */
-export function templatePostHeader({ name, avatar }) {
+export function templatePostHeader({ name = "", avatar }) {
   if (!avatar || avatar.length === 0)
     avatar = "/dist/assets/images/default-avatar.png";
 
