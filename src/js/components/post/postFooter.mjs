@@ -18,12 +18,14 @@ export function templatePostFooter(comments) {
   );
 
   const commentsContainer = parsedPostFooter.querySelector(".post-comments");
-  comments.forEach((el, index) => {
-    let comment = postComment(el);
-    commentsContainer.appendChild(comment.querySelector(".comment"));
+  if (comments) {
+    comments.forEach((el, index) => {
+      let comment = postComment(el);
+      commentsContainer.appendChild(comment.querySelector(".comment"));
 
-    if ((index = 2)) return; // exits function when there is three comments in place
-  });
+      if ((index = 2)) return; // exits function when there is three comments in place
+    });
+  }
 
   return parsedPostFooter;
 }

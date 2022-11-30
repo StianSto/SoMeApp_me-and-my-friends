@@ -1,6 +1,7 @@
+const defaultAvatar = "/dist/assets/images/default-avatar.png";
+
 export function templatePostHeader({ name, avatar }) {
-  if (!avatar || avatar.length === 0)
-    avatar = "/dist/assets/images/default-avatar.png";
+  if (!avatar || avatar.length === 0) avatar = defaultAvatar;
 
   const parser = new DOMParser();
   const parsedPostHeader = parser.parseFromString(

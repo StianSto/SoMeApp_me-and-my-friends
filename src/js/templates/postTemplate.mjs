@@ -12,7 +12,7 @@ export function postTemplate(postData, parent) {
 
   const parser = new DOMParser();
   const parsedPostContainer = parser.parseFromString(
-    `<div id="${id}" class="card post my-5 row mx-1 mx-md-auto"> </div>`,
+    `<div class="card post my-5 row mx-1 mx-md-auto" data-post-id="${id}"> </div>`,
     "text/html"
   );
 
