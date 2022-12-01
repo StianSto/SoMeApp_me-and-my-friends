@@ -11,13 +11,13 @@ export async function getProfile(name, flags) {
   let flagstring = createFlagString(flags);
 
   const url = `${API_SOCIAL_URL}/${action}/${name}?${flagstring}`;
-  console.log(url);
   const response = await authFetch(url, {
     method,
   });
 
   let userData = await response.json();
   insertProfile(userData);
+  return userData;
 }
 
 export async function getProfilePosts(name, flags) {
@@ -50,7 +50,6 @@ function insertProfile({
   },
 }) {
   if (banner) {
-    console.log(banner);
     const bannerBackground = document.querySelector("#userBanner");
     bannerBackground.style.backgroundImage = `url(${banner})`;
   }

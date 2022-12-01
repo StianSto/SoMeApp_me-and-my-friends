@@ -2,7 +2,6 @@ import { load } from "../storage/index.mjs";
 
 export function headers() {
   const token = load("accessToken");
-  console.log(token);
 
   return {
     "Content-Type": "application/json",
