@@ -57,8 +57,9 @@ main {
     &.show-sidebar {
       --sidebar-width: var(--sidebar-width-open);
 
-      & h3 {
-        display: block;
+      & h3,
+      form {
+        display: block !important;
       }
 
       & ~ .main-content {
@@ -71,20 +72,12 @@ main {
     }
   }
 
-  #sidebar {
-    & .btn {
-      width: calc(var(--sidebar-width-closed) + 0.5rem);
-      margin-left: auto;
-      aspect-ratio: 1.5;
-    }
-  }
-
   #filterPosts {
     display: block;
     left: 0;
     width: 50%;
     z-index: 100;
-    // translate: -100%;
+    translate: -100%;
 
     @include media-breakpoint-up(lg) {
       width: fit-content !important;

@@ -10767,6 +10767,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.pe-hover-pointer:hover {
+  cursor: pointer;
+}
+
 .bar {
   background: #000;
   width: 100%;
@@ -11005,8 +11009,9 @@ main .sidebar .friend__name {
 main .sidebar.show-sidebar {
   --sidebar-width: var(--sidebar-width-open);
 }
-main .sidebar.show-sidebar h3, main .sidebar.show-sidebar .h3 {
-  display: block;
+main .sidebar.show-sidebar h3, main .sidebar.show-sidebar .h3,
+main .sidebar.show-sidebar form {
+  display: block !important;
 }
 main .sidebar.show-sidebar ~ .main-content {
   background-color: red;
@@ -11015,16 +11020,12 @@ main .sidebar.show-sidebar .friend__name {
   /* display: block; */
   opacity: 1;
 }
-main #sidebar .btn {
-  width: calc(var(--sidebar-width-closed) + 0.5rem);
-  margin-left: auto;
-  aspect-ratio: 1.5;
-}
 main #filterPosts {
   display: block;
   left: 0;
   width: 50%;
   z-index: 100;
+  translate: -100%;
 }
 @media (min-width: 992px) {
   main #filterPosts {

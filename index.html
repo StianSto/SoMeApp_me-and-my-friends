@@ -21,7 +21,7 @@
       <div class="sidebar | w-100 p-3 py-4" id="filterPosts">
         <span class="d-flex justify-content-between align-content-center">
           <h2 class="m-0">Filter</h2>
-          <i class="fa-solid fa-arrow-left | fs-4 my-auto" data-filter-btn-hide></i>
+          <i class="fa-solid fa-arrow-left | fs-4 my-auto pe-hover-pointer" data-filter-btn-hide></i>
         </span>
         <form class="mt-4">
           <div class="input-group my-1">
@@ -110,13 +110,15 @@
           
           <div class="container post--container mt-5 d-flex justify-content-between">
             <h1>My Wall</h1>
-            <span class="fs-2"id="filterPostsBtn" ><i class="fa-solid fa-filter"></i></span>
+            <span class="fs-2 pe-hover-pointer" id="filterPostsBtn" ><i class="fa-solid fa-filter"></i></span>
           </div>      
           <div id="posts-wall" class="container post--container post--example | mt-5">
           </div>
         </div>
 
-        <div id="sidebar" class="sidebar flex-column">
+        <div id="sidebar" 
+          class="sidebar flex-column"
+          >
             <div class="container mt-2">
                 <div class="row flex-nowrap justify-content-between align-content-center">
                     <h3 class="col-auto m-0 my-auto">Friends</h3>
@@ -126,6 +128,11 @@
                         id="sidebar-btn"
                         aria-expanded="true" 
                         aria-controls="sidebar"
+                        style="
+                          width: calc(var(--sidebar-width-closed) + 0.5rem);
+                          margin-left: auto;
+                          aspect-ratio: 1.5;
+                        "
                     >
                         <i class="fa-solid fa-bars fs-3 my-auto"></i>
                     </button>
