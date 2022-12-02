@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Wall | Me & My Friends</title>
+    <script
+      src="https://kit.fontawesome.com/48de792fa6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="/src/js/script.js" type="module"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/48de792fa6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="fixed-top"></header>
+
+    <main class="push-down">
+      <div class="main-content">
+        <div class="container my-5">
+          <div class="col">
+            <h1>Edit Post</h1>
+          </div>
+          <div class="col">
+            <form action="" class="p-5 bg-light d-flex flex-column">
+              <div class="d-flex flex-column">
+                <label for="editTitle">Title</label>
+                <input type="form-control" id="editTitle" class="p-2" />
+              </div>
+              <div class="d-flex flex-column">
+                <label for="editBody">Body</label>
+                <textarea
+                  type="form-control"
+                  id="editBody"
+                  rows="4"
+                  class="p-2"
+                ></textarea>
+              </div>
+              <div class="d-flex flex-column">
+                <label for="editMedia">Media</label>
+                <input type="form-control" id="editMedia" class="p-2" />
+              </div>
+              <div class="d-flex flex-column">
+                <label for="editTags">Tags</label>
+                <input type="form-control" id="editTags" class="p-2" />
+              </div>
+              <div class="mt-3 ms-auto">
+                <button type="button" class="btn btn-outline-secondary">
+                  Preview
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Submit Edit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="sidebar" class="sidebar flex-column">
+        <div class="container mt-2">
+          <div
+            class="row flex-nowrap justify-content-between align-content-center"
+          >
+            <h3 class="col-auto m-0 my-auto">Friends</h3>
+
+            <button
+              class="btn d-flex justify-content-center py-0 px-auto"
+              id="sidebar-btn"
+              aria-expanded="true"
+              aria-controls="sidebar"
+              style="
+                width: calc(var(--sidebar-width-closed) + 0.5rem);
+                margin-left: auto;
+                aspect-ratio: 1.5;
+              "
+            >
+              <i class="fa-solid fa-bars fs-3 my-auto"></i>
+            </button>
+          </div>
+        </div>
+        <ul class="col p-0 ps-1 list-unstyled">
+          <li class="w-100">
+            <a
+              href="/profile"
+              class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none"
+            >
+              <div class="friend__img p-0">
+                <img
+                  class="h-100"
+                  style="object-fit: cover; aspect-ratio: 1"
+                  src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+                  alt=""
+                />
+              </div>
+              <span class="friend__name col-auto my-auto px-2"
+                >Name Nameson</span
+              >
+            </a>
+          </li>
+          <li class="w-100">
+            <a
+              href="/profile"
+              class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none"
+            >
+              <div class="friend__img p-0">
+                <img
+                  class="h-100"
+                  style="object-fit: cover; aspect-ratio: 1"
+                  src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+                  alt=""
+                />
+              </div>
+              <span class="friend__name col-auto my-auto px-2"
+                >Name Nameson</span
+              >
+            </a>
+          </li>
+          <li class="w-100">
+            <a
+              href="/profile"
+              class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none"
+            >
+              <div class="friend__img p-0">
+                <img
+                  class="h-100"
+                  style="object-fit: cover; aspect-ratio: 1"
+                  src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+                  alt=""
+                />
+              </div>
+              <span class="friend__name col-auto my-auto px-2"
+                >Name Nameson</span
+              >
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <div class="bg-blac" style="width: 300px; height: 300px; overflow: hidden">
+      <img
+        src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+        alt=""
+        class="h-100 w-100"
+        style="object-position: center center; object-fit: cover"
+      />
+    </div>
+    <footer></footer>
+  </body>
+</html>
