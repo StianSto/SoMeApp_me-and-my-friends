@@ -42,7 +42,7 @@ const fakePostData = {
     comments: 1,
   },
 };
-const fakePostData2 = {
+export const fakePostData2 = {
   id: 12345,
   title: "Milk is good for you",
   body: "Drink your milk, every day!",

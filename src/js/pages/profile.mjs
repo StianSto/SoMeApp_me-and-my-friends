@@ -24,8 +24,10 @@ let flags = {
   _following: true,
 };
 
-profile.getProfile(name, flags);
-profile.getProfilePosts(name, flags);
+if (window.location.pathname === "/profile/") {
+  profile.getProfile(name, flags);
+  profile.getProfilePosts(name, flags);
+}
 
 const updateForm = document.querySelector("#updateMedia");
 const updateBanner = updateForm.querySelector("#updateBanner");

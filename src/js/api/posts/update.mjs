@@ -2,7 +2,7 @@ import { authFetch } from "../authFetch.mjs";
 import { API_SOCIAL_URL } from "../constants.mjs";
 
 const method = "PUT";
-const action = "/posts";
+const action = "posts";
 
 /**
  * updates a post. Post ID is required
@@ -12,7 +12,7 @@ const action = "/posts";
 export async function updatePost(postData) {
   if (!postData.id) throw new Error("update requires a post ID");
 
-  const url = `${API_SOCIAL_URL}${action}/${postData.id}`;
+  const url = `${API_SOCIAL_URL}/${action}/${postData.id}`;
 
   const response = await authFetch(url, {
     method,

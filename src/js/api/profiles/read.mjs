@@ -62,6 +62,10 @@ function insertProfile({
   `,
     "text/html"
   );
+
+  if (avatarDom.querySelector("img")) {
+    avatarDom.querySelector("img").replaceWith(avatarDom.querySelector("img"));
+  }
   avatarContainer.appendChild(avatarDom.querySelector("img"));
 
   const profileName = document.querySelector("h1");

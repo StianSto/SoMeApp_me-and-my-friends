@@ -22,7 +22,7 @@
  * }
  * ```
  */
-export function templatePostBody({
+export function templateSinglePostBody({
   id,
   title,
   body,
@@ -34,22 +34,31 @@ export function templatePostBody({
   const parser = new DOMParser();
   const parsedPostBody = parser.parseFromString(
     `
-    <div class="card-body p-0">
-      <div class="post-media-container">
-        <img class="img-fluid w-100" src="${media}">
+    <div class="card-body p-0 d-flex flex-column flex-md-row">
+      <div 
+        class="col col-md-6 post-media-container"
+        style="background-color: #272727;"
+      >
+        <img 
+          class="img-fluid w-100 h-100" 
+          
+          src="${media}"
+          style="max-height: 80vh; min-hight: 40vh; object-fit: contain"
+        >
       </div>
-      <div class="px-4 px-md-5 pt-3 pt-md-4">
+      <div class="col px-3 px-sm-4 px-md-5 pt-3 pt-sm-4 pt-md-5 d-flex flex-column">
       <div class="d-flex mb-4 align-items-center">
-        <span class="text-bold fs-4 me-4" style="font-size">${title}</span><a class="ms-auto text-black" href="/profile/posts/?id=${id}"><i class="fa-solid fa-expand fs-5 pe-hover-pointer"></i></a>
+        <span class="text-bold fs-4 me-4" style="font-size">${title}</span><a class="ms-auto text-black" href="/profile/posts/edit/?id=${id}"><i class="fa-solid fa-edit fs-5 pe-hover-pointer"></i></a>
       </div>
-        <p class="post-content">${body}</p>
-        <div class="d-flex align-end mt-5">
+        <p class="post-content mb-5">${body}</p>
+        <div class="d-flex align-end mt-auto">
           <button class="btn btn__like"><i class="fa-solid fa-heart fs-4 liked"></i><span class="likes ms-2">${reactions}</span></button>
           <button class="btn btn__comment"><i class="fa-solid fa-comment fs-4"></i><span class="comments ms-2">${comments}</span></button>
           <p class="text-muted mb-0 mt-auto ms-auto" style="font-size: smaller;">posted: <span>${parseDate}</span></p>
         </div>
       </div>
     </div>
+
   );
   `,
     "text/html"
