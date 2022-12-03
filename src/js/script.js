@@ -51,3 +51,10 @@ import { reactToPost } from "./api/posts/index.mjs";
 createPostTemplate();
 
 setFilterPostsListener();
+
+const popoverTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="popover"]'
+);
+const popoverList = [...popoverTriggerList].map(
+  (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+);

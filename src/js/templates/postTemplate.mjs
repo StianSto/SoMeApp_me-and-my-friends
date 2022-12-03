@@ -1,3 +1,4 @@
+import postOptions from "../components/post/postOptions.mjs";
 import * as postComponents from "../components/post/index.mjs";
 // import { templatePostHeader } from "../components/post/index.mjs";
 
@@ -16,9 +17,13 @@ export function postTemplate(postData, parent) {
     "text/html"
   );
 
-  const postHeader = postComponents.templatePostHeader(author);
+  const postHeader = postComponents.templatePostHeader(author, id);
   const postBody = postComponents.templatePostBody(postData);
   const postFooter = postComponents.templatePostFooter(other.comments);
+
+  const postOptionsBtn = postHeader.querySelector(".post-options");
+  if (postOptionsBtn !== undefined)
+    postOptions(author.name, id, postOptionsBtn);
 
   const post = parsedPostContainer.querySelector(".card");
   post.appendChild(postHeader.querySelector(".card-header"));
@@ -49,9 +54,13 @@ export function viewSinglePostTemplate(postData, parent) {
     "text/html"
   );
 
-  const postHeader = postComponents.templatePostHeader(author);
+  const postHeader = postComponents.templatePostHeader(author, id);
   const postBody = templateSinglePostBody(postData);
   const postFooter = postComponents.templatePostFooter(other.comments);
+
+  const postOptionsBtn = postHeader.querySelector(".post-options");
+  if (postOptionsBtn !== undefined)
+    postOptions(author.name, id, postOptionsBtn);
 
   const post = parsedPostContainer.querySelector(".card");
   post.appendChild(postHeader.querySelector(".card-header"));

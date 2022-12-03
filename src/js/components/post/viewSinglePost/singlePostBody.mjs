@@ -1,3 +1,5 @@
+import * as storage from "../../../storage/index.mjs";
+import postOptions from "../postOptions.mjs";
 /**
  * makes a DOMParsed element for the body of the post.
  * @param {Object} postData
@@ -24,6 +26,7 @@
  */
 export function templateSinglePostBody({
   id,
+  author,
   title,
   body,
   created,
@@ -48,7 +51,7 @@ export function templateSinglePostBody({
       </div>
       <div class="col px-3 px-sm-4 px-md-5 pt-3 pt-sm-4 pt-md-5 d-flex flex-column">
       <div class="d-flex mb-4 align-items-center">
-        <span class="text-bold fs-4 me-4" style="font-size">${title}</span><a class="ms-auto text-black" href="/profile/posts/edit/?id=${id}"><i class="fa-solid fa-edit fs-5 pe-hover-pointer"></i></a>
+        <span class="text-bold fs-4 me-4" style="font-size">${title}</span>
       </div>
         <p class="post-content mb-5">${body}</p>
         <div class="d-flex align-end mt-auto">
