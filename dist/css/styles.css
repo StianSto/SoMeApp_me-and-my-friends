@@ -10793,7 +10793,7 @@ textarea.form-control-lg {
 }
 
 .post--container {
-  max-width: 675px;
+  max-width: 550px;
 }
 .post .card-header {
   background-color: #FF9E2C;
@@ -10953,7 +10953,7 @@ header {
 :root {
   --sidebar-width-open: clamp(200px, 20vw, 450px);
   --sidebar-width-closed: 60px;
-  --sidebar-width: var(--sidebar-width-closed) ;
+  --sidebar-width: var(--sidebar-width-closed);
 }
 
 main {
@@ -10970,12 +10970,11 @@ main .main-content {
 main .main-content.show-sidebar {
   --sidebar-width: var(--sidebar-width-open);
 }
-main #sidebar {
+main .sidebar {
   display: none;
   position: fixed;
   margin-top: var(--header-height);
   height: 100%;
-  right: 100%;
   top: 0;
   right: 0;
   width: calc(var(--sidebar-width) + 0.5rem);
@@ -10983,47 +10982,57 @@ main #sidebar {
   transition: all 200ms ease;
 }
 @media (min-width: 992px) {
-  main #sidebar {
+  main .sidebar {
     display: block;
   }
 }
-main #sidebar h3, main #sidebar .h3 {
+main .sidebar h3, main .sidebar .h3 {
   display: none;
+}
+main .sidebar .friend {
+  height: var(--sidebar-width-closed) !important;
+}
+main .sidebar .friend__img {
+  width: var(--sidebar-width-closed);
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+main .sidebar .friend__name {
+  /* display: none; */
+  opacity: 0;
+  transition: all 500ms ease;
+}
+main .sidebar.show-sidebar {
+  --sidebar-width: var(--sidebar-width-open);
+}
+main .sidebar.show-sidebar h3, main .sidebar.show-sidebar .h3 {
+  display: block;
+}
+main .sidebar.show-sidebar ~ .main-content {
+  background-color: red;
+}
+main .sidebar.show-sidebar .friend__name {
+  /* display: block; */
+  opacity: 1;
 }
 main #sidebar .btn {
   width: calc(var(--sidebar-width-closed) + 0.5rem);
   margin-left: auto;
   aspect-ratio: 1.5;
 }
-main #sidebar .friend {
-  height: var(--sidebar-width-closed) !important;
-}
-main #sidebar .friend__img {
-  width: var(--sidebar-width-closed);
-  aspect-ratio: 1;
-  object-fit: cover;
-}
-main #sidebar .friend__name {
-  /* display: none; */
-  opacity: 0;
-  transition: all 500ms ease;
-}
-main #sidebar.show-sidebar {
-  --sidebar-width: var(--sidebar-width-open);
-}
-main #sidebar.show-sidebar h3, main #sidebar.show-sidebar .h3 {
+main #filterPosts {
   display: block;
+  left: 0;
+  width: 50%;
+  z-index: 100;
 }
-main #sidebar.show-sidebar ~ .main-content {
-  background-color: red;
+@media (min-width: 992px) {
+  main #filterPosts {
+    width: fit-content !important;
+  }
 }
-main #sidebar.show-sidebar .friend__name {
-  /* display: block; */
-  opacity: 1;
-}
-
-.show ~ .main-content {
-  background-color: red !important;
+main #filterPosts.show {
+  translate: 0;
 }
 
 .profile-page__user {
