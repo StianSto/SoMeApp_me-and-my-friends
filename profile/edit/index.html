@@ -19,11 +19,11 @@
     <script src="/src/js//pages/profile.mjs" type="module"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <body>
+  <body style="--sidebar-width-open: 40vw">
     <header class="fixed-top"></header>
 
     <main class="">
-      <div class="main-content">
+      <div class="main-content show-sidebar">
         <div class="container-fluid profile-page p-0 w-100">
           <div class="profile-page__user row m-0">
             <div class="banner col-12 h-100 p-0">
@@ -34,9 +34,7 @@
             <div
               class="profile-page__user-img | col-auto mx-auto mt-auto d-flex flex-column align-items-center"
               id="userAvatar"
-            >
-              <!-- <img src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg" class="rounded-2 shadow" style="object-fit: cover; aspect-ratio: 1;" alt=""> -->
-            </div>
+            ></div>
           </div>
           <div class="row justify-content-center name m-0">
             <h1 class="p-0 m-0 text-center">Name Nameson</h1>
@@ -196,79 +194,64 @@
         </div>
       </div>
 
-      <div id="sidebar" class="sidebar flex-column">
+      <div id="sidebar" class="sidebar flex-column show-sidebar">
         <div class="container mt-2">
           <div
             class="row flex-nowrap justify-content-between align-content-center"
           >
-            <h3 class="col-auto m-0 my-auto">Friends</h3>
+            <h3 class="col-auto m-0 my-auto">Edit profile</h3>
 
             <button
               class="btn d-flex justify-content-center py-0 px-auto"
               id="sidebar-btn"
+              style="
+                width: calc(var(--sidebar-width-closed) + 0.5rem);
+                margin-left: auto;
+                aspect-ratio: 1.5;
+              "
               aria-expanded="true"
               aria-controls="sidebar"
             >
               <i class="fa-solid fa-bars fs-3 my-auto"></i>
             </button>
           </div>
+          <form class="d-none" id="updateMedia">
+            <div class="input-group mt-3">
+              <span class="input-group-text">Banner url</span>
+              <input
+                type="text"
+                name="banner"
+                id="updateBanner"
+                class="form-control"
+              />
+            </div>
+            <div class="input-group mt-3">
+              <span class="input-group-text">Avatar url</span>
+              <input
+                type="text"
+                name="avatar"
+                id="updateAvatar"
+                class="form-control"
+              />
+            </div>
+            <div class="col mt-4">
+              <button
+                type="button"
+                class="btn btn-outline-secondary w-auto"
+                id="previewUpdateProfile"
+              >
+                Preview
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary w-auto"
+                id="updateProfile"
+              >
+                Update Profile
+              </button>
+            </div>
+          </form>
         </div>
-        <ul class="col p-0 ps-1 list-unstyled">
-          <li class="w-100">
-            <a
-              href="/profile.html"
-              class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none"
-            >
-              <div class="friend__img p-0">
-                <img
-                  class="h-100"
-                  style="object-fit: cover; aspect-ratio: 1"
-                  src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
-                  alt=""
-                />
-              </div>
-              <span class="friend__name col-auto my-auto px-2"
-                >Name Nameson</span
-              >
-            </a>
-          </li>
-          <li class="w-100">
-            <a
-              href="/profile.html"
-              class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none"
-            >
-              <div class="friend__img p-0">
-                <img
-                  class="h-100"
-                  style="object-fit: cover; aspect-ratio: 1"
-                  src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
-                  alt=""
-                />
-              </div>
-              <span class="friend__name col-auto my-auto px-2"
-                >Name Nameson</span
-              >
-            </a>
-          </li>
-          <li class="w-100">
-            <a
-              href="/profile.html"
-              class="row flex-nowrap friend m-0 bg-light my-2 text-bg-light text-decoration-none"
-            >
-              <div class="friend__img p-0">
-                <img
-                  class="h-100"
-                  style="object-fit: cover; aspect-ratio: 1"
-                  src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
-                  alt=""
-                />
-              </div>
-              <span class="friend__name col-auto my-auto px-2"
-                >Name Nameson</span
-              >
-            </a>
-          </li>
-        </ul>
       </div>
     </main>
 

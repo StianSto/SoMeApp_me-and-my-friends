@@ -16,14 +16,11 @@
 
 export default function createFlagString(flagOptions) {
   let string = "";
-  console.log(string);
   for (const [key, value] of Object.entries(flagOptions)) {
-    console.log(key, value);
     if (value.length === 0) continue;
 
     if (string) string += "&";
     string += `${key}=${value}`;
   }
-  console.log(string);
   return string;
 }
