@@ -10813,6 +10813,9 @@ textarea.form-control-lg {
 .post .card-footer {
   background-color: rgba(255, 158, 44, 0.1);
 }
+.post .card-footer .comment > .comment {
+  margin-left: 1rem;
+}
 .post .card-footer .comment-content {
   min-width: min(200px, 100%);
 }

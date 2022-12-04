@@ -19,7 +19,7 @@ export function postTemplate(postData, parent) {
 
   const postHeader = postComponents.templatePostHeader(author, id);
   const postBody = postComponents.templatePostBody(postData);
-  const postFooter = postComponents.templatePostFooter(other.comments);
+  const postFooter = postComponents.templatePostFooter(other.comments, id);
 
   const postOptionsBtn = postHeader.querySelector(".post-options");
   if (postOptionsBtn !== undefined)
@@ -56,7 +56,7 @@ export function viewSinglePostTemplate(postData, parent) {
 
   const postHeader = postComponents.templatePostHeader(author, id);
   const postBody = templateSinglePostBody(postData);
-  const postFooter = postComponents.templatePostFooter(other.comments);
+  const postFooter = postComponents.templatePostFooter(other.comments, id);
 
   const postOptionsBtn = postHeader.querySelector(".post-options");
   if (postOptionsBtn !== undefined)

@@ -18,8 +18,6 @@ import * as storage from "../../storage/index.mjs";
  * ```
  */
 export default function postOptions(name, id, postOptionsElement) {
-  console.log(postOptionsElement);
-
   if (name === storage.load("userProfile").name) {
     postOptionsElement.setAttribute(
       "data-bs-content",

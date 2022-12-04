@@ -1,13 +1,14 @@
+import { setCommentFormListener } from "../../handlers/setCommentFormListener.mjs";
 import postComment from "./postComment.mjs";
 
-export function templatePostFooter(comments) {
+export function templatePostFooter(comments, postId) {
   const parser = new DOMParser();
   const parsedPostFooter = parser.parseFromString(
     `
     <div class="card-footer py-4 px-4 px-md-5">
-        <form class="comment row align-items-end">
+        <form class="comment row align-items-end" data-comment-postId="${postId}">
             <div class="col comment-content">
-                <textarea name="" id="comment-textarea" placeholder="comment here" class="form-control w-100 rounded-0"></textarea>
+                <textarea name="body" id="comment-textarea" placeholder="comment here" class="form-control w-100 rounded-0"></textarea>
             </div>
             <button type="submit" class=" col-auto btn submit-comment shadow-sm mt-4">Comment</button>
         </form>
@@ -17,15 +18,27 @@ export function templatePostFooter(comments) {
     "text/html"
   );
 
+  setCommentFormListener(parsedPostFooter.querySelector("form"), postId);
+
   const commentsContainer = parsedPostFooter.querySelector(".post-comments");
   if (comments) {
     comments.forEach((el, index) => {
-      let comment = postComment(el);
-      commentsContainer.appendChild(comment.querySelector(".comment"));
-
-      if ((index = 2)) return; // exits function when there is three comments in place
+      try {
+        let comment = postComment(el);
+        if (el.replyToId) {
+          const commentReplyTo = commentsContainer.querySelector(
+            `[data-comment-id="${el.replyToId}"]`
+          );
+          commentReplyTo.append(comment.querySelector(".comment"));
+        } else {
+          commentsContainer.appendChild(comment.querySelector(".comment"));
+        }
+      } catch (error) {
+        console.log(error);
+        console.log("error appeared on comment object: ", el);
+      }
     });
-  }
 
-  return parsedPostFooter;
+    return parsedPostFooter;
+  }
 }

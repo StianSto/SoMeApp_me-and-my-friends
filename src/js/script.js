@@ -52,6 +52,7 @@ createPostTemplate();
 
 setFilterPostsListener();
 
+// enables bootstrap popovers
 const popoverTriggerList = document.querySelectorAll(
   '[data-bs-toggle="popover"]'
 );
