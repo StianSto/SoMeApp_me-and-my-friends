@@ -10,6 +10,8 @@ export function templatePostHeader({ name = "", avatar }, id) {
   if (!avatar || avatar.length === 0)
     avatar = "/dist/assets/images/default-avatar.png";
 
+  name = name.replace("_", " ");
+
   const parser = new DOMParser();
   const parsedPostHeader = parser.parseFromString(
     `
