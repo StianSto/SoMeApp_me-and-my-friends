@@ -31,14 +31,11 @@ let postContainer = document.getElementById("posts-wall");
 const flagOptions = {
   _author: true,
   _comments: true,
-  _reactions: false,
+  _reactions: true,
 };
 
 const flagstring = createFlagString(flagOptions);
-
 const loadPosts = await posts.getPosts(flagstring);
-console.log(typeof loadPosts);
-console.log(loadPosts);
 
 loadPosts.forEach((post) => {
   templates.postTemplate(post, postContainer);

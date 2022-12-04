@@ -1,5 +1,7 @@
 import * as storage from "../../../storage/index.mjs";
 import postOptions from "../postOptions.mjs";
+import setReactionBtnListener from "../../../handlers/setReactionBtnListener.mjs";
+import { postReaction } from "../postReaction.mjs";
 /**
  * makes a DOMParsed element for the body of the post.
  * @param {Object} postData
@@ -31,35 +33,63 @@ export function templateSinglePostBody({
   body,
   created,
   media,
-  _count: { comments, reactions },
+  _count,
+  reactions,
 }) {
   const parseDate = new Date(created).toLocaleDateString();
   const parser = new DOMParser();
   const parsedPostBody = parser.parseFromString(
     `
     <div class="card-body p-0 d-flex flex-column flex-md-row">
+      
       <div 
         class="col col-md-6 post-media-container"
-        style="background-color: #272727;"
-      >
+        style="background-color: #272727;">
+
         <img 
-          class="img-fluid w-100 h-100" 
-          
+          class="img-fluid w-100 h-100"
           src="${media}"
-          style="max-height: 80vh; min-hight: 40vh; object-fit: contain"
-        >
+          style="max-height: 80vh; min-hight: 40vh; object-fit: contain">
+
       </div>
-      <div class="col px-3 px-sm-4 px-md-5 pt-3 pt-sm-4 pt-md-5 d-flex flex-column">
-      <div class="d-flex mb-4 align-items-center">
-        <span class="text-bold fs-4 me-4" style="font-size">${title}</span>
-      </div>
+
+      <div 
+        class="col px-3 px-sm-4 px-md-5 pt-3 pt-sm-4 pt-md-5 d-flex flex-column">
+
+        <div 
+          class="d-flex mb-4 align-items-start">
+
+          <span 
+            class="text-bold fs-4 me-4" style="font-size">
+            ${title}
+          </span>
+
+        </div>
+
         <p class="post-content mb-5">${body}</p>
-        <div class="d-flex align-end mt-auto">
-          <button class="btn btn__like"><i class="fa-solid fa-heart fs-4 liked"></i><span class="likes ms-2">${reactions}</span></button>
-          <button class="btn btn__comment"><i class="fa-solid fa-comment fs-4"></i><span class="comments ms-2">${comments}</span></button>
-          <p class="text-muted mb-0 mt-auto ms-auto" style="font-size: smaller;">posted: <span>${parseDate}</span></p>
+        <div class="d-flex justify-content-between w-100 align-end mt-auto">
+          
+            <div class="row reactions gap-1 m-0">
+              <button 
+                class="btn btn__like"
+                style="width: fit-content; position: relative"
+              >
+                <i class="fa-solid fa-plus fs-4"></i><span class="likes ms-2 align-top">react</span>
+                </button>
+            </div>
+        </div>
+        <div class="row justify-content-between align-items-start mt-3 ms-2">
+          <span 
+            class="btn btn__comment m-0 me-auto p-0"
+            style="width: fit-content; font-size: smaller"
+            >
+            <i class="fa-solid fa-comment"></i>
+          <span class="comments">${_count.comments} comments</span>
+          </span>
+          <span class="text-muted mb-0 mt-auto ms-auto" style="font-size: smaller; width: fit-content">posted: <span>${parseDate}</span></span>
         </div>
       </div>
+      
     </div>
 
   );
@@ -68,6 +98,12 @@ export function templateSinglePostBody({
   );
 
   if (!media) parsedPostBody.querySelector(".post-media-container").remove();
+  if (reactions)
+    postReaction(reactions, parsedPostBody.querySelector(".reactions"));
+
+  parsedPostBody.querySelectorAll(".btn-react").forEach((btn) => {
+    setReactionBtnListener(btn);
+  });
 
   return parsedPostBody;
 }

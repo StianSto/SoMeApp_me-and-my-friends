@@ -16,7 +16,7 @@ const postID = params.get("id");
 const flagOptions = {
   _author: true,
   _comments: true,
-  _reactions: false,
+  _reactions: true,
 };
 
 const flagstring = createFlagString(flagOptions);

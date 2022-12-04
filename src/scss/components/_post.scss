@@ -90,3 +90,20 @@
     }
   }
 }
+
+emoji-picker {
+  --num-columns: 6;
+  --emoji-size: 1.5rem;
+  --category-emoji-size: 1.75rem;
+
+  @include media-breakpoint-up(md) {
+    --num-columns: 8;
+    --emoji-size: 1.75rem;
+    --category-emoji-size: 2rem;
+  }
+  @include media-breakpoint-up(lg) {
+    --num-columns: 10;
+    --emoji-size: 2rem;
+    --category-emoji-size: 2.5rem;
+  }
+}
