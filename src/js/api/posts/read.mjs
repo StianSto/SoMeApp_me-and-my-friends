@@ -15,11 +15,18 @@ const action = "/posts";
  * const id = 123
  *
  * // flags
- * const flags = {
- *  _author: true | false (default),
- *  _comments: true | false (default),
- *  _reactions: true | false (default)
- * }
+ * const flagstring = "_author=true/false&_comments=true/false&_reactions=true/false";
+ *
+ * getPost(123, flagstring)
+ * // returns Post Object. ex:
+ * // {
+ * //   id: "123",
+ * //   title: "post title",
+ * //   body: "post body",
+ * //   .
+ * //   .
+ * //   .
+ * // }
  * ```
  */
 

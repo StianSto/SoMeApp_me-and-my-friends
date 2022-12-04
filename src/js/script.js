@@ -23,26 +23,26 @@ import { examplePosts } from "../../temp/examplePosts.mjs";
 import createFlagString from "./functions/createFlagString.mjs";
 
 let postContainer = document.getElementById("posts-wall");
-examplePosts.forEach((post) => templates.postTemplate(post, postContainer));
+// examplePosts.forEach((post) => templates.postTemplate(post, postContainer));
 
 // const myPost = posts.getPost(4055);
 // templates.postTemplate(myPost, postContainer);
 
-const flagOptionsTest = {
+const flagOptions = {
   _author: true,
   _comments: true,
   _reactions: false,
 };
 
-const flagstring = createFlagString(flagOptionsTest);
+const flagstring = createFlagString(flagOptions);
 
-// const loadPosts = await posts.getPosts(flagstring);
-// console.log(typeof loadPosts);
-// console.log(loadPosts);
+const loadPosts = await posts.getPosts(flagstring);
+console.log(typeof loadPosts);
+console.log(loadPosts);
 
-// loadPosts.forEach((post) => {
-//   templates.postTemplate(post, postContainer);
-// });
+loadPosts.forEach((post) => {
+  templates.postTemplate(post, postContainer);
+});
 
 import { createPostTemplate } from "./templates/createPostTemplate.mjs";
 import setFilterPostsListener from "./handlers/setFilterPostsListener.mjs";
@@ -51,3 +51,11 @@ import { reactToPost } from "./api/posts/index.mjs";
 createPostTemplate();
 
 setFilterPostsListener();
+
+// enables bootstrap popovers
+const popoverTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="popover"]'
+);
+const popoverList = [...popoverTriggerList].map(
+  (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+);
