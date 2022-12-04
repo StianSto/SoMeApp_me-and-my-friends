@@ -1,6 +1,12 @@
 import { setCommentFormListener } from "../../handlers/setCommentFormListener.mjs";
 import postComment from "./postComment.mjs";
 
+/**
+ *
+ * @param {Array} comments array of comments (objects)
+ * @param {string | nuumber} postId id of post
+ * @returns parsed element of post footer
+ */
 export function templatePostFooter(comments, postId) {
   const parser = new DOMParser();
   const parsedPostFooter = parser.parseFromString(
@@ -38,7 +44,6 @@ export function templatePostFooter(comments, postId) {
         console.log("error appeared on comment object: ", el);
       }
     });
-
-    return parsedPostFooter;
   }
+  return parsedPostFooter;
 }

@@ -32,9 +32,6 @@ export default function postOptions(name, id, postOptionsElement) {
         <li class='list-group-item'>
           <a href='/profile/posts/edit/?id=${id}' class='text-black text-decoration-none'><i class='fa-solid fa-edit | me-2 fs-5 pe-hover-pointer'></i>Edit Post</a>
         </li>
-        <li class='list-group-item'>
-          <a href='/profile/posts/edit/?id=${id}' class='text-danger text-decoration-none'><i class='fa-solid fa-trash-can | me-2 fs-5 pe-hover-pointer'></i>Delete Post</a>
-        </li>
       </ul>
     `
     );

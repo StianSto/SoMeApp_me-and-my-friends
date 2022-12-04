@@ -25,13 +25,11 @@ export async function getProfilePosts(name, flags) {
   let flagstring = createFlagString(flags);
 
   const url = `${API_SOCIAL_URL}/${action}/${name}/posts?${flagstring}`;
-  console.log();
   const response = await authFetch(url, {
     method,
   });
 
   const result = await response.json();
-  console.log(result);
   if (result.length === 0) return;
 
   insertProfilePosts(result);
@@ -77,10 +75,6 @@ function insertProfile({
 
 function insertProfilePosts(arr) {
   const postsContainer = document.querySelector("#posts-wall");
-  postsContainer.innerHTML = "";
 
-  arr.forEach((post) => {
-    console.log(post);
-    templates.postTemplate(post, postsContainer);
-  });
+  arr.forEach((post) => templates.postTemplate(post, postsContainer));
 }
