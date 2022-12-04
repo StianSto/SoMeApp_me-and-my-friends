@@ -6,16 +6,18 @@ const header = document.querySelector("header");
 header.innerHTML = nav;
 toggleSideBar();
 
+// edit page
+import { examplePosts } from "../../../temp/examplePosts.mjs";
+import createFlagString from "../functions/createFlagString.mjs";
+import * as posts from "../api/posts/index.mjs";
+import { setEditPostListener } from "../handlers/setEditPostListener.mjs";
+import { setDeletePostListener } from "../handlers/setDeletePostListener.mjs";
+
 const formEditPost = document.querySelector("#formEditPost");
 const editTitle = formEditPost.querySelector("#editTitle");
 const editBody = formEditPost.querySelector("#editBody");
 const editMedia = formEditPost.querySelector("#editMedia");
 const editTags = formEditPost.querySelector("#editTags");
-
-import { examplePosts } from "../../../temp/examplePosts.mjs";
-import createFlagString from "../functions/createFlagString.mjs";
-import * as posts from "../api/posts/index.mjs";
-import { setEditPostListener } from "../handlers/setEditPostListener.mjs";
 
 const params = new URLSearchParams(window.location.search);
 const postID = params.get("id");
@@ -43,3 +45,5 @@ console.log(post);
 })();
 
 setEditPostListener();
+
+setDeletePostListener(postID);

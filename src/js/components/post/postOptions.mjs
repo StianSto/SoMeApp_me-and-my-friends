@@ -24,13 +24,13 @@ export default function postOptions(name, id, postOptionsElement) {
       `
       <ul class='list-group p-0 m-0'>
         <li class='list-group-item'>
-          <a href='/profile/posts/?id=${id}' class='text-black'><i class='fa-solid fa-expand | me-2 fs-5 pe-hover-pointer'></i>View Post</a>
+          <a href='/profile/posts/?id=${id}' class='text-black text-decoration-none'><i class='fa-solid fa-expand | me-2 fs-5 pe-hover-pointer'></i>View Post</a>
         </li>
         <li class='list-group-item'>
-          <a href='/profile/posts/edit/?id=${id}' class='text-black'><i class='fa-solid fa-edit | me-2 fs-5 pe-hover-pointer'></i>Edit Post</a>
+          <a href='/profile/?name=${name}' class='text-black text-decoration-none'><i class='fa-solid fa-user | me-2 fs-5 pe-hover-pointer'></i>View Profile</a>
         </li>
         <li class='list-group-item'>
-          <a href='/profile/?name=${name}' class='text-black'><i class='fa-solid fa-edit | me-2 fs-5 pe-hover-pointer'></i>Edit Post</a>
+          <a href='/profile/posts/edit/?id=${id}' class='text-black text-decoration-none'><i class='fa-solid fa-edit | me-2 fs-5 pe-hover-pointer'></i>Edit Post</a>
         </li>
       </ul>
     `
@@ -41,10 +41,10 @@ export default function postOptions(name, id, postOptionsElement) {
       `
       <ul class='list-group p-0 m-0'>
         <li class='list-group-item'>
-          <a href='/profile/posts/?id=${id}' class='text-black'><i class='fa-solid fa-expand | me-2 fs-5 pe-hover-pointer'></i>View Post</a>
+          <a href='/profile/posts/?id=${id}' class='text-black text-decoration-none'><i class='fa-solid fa-expand | me-2 fs-5 pe-hover-pointer'></i>View Post</a>
         </li>
         <li class='list-group-item'>
-          <a href='/profile/?name=${name}' class='text-black'><i class='fa-solid fa-user | me-2 fs-5 pe-hover-pointer'></i>View Profile</a>
+          <a href='/profile/?name=${name}' class='text-black text-decoration-none'><i class='fa-solid fa-user | me-2 fs-5 pe-hover-pointer'></i>View Profile</a>
         </li>
       </ul>
     `

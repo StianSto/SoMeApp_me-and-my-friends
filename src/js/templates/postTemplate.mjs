@@ -22,6 +22,7 @@ export function postTemplate(postData, parent) {
   const postFooter = postComponents.templatePostFooter(other.comments, id);
 
   const postOptionsBtn = postHeader.querySelector(".post-options");
+  console.log(postOptionsBtn);
   if (postOptionsBtn !== undefined)
     postOptions(author.name, id, postOptionsBtn);
 
@@ -33,7 +34,6 @@ export function postTemplate(postData, parent) {
   parent.appendChild(post);
 }
 
-import { templateSinglePostBody } from "../components/post/viewSinglePost/singlePostBody.mjs";
 /**
  * creates a template for a view a single specific post
  * @param {*} postData post data retrieved from API
@@ -55,7 +55,8 @@ export function viewSinglePostTemplate(postData, parent) {
   );
 
   const postHeader = postComponents.templatePostHeader(author, id);
-  const postBody = templateSinglePostBody(postData);
+  // const postBody = templateSinglePostBody(postData);
+  const postBody = postComponents.templatePostBody(postData);
   const postFooter = postComponents.templatePostFooter(other.comments, id);
 
   const postOptionsBtn = postHeader.querySelector(".post-options");

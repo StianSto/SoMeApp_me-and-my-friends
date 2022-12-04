@@ -10866,6 +10866,26 @@ textarea.form-control-lg {
   background-color: #ff9e2c;
 }
 
+emoji-picker {
+  --num-columns: 6;
+  --emoji-size: 1.5rem;
+  --category-emoji-size: 1.75rem;
+}
+@media (min-width: 768px) {
+  emoji-picker {
+    --num-columns: 8;
+    --emoji-size: 1.75rem;
+    --category-emoji-size: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  emoji-picker {
+    --num-columns: 10;
+    --emoji-size: 2rem;
+    --category-emoji-size: 2.5rem;
+  }
+}
+
 #friend-list .scroll-list {
   overflow-x: auto;
   padding-inline: 20px;
