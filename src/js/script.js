@@ -47,7 +47,7 @@ const filteredPost = filterByQuery(loadPosts);
 
 console.log(filteredPost);
 filteredPost.forEach((post) => {
-  templates.postTemplate(post, postContainer);
+  postContainer.append(templates.postTemplate(post));
 });
 
 createPostTemplate();

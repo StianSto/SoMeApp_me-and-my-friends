@@ -7,7 +7,7 @@ import * as postComponents from "../components/post/index.mjs";
  * @param {*} postData post data retrieved from API
  * @param {*} parent the parent element where the post will be inserted
  */
-export function postTemplate(postData, parent) {
+export function postTemplate(postData) {
   const { id, title, body, tags, media, created, updated, author, ...other } =
     postData;
 
@@ -30,7 +30,7 @@ export function postTemplate(postData, parent) {
   post.appendChild(postBody.querySelector(".card-body"));
   post.appendChild(postFooter.querySelector(".card-footer"));
 
-  parent.appendChild(post);
+  return post;
 }
 
 /**
@@ -54,7 +54,6 @@ export function viewSinglePostTemplate(postData, parent) {
   );
 
   const postHeader = postComponents.templatePostHeader(author, id);
-  // const postBody = templateSinglePostBody(postData);
   const postBody = postComponents.templatePostBody(postData);
   const postFooter = postComponents.templatePostFooter(other.comments, id);
 

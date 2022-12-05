@@ -6,7 +6,7 @@ const action = "/posts";
 
 /**
  * Retrieve posts. supply id for one specific post
- * @param {*} postID required. Post ID to retrieve specific post from API
+ * @param {atring | number} postID required. Post ID to retrieve specific post from API
  * @param {Object} flags optional. retrieve additional data by adding a flag. ex:
  * @returns post
  * @example

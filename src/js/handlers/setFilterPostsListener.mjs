@@ -32,7 +32,7 @@ export default async function setFilterPostsListener() {
         } else {
           postContainer.innerHTML = `We found ${result.length} results matching your filters`;
           result.forEach((post) => {
-            templates.postTemplate(post, postContainer);
+            postContainer.append(templates.postTemplate(post));
           });
         }
       } catch (error) {

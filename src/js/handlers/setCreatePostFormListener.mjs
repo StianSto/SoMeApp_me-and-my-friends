@@ -1,5 +1,9 @@
+import * as posts from "../api/posts/index.mjs";
 import { createPost } from "../api/posts/create.mjs";
+import { getPost } from "../api/posts/read.mjs";
 import { convertTagsStringToArray } from "../functions/convertTagsToArray.mjs";
+import { postTemplate } from "../templates/postTemplate.mjs";
+import createFlagString from "../functions/createFlagString.mjs";
 
 export default async function setCreatePostFormListener() {
   const createPostForm = document.querySelector("#form-create-post");
@@ -15,7 +19,24 @@ export default async function setCreatePostFormListener() {
     const profileData = Object.fromEntries(formData.entries());
     profileData.tags = tags;
 
-    createPost(profileData);
-    console.log(profileData);
+    (async () => {
+      const response = await createPost(profileData);
+      console.log(response);
+      if (response.id) {
+        const newPost = await posts.getPost(response.id, flagstring);
+        const container = document.querySelector("#posts-wall");
+        console.log(newPost);
+        container.prepend(postTemplate(newPost));
+      }
+      console.log(profileData);
+    })();
   });
 }
+
+const flags = {
+  _author: true,
+  _reactions: true,
+  _comments: true,
+};
+
+const flagstring = createFlagString(flags);

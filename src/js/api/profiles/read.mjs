@@ -76,5 +76,5 @@ function insertProfile({
 function insertProfilePosts(arr) {
   const postsContainer = document.querySelector("#posts-wall");
 
-  arr.forEach((post) => templates.postTemplate(post, postsContainer));
+  arr.forEach((post) => postsContainer.append(templates.postTemplate(post)));
 }
