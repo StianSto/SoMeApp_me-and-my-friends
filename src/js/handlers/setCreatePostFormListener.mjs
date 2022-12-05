@@ -5,7 +5,7 @@ import { convertTagsStringToArray } from "../functions/convertTagsToArray.mjs";
 import { postTemplate } from "../templates/postTemplate.mjs";
 import createFlagString from "../functions/createFlagString.mjs";
 
-export default async function setCreatePostFormListener() {
+export async function setCreatePostFormListener() {
   const createPostForm = document.querySelector("#form-create-post");
 
   createPostForm.addEventListener("submit", (event) => {

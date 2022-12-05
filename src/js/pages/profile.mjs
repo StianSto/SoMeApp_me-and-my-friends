@@ -1,12 +1,7 @@
-import nav from "../components/nav.mjs";
 import toggleSideBar from "../components/sidebar.mjs";
 import * as profile from "../api/profiles/index.mjs";
 import * as storage from "../storage/index.mjs";
 import { setUpdateProfileFormListener } from "../handlers/setUpdateProfileFormListener.mjs";
-
-// import and add nav, will be added with document.create instead
-const header = document.querySelector("header");
-header.innerHTML = nav;
 
 //import sidebar toggle function, will be added with document.create instead
 toggleSideBar();
