@@ -3,7 +3,7 @@ import { getProfilePosts } from "../api/profiles/read.mjs";
 import createFlagString from "../functions/createFlagString.mjs";
 import * as templates from "../templates/index.mjs";
 
-export default async function setFilterPostsListener() {
+export async function setFilterPostsListener() {
   const filterPostsContainer = document.querySelector("#filterPosts");
   filterPostsContainer.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -15,29 +15,29 @@ export default async function setFilterPostsListener() {
     const form = event.target;
     const formData = new FormData(form);
 
-    const filterByAuthor = formData.get("_author");
-    formData.set("_author", true);
+    const filterByAuthor = formData.get("name");
+    formData.delete("name");
+    formData.append("_author", true);
+    formData.append("_reactions", true);
+    formData.append("_comments", true);
     const filterOptions = Object.fromEntries(formData.entries());
 
-    flagstring = createFlagString(filterOptions);
-    let result;
-    (async function () {
+    (async () => {
+      const msg = document.createElement("p");
+      let result;
       try {
-        result = filterByAuthor
-          ? await getProfilePosts(filterByAuthor, flagstring)
-          : await getPosts(flagstring);
-
-        if (result.errors) {
-          postContainer.innerHTML = `We found 0 results matching your filters: <br> ${result.errors[0].message}`;
+        filterByAuthor
+          ? (result = await getProfilePosts(filterByAuthor, filterOptions))
+          : (result = await getPosts(filterOptions));
+        if (result.errors || !result) {
+          msg.innerHTML = `We found 0 results matching your filters: <br> ${result.errors[0].message}`;
         } else {
-          postContainer.innerHTML = `We found ${result.length} results matching your filters`;
-          result.forEach((post) => {
-            postContainer.append(templates.postTemplate(post));
-          });
+          msg.innerText = `We found ${result.length} results matching your filters`;
         }
       } catch (error) {
         console.log(error);
-        postContainer.innerText = `we are sorry, something went wrong: ${error}`;
+      } finally {
+        postContainer.prepend(msg);
       }
     })();
   });

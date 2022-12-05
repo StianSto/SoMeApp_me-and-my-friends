@@ -1,5 +1,6 @@
 import { authFetch } from "../authFetch.mjs";
 import { API_SOCIAL_URL } from "../constants.mjs";
+import createFlagString from "../../functions/createFlagString.mjs";
 
 const method = "GET";
 const action = "/posts";
@@ -30,20 +31,34 @@ const action = "/posts";
  * ```
  */
 
+const defaultFlagOptions = {
+  _author: true,
+  _reactions: true,
+  _comments: true,
+};
+
 export async function getPost(postID, flags) {
   if (!postID) throw new Error("retrieving a post requires an ID");
+  let flagstring = flags
+    ? createFlagString(flags)
+    : createFlagString(defaultFlagOptions);
+  console.log(flagstring);
 
-  const url = `${API_SOCIAL_URL}${action}/${postID}?${flags}`;
+  const url = `${API_SOCIAL_URL}${action}/${postID}?${flagstring}`;
 
   const response = await authFetch(url, {
     method,
   });
-
   return await response.json();
 }
 
 export async function getPosts(flags) {
-  const url = `${API_SOCIAL_URL}${action}?${flags}`;
+  let flagstring = flags
+    ? createFlagString(flags)
+    : createFlagString(defaultFlagOptions);
+  console.log(flagstring);
+
+  const url = `${API_SOCIAL_URL}${action}?${flagstring}`;
 
   const response = await authFetch(url, {
     method,

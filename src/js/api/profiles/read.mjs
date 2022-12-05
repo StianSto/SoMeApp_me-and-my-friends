@@ -21,18 +21,28 @@ export async function getProfile(name, flags) {
 }
 
 export async function getProfilePosts(name, flags) {
-  if (!name) throw new Error("retrieving a profile requires a proile name");
-  let flagstring = createFlagString(flags);
+  try {
+    if (!name) throw new Error("retrieving a profile requires a proile name");
+    let flagstring = createFlagString(flags);
+    console.log(flagstring);
 
-  const url = `${API_SOCIAL_URL}/${action}/${name}/posts?${flagstring}`;
-  const response = await authFetch(url, {
-    method,
-  });
+    const url = `${API_SOCIAL_URL}/${action}/${name}/posts?${flagstring}`;
+    console.log(url);
+    const response = await authFetch(url, {
+      method,
+    });
 
-  const result = await response.json();
-  if (result.length === 0) return;
+    const result = await response.json();
 
-  insertProfilePosts(result);
+    if (result.errors) return result;
+    if (result.length === 0) return;
+
+    console.log(result);
+    insertProfilePosts(result);
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function insertProfile({
@@ -76,5 +86,6 @@ function insertProfile({
 function insertProfilePosts(arr) {
   const postsContainer = document.querySelector("#posts-wall");
 
+  console.log(arr);
   arr.forEach((post) => postsContainer.append(templates.postTemplate(post)));
 }
