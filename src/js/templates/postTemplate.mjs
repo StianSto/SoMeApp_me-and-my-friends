@@ -22,7 +22,6 @@ export function postTemplate(postData, parent) {
   const postFooter = postComponents.templatePostFooter(other.comments, id);
 
   const postOptionsBtn = postHeader.querySelector(".post-options");
-  console.log(postOptionsBtn);
   if (postOptionsBtn !== undefined)
     postOptions(author.name, id, postOptionsBtn);
 

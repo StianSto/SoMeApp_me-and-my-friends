@@ -4,6 +4,13 @@ import toggleFilterPostsVisibility from "./components/filterPosts.mjs";
 import * as posts from "./api/posts/index.mjs";
 import * as templates from "./templates/index.mjs";
 import setCreatePostFormListener from "./handlers/setcreatePostFormListener.mjs";
+import { setSearchFormListener } from "./handlers/setSearchFormListener.mjs";
+
+import { createPostTemplate } from "./templates/createPostTemplate.mjs";
+import setFilterPostsListener from "./handlers/setFilterPostsListener.mjs";
+import { reactToPost } from "./api/posts/index.mjs";
+import createFlagString from "./functions/createFlagString.mjs";
+import { filterByQuery } from "./functions/filterByQuery.mjs";
 
 // import and add nav, will be added with document.create instead
 const header = document.querySelector("header");
@@ -11,6 +18,7 @@ header.innerHTML = nav;
 
 //import sidebar toggle function, will be added with document.create instead
 toggleSideBar();
+// import filter for posts
 toggleFilterPostsVisibility();
 
 // create post form submit listener
@@ -19,8 +27,6 @@ setCreatePostFormListener();
 const formCreatePost = document.getElementById("form-create-post");
 
 //temp
-import { examplePosts } from "../../temp/examplePosts.mjs";
-import createFlagString from "./functions/createFlagString.mjs";
 
 let postContainer = document.getElementById("posts-wall");
 // examplePosts.forEach((post) => templates.postTemplate(post, postContainer));
@@ -37,13 +43,12 @@ const flagOptions = {
 const flagstring = createFlagString(flagOptions);
 const loadPosts = await posts.getPosts(flagstring);
 
-loadPosts.forEach((post) => {
+const filteredPost = filterByQuery(loadPosts);
+
+console.log(filteredPost);
+filteredPost.forEach((post) => {
   templates.postTemplate(post, postContainer);
 });
-
-import { createPostTemplate } from "./templates/createPostTemplate.mjs";
-import setFilterPostsListener from "./handlers/setFilterPostsListener.mjs";
-import { reactToPost } from "./api/posts/index.mjs";
 
 createPostTemplate();
 
@@ -56,3 +61,8 @@ const popoverTriggerList = document.querySelectorAll(
 const popoverList = [...popoverTriggerList].map(
   (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
 );
+
+(() => {
+  const searchBtn = document.querySelector("#site-search");
+  if (searchBtn) setSearchFormListener(searchBtn);
+})();

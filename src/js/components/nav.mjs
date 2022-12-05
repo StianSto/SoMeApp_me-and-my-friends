@@ -41,11 +41,11 @@ const nav = `
                 </li> -->
             </ul>
             <form id="site-search" class="d-flex" role="search">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn" type="submit"><i style="font-size: 1.2em" class="fa-solid fa-magnifying-glass text-dark"></i></button>
             </form>
         </div>
     </div>
 </nav>
-`
+`;
 export default nav;
