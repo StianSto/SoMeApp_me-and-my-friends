@@ -6,7 +6,7 @@ import createFlagString from "../../functions/createFlagString.mjs";
 const method = "GET";
 const action = API_SOCIAL_ENDPOINT_PROFILES;
 
-export async function getProfile(name, flags) {
+export async function getProfile(name, flags = "") {
   if (!name) throw new Error("retrieving a profile requires a profile name");
   let flagstring = createFlagString(flags);
 
@@ -24,10 +24,8 @@ export async function getProfilePosts(name, flags) {
   try {
     if (!name) throw new Error("retrieving a profile requires a proile name");
     let flagstring = createFlagString(flags);
-    console.log(flagstring);
 
     const url = `${API_SOCIAL_URL}/${action}/${name}/posts?${flagstring}`;
-    console.log(url);
     const response = await authFetch(url, {
       method,
     });
@@ -37,7 +35,6 @@ export async function getProfilePosts(name, flags) {
     if (result.errors) return result;
     if (result.length === 0) return;
 
-    console.log(result);
     insertProfilePosts(result);
     return result;
   } catch (error) {
@@ -63,29 +60,14 @@ function insertProfile({
   }
 
   if (!avatar) avatar = "/dist/assets/images/default-avatar.png";
-  const avatarContainer = document.querySelector("#userAvatar");
-  const avatarDom = new DOMParser().parseFromString(
-    `
-    <img src="${avatar}" class="rounded-2 shadow" style="object-fit: cover; aspect-ratio: 1;" alt="image of ${name}">
-  `,
-    "text/html"
-  );
-
-  if (avatarDom.querySelector("img")) {
-    avatarDom.querySelector("img").replaceWith(avatarDom.querySelector("img"));
-  }
-  avatarContainer.appendChild(avatarDom.querySelector("img"));
+  const avatarImg = document.querySelector("#userAvatar img");
+  avatarImg.src = avatar;
 
   const profileName = document.querySelector("h1");
   profileName.innerText = name.replace("_", " ");
-
-  const bio = new DOMParser().parseFromString(``, "text/html");
-  const bioContainer = document.querySelector("#bio");
 }
 
 function insertProfilePosts(arr) {
   const postsContainer = document.querySelector("#posts-wall");
-
-  console.log(arr);
   arr.forEach((post) => postsContainer.append(templates.postTemplate(post)));
 }
