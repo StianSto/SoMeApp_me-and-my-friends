@@ -3,7 +3,7 @@ import * as storage from "../../storage/index.mjs";
 
 /**
  * user log in. needs valid email and password.
- * @param {text} email valid email
+ * @param {string} email valid email
  * @param {text} password enter valid password
  * @param {url to api login endpoint} APIUrl url to api login endpoint
  */
