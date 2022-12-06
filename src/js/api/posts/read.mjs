@@ -7,7 +7,7 @@ const action = "/posts";
 
 /**
  * Retrieve posts. supply id for one specific post
- * @param {atring | number} postID required. Post ID to retrieve specific post from API
+ * @param {string | number} postID required. Post ID to retrieve specific post from API
  * @param {Object} flags optional. retrieve additional data by adding a flag. ex:
  * @returns post
  * @example
@@ -56,7 +56,6 @@ export async function getPosts(flags) {
   let flagstring = flags
     ? createFlagString(flags)
     : createFlagString(defaultFlagOptions);
-  console.log(flagstring);
 
   const url = `${API_SOCIAL_URL}${action}?${flagstring}`;
 
