@@ -4,7 +4,7 @@ import * as storage from "../../storage/index.mjs";
 /**
  * user log in. needs valid email and password.
  * @param {string} email valid email
- * @param {text} password enter valid password
+ * @param {string} password enter valid password
  * @param {url to api login endpoint} APIUrl url to api login endpoint
  */
 export default async function login(email, password, APIUrl) {
