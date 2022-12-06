@@ -3,6 +3,7 @@ import * as pages from "./pages/index.mjs";
 
 export default async function router() {
   const path = window.location.pathname;
+  console.log(path);
 
   // for specific pages
   switch (path) {
@@ -21,8 +22,9 @@ export default async function router() {
     case "/profile/edit/": //edit profile
       pages.editProfilePage();
       break;
-    case "/profile/login": //register or login
-      loginPage();
+    case "/profile/login/": //register or login
+      console.log("login");
+      pages.loginPage();
       break;
   }
 }
