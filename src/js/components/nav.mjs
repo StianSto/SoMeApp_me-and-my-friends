@@ -14,9 +14,13 @@ export default function insertNavHeader() {
 							<img src="/dist/assets/logo.svg" height="50"> 
 					</a>
 
-					<a class="nav-link active h-100 p-1 me-auto" aria-current="page" href="/profile/?name=${name}" style="aspect-ratio: 1;">
-						<img class="w-100 h-100 rounded-2" src="${avatar}" alt="image of ${parsedName}" style="object-fit: cover;">
-					</a>
+					<div class="h-100 position-relative nav-profile">
+						<a class="nav-link active h-100 p-1 me-auto nav-profile-img" aria-current="page" href="/profile/?name=${name}" style="aspect-ratio: 1;">
+							<img class="w-100 h-100 rounded-2" src="${avatar}" alt="image of ${parsedName}" style="object-fit: cover;">
+						</a>
+						<a href="/profile/edit/?name=${name}" class="nav-edit-profile text-white position-absolute"><i class="fa-solid fa-gear fs-4"></i></a>
+					</div>
+
 
 					<button class="navbar-toggler border-0 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon py-1" style="background-image: url('')" width="100%" >

@@ -10929,6 +10929,12 @@ header {
   height: var(--header-height);
 }
 
+.navbar .nav-edit-profile {
+  top: 0;
+  right: 0;
+  filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5));
+}
+
 #site-search {
   position: relative;
 }
