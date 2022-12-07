@@ -11085,11 +11085,13 @@ main #filterPosts.show {
   max-width: min(350px, 60vw) !important;
 }
 
-#LogOrSignInCarousel .carousel-indicators, #profile-bio .carousel-indicators {
+#LogOrSignInCarousel .carousel-indicators,
+#profile-bio .carousel-indicators {
   /*override default Bootstrap styles*/
   position: relative;
 }
-#LogOrSignInCarousel .carousel-indicators [data-bs-target], #profile-bio .carousel-indicators [data-bs-target] {
+#LogOrSignInCarousel .carousel-indicators [data-bs-target],
+#profile-bio .carousel-indicators [data-bs-target] {
   width: auto;
   height: auto;
   text-indent: 0;
@@ -11104,6 +11106,10 @@ main #filterPosts.show {
 #log-in-form .form-control:focus,
 #sign-up-form .form-control:focus {
   --bs-bg-opacity: 1;
+}
+
+#edit-profile {
+  --sidebar-width-open: 40vw !important;
 }
 
 :root {
