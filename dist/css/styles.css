@@ -10840,10 +10840,10 @@ textarea.form-control-lg {
   background: #ff9e2c;
   color: #000;
 }
-.post-comments .comment:not(:nth-child(1)) {
+.post-comments > .comment:not(:nth-child(1)) {
   position: relative;
 }
-.post-comments .comment:not(:nth-child(1))::after {
+.post-comments > .comment:not(:nth-child(1))::after {
   position: absolute;
   content: "";
   width: 100%;

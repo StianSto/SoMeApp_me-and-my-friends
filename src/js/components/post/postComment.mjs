@@ -1,7 +1,6 @@
 /**
  *
  * @param {Object} comment accepts a comment from API endpoint.
- * @param {string} body accepts a comment from API endpoint.
  * @returns
  */
 
@@ -43,6 +42,7 @@ export default function postComment({
         </div>
         <button type="submit" class=" col-auto btn submit-comment shadow-sm mt-4">Comment</button>
       </form>
+      <div class="comment pt-3" ></div>
   </div>
 
   `,

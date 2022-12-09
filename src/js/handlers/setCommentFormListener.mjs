@@ -1,4 +1,5 @@
 import { commentOnPost } from "../api/posts/comment.mjs";
+import postComment from "../components/post/postComment.mjs";
 
 /**
  * addes event listener on a comment form. sends data when submitted.
@@ -6,7 +7,7 @@ import { commentOnPost } from "../api/posts/comment.mjs";
  * @param {string | number} postId The id of the post. NOT the id of a comment.
  */
 export function setCommentFormListener(formElement, postId) {
-  formElement.addEventListener("submit", (event) => {
+  formElement.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(formElement);
     const checkReplyTo = formElement.getAttribute("data-comment-reply");
@@ -22,8 +23,10 @@ export function setCommentFormListener(formElement, postId) {
         ...replyTo,
       };
     }
+    const response = await commentOnPost(postId, commentData);
 
-    console.log(commentData);
-    commentOnPost(postId, commentData);
+    const renderComment = await postComment(response);
+    const repliedToCommentContainer = event.target.nextElementSibling;
+    repliedToCommentContainer.prepend(renderComment.querySelector(".comment"));
   });
 }
