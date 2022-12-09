@@ -24,6 +24,11 @@ export function setCommentFormListener(formElement, postId) {
       };
     }
     const response = await commentOnPost(postId, commentData);
+    console.log(response);
+    if (!response)
+      return alert(
+        "sorry, something went wrong. check your comment and try again :) "
+      );
 
     const renderComment = await postComment(response);
     const repliedToCommentContainer = event.target.nextElementSibling;
