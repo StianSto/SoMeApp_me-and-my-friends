@@ -3,7 +3,7 @@ import * as profile from "../api/profiles/index.mjs";
 // import { setUpdateProfileFormListener } from "../handlers/setUpdateProfileFormListener.mjs";
 import { enableBsPopovers } from "../enablers/enableBsPopovers.mjs";
 
-export function profilePage() {
+export async function profilePage() {
   const params = new URL(document.location).searchParams;
   const name = params.get("name");
 
@@ -15,8 +15,8 @@ export function profilePage() {
     _following: true,
   };
 
-  profile.getProfile(name, flags);
-  profile.getProfilePosts(name, flags);
+  const profileData = await profile.getProfile(name, flags);
+  const profilePosts = await profile.getProfilePosts(name, flags);
 
   enableBsPopovers();
   toggleSideBar();
