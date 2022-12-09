@@ -1,20 +1,30 @@
 import { reactToPost } from "../api/posts/react.mjs";
 
+/**
+ *
+ * @param {*} btn
+ * @param {*} element
+ */
 export default function setReactionBtnEmojiSelectListener(btn, element) {
-  const emojiPicker = document.createElement("emoji-picker");
-  emojiPicker.classList.add("p-0");
+  console.log("firing");
+  let emojiPicker;
+  if (!document.querySelector("emoji-picker")) {
+    emojiPicker = document.createElement("emoji-picker");
+    emojiPicker.classList.add("p-0", "d-none");
+    emojiPicker.style.transition = "height 2000ms ease-in-out";
+  }
 
   btn.addEventListener("click", () => {
-    element.style = `
-      position: relative;
-    `;
-    console.log(emojiPicker);
-    emojiPicker.addEventListener("emoji-click", (event) => {
-      let id = btn.getAttribute("data-post-id");
-      console.log(id);
-      reactToPost(id, event.detail.unicode);
-      let newReaction = new DOMParser().parseFromString(
-        `
+    emojiPicker.classList.toggle("d-none");
+    emojiPicker.ontransitionend = emojiPicker.remove();
+
+    emojiPicker.addEventListener(
+      "emoji-click",
+      (event) => {
+        let id = btn.getAttribute("data-post-id");
+        reactToPost(id, event.detail.unicode);
+        let newReaction = new DOMParser().parseFromString(
+          `
         <button 
           class="btn btn-light text-dark btn-react"
           style="width: fit-content;"
@@ -24,10 +34,12 @@ export default function setReactionBtnEmojiSelectListener(btn, element) {
           <span class="align-top">${event.detail.unicode} <span data-reaction-count>1</span></span>
         </button>
       `,
-        "text/html"
-      );
-      btn.after(newReaction.querySelector("button"));
-    });
+          "text/html"
+        );
+        btn.after(newReaction.querySelector("button"));
+      },
+      { once: true }
+    );
     element.after(emojiPicker);
   });
 }

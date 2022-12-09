@@ -11118,6 +11118,10 @@ main #filterPosts.show {
   --sidebar-width-open: 40vw !important;
 }
 
+.h-0 {
+  height: 0px !important;
+}
+
 :root {
   --header-height: 80px;
   --user-color: $user-color;
