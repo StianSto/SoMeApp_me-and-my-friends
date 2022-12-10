@@ -10852,6 +10852,9 @@ textarea.form-control-lg {
   top: 0;
   left: 0;
 }
+.post-comments .profile:hover {
+  text-decoration: underline !important;
+}
 .post--create textarea {
   resize: none;
 }
