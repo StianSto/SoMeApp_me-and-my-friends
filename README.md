@@ -2,7 +2,7 @@
 
 <!-- ![me and my friends - a social media application](/dist/assets/logo.png) -->
 
-<img src="./dist/assets/logo.svg" style="width: clamp(10rem, 60%, 30rem);">
+<img src="./dist/assets/logo-reverse.svg" style="width: clamp(10rem, 60%, 30rem); --fill: #ff9e2c;">
 
 "Me &amp; My Friends" is a social media website where the user has more control over customization. set their own theme that appears on their banner when posting. This is a website I made as a school project.
 
