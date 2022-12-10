@@ -69,6 +69,11 @@
         }
       }
     }
+    & .profile {
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
   }
 
   &--create {
