@@ -10,9 +10,8 @@ export default async function setLoginFormListener() {
     const form = event.target;
     const formData = new FormData(form);
     const profileData = Object.fromEntries(formData.entries());
-    const { email, password } = profileData;
 
     // send data to API
-    loginAuth(email, password, loginURL);
+    loginAuth(profileData, loginURL);
   });
 }

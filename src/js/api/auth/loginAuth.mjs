@@ -3,19 +3,16 @@ import * as storage from "../../storage/index.mjs";
 
 /**
  * user log in. needs valid email and password.
- * @param {text} email valid email
- * @param {text} password enter valid password
- * @param {url to api login endpoint} APIUrl url to api login endpoint
+ * @param {string} email valid email
+ * @param {string} password enter valid password
+ * @param {string} APIUrl url to api login endpoint
  */
-export default async function login(email, password, APIUrl) {
+export default async function login(profileData, APIUrl) {
   const errMsgContainer = document.querySelector(".error-msg-login");
 
   const fetchOptions = {
     method: "POST",
-    body: JSON.stringify({
-      email: email,
-      password: password,
-    }),
+    body: JSON.stringify(profileData),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
