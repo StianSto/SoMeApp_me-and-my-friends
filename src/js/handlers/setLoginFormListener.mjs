@@ -1,9 +1,7 @@
-import * as constants from "../api/constants.mjs";
 import loginAuth from "../api/auth/loginAuth.mjs";
 
 export default async function setLoginFormListener() {
   const logInForm = document.querySelector("#log-in-form");
-  const loginURL = constants.API_SOCIAL_URL + "/auth/login";
 
   logInForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -12,6 +10,6 @@ export default async function setLoginFormListener() {
     const profileData = Object.fromEntries(formData.entries());
 
     // send data to API
-    loginAuth(profileData, loginURL);
+    loginAuth(profileData);
   });
 }

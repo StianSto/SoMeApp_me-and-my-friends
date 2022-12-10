@@ -1,14 +1,25 @@
 import errMsg from "../../functions/errMsg.mjs";
 import * as storage from "../../storage/index.mjs";
+import * as constants from "../../api/constants.mjs";
 
 /**
- * user log in. needs valid email and password.
- * @param {string} email valid email
- * @param {string} password enter valid password
+ * sends a post request to API to log in user. will redirect if succesful
+ * @param {Object} profileData
+ * @param {string} profileData.email users email
+ * @param {string} profileData.password users password
  * @param {string} APIUrl url to api login endpoint
+ * @example
+ * const profileData = {
+ *  email: "john@email.com",
+ *  password: "myPassword"
+ * }
+ * const APIUrl = "https://url.com"
+ *
+ * login(profileData, APIUrl)
  */
-export default async function login(profileData, APIUrl) {
+export default async function login(profileData) {
   const errMsgContainer = document.querySelector(".error-msg-login");
+  const APIUrl = constants.API_SOCIAL_URL + "/auth/login";
 
   const fetchOptions = {
     method: "POST",
