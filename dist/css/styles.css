@@ -10840,10 +10840,10 @@ textarea.form-control-lg {
   background: #ff9e2c;
   color: #000;
 }
-.post-comments .comment:not(:nth-child(1)) {
+.post-comments > .comment:not(:nth-child(1)) {
   position: relative;
 }
-.post-comments .comment:not(:nth-child(1))::after {
+.post-comments > .comment:not(:nth-child(1))::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -10927,6 +10927,12 @@ emoji-picker {
 
 header {
   height: var(--header-height);
+}
+
+.navbar .nav-edit-profile {
+  top: 0;
+  right: 0;
+  filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5));
 }
 
 #site-search {
@@ -11085,11 +11091,13 @@ main #filterPosts.show {
   max-width: min(350px, 60vw) !important;
 }
 
-#LogOrSignInCarousel .carousel-indicators, #profile-bio .carousel-indicators {
+#LogOrSignInCarousel .carousel-indicators,
+#profile-bio .carousel-indicators {
   /*override default Bootstrap styles*/
   position: relative;
 }
-#LogOrSignInCarousel .carousel-indicators [data-bs-target], #profile-bio .carousel-indicators [data-bs-target] {
+#LogOrSignInCarousel .carousel-indicators [data-bs-target],
+#profile-bio .carousel-indicators [data-bs-target] {
   width: auto;
   height: auto;
   text-indent: 0;
@@ -11104,6 +11112,14 @@ main #filterPosts.show {
 #log-in-form .form-control:focus,
 #sign-up-form .form-control:focus {
   --bs-bg-opacity: 1;
+}
+
+#edit-profile {
+  --sidebar-width-open: 40vw !important;
+}
+
+.h-0 {
+  height: 0px !important;
 }
 
 :root {

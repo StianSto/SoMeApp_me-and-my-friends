@@ -59,7 +59,7 @@
   }
 
   &-comments {
-    & .comment {
+    & > .comment {
       &:not(:nth-child(1)) {
         position: relative;
         @include pseudo(after, 100%, 1px) {

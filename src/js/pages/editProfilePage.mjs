@@ -1,6 +1,7 @@
 import * as storage from "../storage/index.mjs";
 import { setUpdateProfileFormListener } from "../handlers/setUpdateProfileFormListener.mjs";
 import { getProfile } from "../api/profiles/read.mjs";
+import toggleSideBar from "../components/sidebar.mjs";
 
 export async function editProfilePage() {
   const updateForm = document.querySelector("#updateMedia");
@@ -34,4 +35,5 @@ export async function editProfilePage() {
   })();
 
   setUpdateProfileFormListener(name);
+  toggleSideBar();
 }

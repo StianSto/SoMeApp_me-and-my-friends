@@ -1,7 +1,6 @@
 import toggleSideBar from "../components/sidebar.mjs";
 
 // edit page
-import createFlagString from "../functions/createFlagString.mjs";
 import * as posts from "../api/posts/index.mjs";
 import { setEditPostListener } from "../handlers/setEditPostListener.mjs";
 import { setDeletePostListener } from "../handlers/setDeletePostListener.mjs";

@@ -1,7 +1,6 @@
 /**
  *
  * @param {Object} comment accepts a comment from API endpoint.
- * @param {string} body accepts a comment from API endpoint.
  * @returns
  */
 
@@ -15,6 +14,7 @@ export default function postComment({
   created,
   author: { name, avatar },
 }) {
+  let parsedName = name.replace("_", " ");
   if (!avatar || avatar.length === 0)
     avatar = "/dist/assets/images/default-avatar.png";
   const parser = new DOMParser();
@@ -26,7 +26,7 @@ export default function postComment({
           <div class="profile__img h-100 col-auto p-0" style="aspect-ratio: 1;">
               <img class="w-100 h-100 rounded-2" src="${avatar}" alt="">
           </div>
-          <p class="col m-0 fs-5">${name}</p>
+          <p class="col m-0 fs-5">${parsedName}</p>
       </div>
       <p>${body}</p>
       <span
@@ -43,6 +43,7 @@ export default function postComment({
         </div>
         <button type="submit" class=" col-auto btn submit-comment shadow-sm mt-4">Comment</button>
       </form>
+      <div class="comment pt-3" ></div>
   </div>
 
   `,
