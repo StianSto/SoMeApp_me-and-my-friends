@@ -4,6 +4,7 @@ import { getPost } from "../api/posts/read.mjs";
 import { convertTagsStringToArray } from "../functions/convertTagsToArray.mjs";
 import { postTemplate } from "../templates/postTemplate.mjs";
 import createFlagString from "../functions/createFlagString.mjs";
+import * as storage from "../storage/index.mjs";
 
 export async function setCreatePostFormListener() {
   const createPostForm = document.querySelector("#form-create-post");
@@ -25,8 +26,16 @@ export async function setCreatePostFormListener() {
       if (response.id) {
         const newPost = await posts.getPost(response.id, flagstring);
         const container = document.querySelector("#posts-wall");
-        console.log(newPost);
-        container.prepend(postTemplate(newPost));
+
+        const addAuthor = { author: storage.load("userProfile") };
+
+        const prependNewPost = {
+          ...newPost,
+          ...addAuthor,
+        };
+
+        console.log(prependNewPost);
+        container.prepend(postTemplate(prependNewPost));
       }
       console.log(profileData);
     })();
