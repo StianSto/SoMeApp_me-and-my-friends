@@ -34,6 +34,6 @@ export async function editProfilePage() {
     });
   })();
 
-  setUpdateProfileFormListener(name);
+  setUpdateProfileFormListener(userName);
   toggleSideBar();
 }
