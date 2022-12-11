@@ -13,7 +13,6 @@ import { postReaction } from "../postReaction.mjs";
  * @param {string | number} postData._count.comments count of comments
  * @returns body element for post
  * @example
- * ```js
  * // input an object that hold all data
  * const postData = {
  *  "title": "",
@@ -24,7 +23,8 @@ import { postReaction } from "../postReaction.mjs";
  *    "comments": "",
  *  },
  * }
- * ```
+ *
+ * templateSinglePostBody(postData)
  */
 export function templateSinglePostBody({
   id,

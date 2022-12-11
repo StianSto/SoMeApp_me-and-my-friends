@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {Array} reactions array of reactions
+ * @param {Element} container container to put the reactions in
+ */
+
 export function postReaction(reactions, container) {
   const reactionsSortedByCount = reactions.sort((a, b) => {
     return b.count - a.count;

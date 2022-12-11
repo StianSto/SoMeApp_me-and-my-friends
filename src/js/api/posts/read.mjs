@@ -5,44 +5,43 @@ import createFlagString from "../../functions/createFlagString.mjs";
 const method = "GET";
 const action = "/posts";
 
-/**
- * Retrieve posts. supply id for one specific post
- * @param {string | number} postID required. Post ID to retrieve specific post from API
- * @param {Object} flags optional. retrieve additional data by adding a flag. ex:
- * @returns post
- * @example
- * ```js
- * // postID
- * const id = 123
- *
- * // flags
- * const flagstring = "_author=true/false&_comments=true/false&_reactions=true/false";
- *
- * getPost(123, flagstring)
- * // returns Post Object. ex:
- * // {
- * //   id: "123",
- * //   title: "post title",
- * //   body: "post body",
- * //   .
- * //   .
- * //   .
- * // }
- * ```
- */
-
 const defaultFlagOptions = {
   _author: true,
   _reactions: true,
   _comments: true,
 };
 
+/**
+ * Retrieve post.
+ * @param {string | number} postID required. Post ID to retrieve specific post from API
+ * @param {Object} [flags] optional. retrieve additional data by adding a flag.
+ * @returns post object form api
+ * @example
+ * const postID = 123
+ * const flags = {
+ *  _author: true [default]
+ *  _reactions: true [default]
+ *  _comments: true [default]
+ * };
+ *
+ * getPost(postID, flags)
+ * // returns post response:
+ * // {
+ * //   title: "",
+ * //   body: "",
+ * //   media: "",
+ * //   .
+ * //   .
+ * //   .
+ * // }
+ *
+ */
+
 export async function getPost(postID, flags) {
   if (!postID) throw new Error("retrieving a post requires an ID");
   let flagstring = flags
     ? createFlagString(flags)
     : createFlagString(defaultFlagOptions);
-  console.log(flagstring);
 
   const url = `${API_SOCIAL_URL}${action}/${postID}?${flagstring}`;
 
@@ -52,6 +51,29 @@ export async function getPost(postID, flags) {
   return await response.json();
 }
 
+/**
+ * Retrieve last 100 posts.
+ * @param {Object} [flags] optional. retrieve additional data by adding a flag.
+ * @returns array of post objects form api
+ * @example
+ * const flags = {
+ *  _author: true [default]
+ *  _reactions: true [default]
+ *  _comments: true [default]
+ * };
+ *
+ * getPost(postID, flags)
+ * // returns post response:
+ * // {
+ * //   title: "",
+ * //   body: "",
+ * //   media: "",
+ * //   .
+ * //   .
+ * //   .
+ * // }
+ *
+ */
 export async function getPosts(flags) {
   let flagstring = flags
     ? createFlagString(flags)

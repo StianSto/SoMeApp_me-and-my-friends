@@ -13,8 +13,6 @@ import setReactionBtnEmojiSelectListener from "../../handlers/setReactBtnEmojiSe
  * @param {string | number} postData._count.comments count of comments
  * @returns body element for post
  * @example
- * ```js
- * // input an object that hold all data
  * const postData = {
  *  "title": "",
  *  "body": "",
@@ -24,7 +22,8 @@ import setReactionBtnEmojiSelectListener from "../../handlers/setReactBtnEmojiSe
  *    "comments": "",
  *  },
  * }
- * ```
+ *
+ * templatePostBody(postData)
  */
 export function templatePostBody({
   id,
