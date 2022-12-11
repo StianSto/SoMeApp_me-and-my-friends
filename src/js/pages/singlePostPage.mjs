@@ -11,7 +11,6 @@ const flags = {
 };
 
 export async function singlePostPage() {
-  console.log("i c u");
   const mainContent = document.querySelector(".main-content");
 
   const params = new URLSearchParams(window.location.search);

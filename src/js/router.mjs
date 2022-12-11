@@ -3,7 +3,6 @@ import * as pages from "./pages/index.mjs";
 
 export default async function router() {
   const path = window.location.pathname;
-  console.log(path);
 
   // for specific pages
   switch (path) {
