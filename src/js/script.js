@@ -1,14 +1,11 @@
 import insertNavHeader from "./components/nav.mjs";
+import isUserLoggedIn from "./functions/isUserLoggedIn.mjs";
 import { setSearchFormListener } from "./handlers/setSearchFormListener.mjs";
 import router from "./router.mjs";
 
-// check for token to determine if user is logged in.
-(async () => {
-  const storage = await import("./storage/index.mjs");
-  const token = storage.load("accessToken");
-  // if (!token) window.location.replace("/profile/login");
-})();
+// check if user is logged in
 
+if (window.location.pathname !== "/profile/login/") isUserLoggedIn();
 // insert navbar
 (() => {
   const header = document.querySelector("header");
