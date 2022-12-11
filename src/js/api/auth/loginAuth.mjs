@@ -4,10 +4,9 @@ import * as constants from "../../api/constants.mjs";
 
 /**
  * sends a post request to API to log in user. will redirect if succesful
- * @param {Object} profileData
+ * @param {Object} profileData object containing  email and password
  * @param {string} profileData.email users email
  * @param {string} profileData.password users password
- * @param {string} APIUrl url to api login endpoint
  * @example
  * const profileData = {
  *  email: "john@email.com",

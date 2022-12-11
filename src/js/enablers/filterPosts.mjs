@@ -1,3 +1,7 @@
+/**
+ * enables filter for posts. "#filterPosts", "#filterPostsBtn" and "[data-filter-btn-hide]" must exist on page
+ */
+
 export default function toggleFilterPostsVisibility() {
   const filterContainer = document.getElementById("filterPosts");
   const filterPostsBtn = document.getElementById("filterPostsBtn");

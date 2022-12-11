@@ -1,3 +1,7 @@
+/**
+ * enables sidebar on page. requires ".main-content", "#sidebar", "#sidebar-btn"
+ */
+
 export default function toggleSideBar() {
   const mainContent = document.querySelector(".main-content");
   const sideBar = document.querySelector("#sidebar");

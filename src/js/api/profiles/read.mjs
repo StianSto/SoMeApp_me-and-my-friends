@@ -6,6 +6,20 @@ import createFlagString from "../../functions/createFlagString.mjs";
 const method = "GET";
 const action = API_SOCIAL_ENDPOINT_PROFILES;
 
+/**
+ * returns info of a user that is submitted in the function.
+ * @param {string} name name of visited user profile
+ * @param {Object} [flags] [optional] flags to retrieve more info
+ * @returns userData
+ * @example
+ * const name = "john_deer"
+ * const flags = {
+ *  _following: true,
+ *  _followers: true,
+ * }
+ *
+ * getProfile(name, flags)
+ */
 export async function getProfile(name, flags = "") {
   if (!name) throw new Error("retrieving a profile requires a profile name");
   let flagstring = createFlagString(flags);
@@ -20,6 +34,20 @@ export async function getProfile(name, flags = "") {
   return userData;
 }
 
+/**
+ * returns all posts made by a user
+ * @param {string} name name of user
+ * @param {Object} [flags] [optional] flags for more info
+ * @returns result
+ * @example
+ * const name = "john_deer"
+ * const flags = {
+ *  _author: boolean,
+ *  _comments: boolean,
+ *  _reactions: boolean,
+ * }
+ * getProfilePosts(name, flags);
+ */
 export async function getProfilePosts(name, flags) {
   try {
     if (!name) throw new Error("retrieving a profile requires a proile name");
@@ -42,17 +70,26 @@ export async function getProfilePosts(name, flags) {
   }
 }
 
+/**
+ * renders profile into the profile page
+ * @param {Object} profileInfo object containing info on user
+ * @param {string} profileInfo.banner banner image, submit as url
+ * @param {string} profileInfo.avatar avatar image, submit as url
+ * @param {string} profileInfo.name name of profile
+ * @param {Object[]} profileInfo._followers array of user profiles followers. available with "_followers=true" flag.
+ * @param {Object[]} profileInfo._following array of user profiles that this user is following. available with "_following=true" flag.
+ * @param {Object} profileInfo._count counters
+ * @param {string | number} profileInfo._count.followersCount count of followers
+ * @param {string | number} profileInfo._count.followingCount count of following
+ * @param {string | number} profileInfo._count.postsCount count of posts
+ */
 function insertProfile({
   banner,
   avatar,
   name,
-  followers,
-  following,
-  _count: {
-    followers: followersCount,
-    following: followingCount,
-    posts: postsCount,
-  },
+  _followers,
+  _following,
+  _count: { followersCount, followingCount, postsCount },
 }) {
   if (banner) {
     const bannerBackground = document.querySelector("#userBanner");

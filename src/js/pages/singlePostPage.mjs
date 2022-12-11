@@ -2,7 +2,7 @@ import { examplePosts } from "../../../temp/examplePosts.mjs";
 import * as postTemplates from "../templates/index.mjs";
 import * as posts from "../api/posts/index.mjs";
 import { enableBsPopovers } from "../enablers/enableBsPopovers.mjs";
-import toggleSideBar from "../components/sidebar.mjs";
+import toggleSideBar from "../enablers/sidebar.mjs";
 
 const flags = {
   _author: true,
