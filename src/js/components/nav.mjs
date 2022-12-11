@@ -12,8 +12,9 @@ import * as storage from "../storage/index.mjs";
 export default function insertNavHeader() {
   const profile = storage.load("userProfile");
 
-  const { name, avatar } = profile;
+  let { name, avatar } = profile;
   let parsedName = name.replace("_", " ");
+  if (!avatar) avatar = "/dist/assets/images/default-avatar.png";
 
   const nav = new DOMParser().parseFromString(
     `
