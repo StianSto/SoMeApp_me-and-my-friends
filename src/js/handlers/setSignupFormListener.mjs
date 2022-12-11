@@ -15,11 +15,12 @@ export default function setSignupFormListener() {
     let email = document.getElementById("email-sign-up");
     let password = document.getElementById("password-sign-up");
 
-    signupAuth(
-      nameString,
-      email.value,
-      password.value,
-      constants.API_SOCIAL_URL + "/auth/register"
-    );
+    const profileData = {
+      name: nameString,
+      email: email.value,
+      password: password.value,
+    };
+
+    signupAuth(profileData);
   });
 }

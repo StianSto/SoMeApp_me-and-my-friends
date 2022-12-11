@@ -1,9 +1,15 @@
-export function filterByQuery(arr) {
+/**
+ * checks url for any search queries. returns filtered posts if the pst title, body or author mathes or contains the wuery. if no wuery exist this function returns all posts before filtering.
+ * @param {array} posts array of posts
+ * @returns new filtered array of posts
+ */
+
+export function filterByQuery(posts) {
   const params = new URLSearchParams(window.location.search);
   const search = params.get("search");
-  if (!search) return arr;
+  if (!search) return posts;
 
-  const newArr = arr.filter((post) => {
+  const newArr = posts.filter((post) => {
     const {
       title,
       body,

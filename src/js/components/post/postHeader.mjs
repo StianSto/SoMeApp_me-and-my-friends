@@ -1,10 +1,18 @@
 /**
  * makes a DOMParsed element for the header of the post.
- * @param {Object} author
+ * @param {Object} author object containing name and avatar image(url)
  * @param {string} author.name author's name
  * @param {string} author.avatar author's profile image / avatar
  * @param {string | number} id id of Post
  * @returns element
+ * @example
+ * const author = {
+ *  name: "john_deer",
+ *  avatar: "https://url.image.com"
+ * }
+ * const id = 123
+ *
+ * templatePostHeader(author, id)
  */
 export function templatePostHeader({ name = "", avatar }, id) {
   if (!avatar || avatar.length === 0)

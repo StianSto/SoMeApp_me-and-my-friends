@@ -7,11 +7,4 @@ export const API_SOCIAL_URL = `${API_HOST_URL}${API_BASE}${API_SOCIAL_BASE}`;
 export const API_SOCIAL_ENDPOINT_POSTS = `posts`;
 export const API_SOCIAL_ENDPOINT_PROFILES = `profiles`;
 
-/**
- * @example
- * ```js
- * const urlReact = urlApiPosts/<postID>/react/<symbol>
- * example: .../social/posts/123/react/heart
- * ```
- */
 export const API_SOCIAL_ENDPOINT_REACT = `react`;

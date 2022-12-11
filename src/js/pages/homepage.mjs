@@ -1,5 +1,5 @@
-import toggleSideBar from "../components/sidebar.mjs";
-import toggleFilterPostsVisibility from "../components/filterPosts.mjs";
+import toggleSideBar from "../enablers/sidebar.mjs";
+import toggleFilterPostsVisibility from "../enablers/filterPosts.mjs";
 import * as handlers from "../handlers/index.mjs";
 import * as posts from "../api/posts/index.mjs";
 import * as templates from "../templates/index.mjs";

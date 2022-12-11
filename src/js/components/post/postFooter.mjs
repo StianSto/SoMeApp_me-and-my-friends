@@ -2,10 +2,15 @@ import { setCommentFormListener } from "../../handlers/setCommentFormListener.mj
 import postComment from "./postComment.mjs";
 
 /**
- *
- * @param {Array} comments array of comments (objects)
- * @param {string | nuumber} postId id of post
+ * creates a DOMParsed element of a post footer. creates comments and appends them to footer.
+ * @param {Array} comments array of comments
+ * @param {string | number} postId id of post
  * @returns parsed element of post footer
+ * @example
+ * const comments = [{}, {}, ...] // array of comment-objects
+ * cosnt postId = 123,
+ *
+ * templatePostFooter(comments, postId)
  */
 export function templatePostFooter(comments, postId) {
   const parser = new DOMParser();

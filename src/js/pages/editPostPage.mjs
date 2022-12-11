@@ -1,4 +1,4 @@
-import toggleSideBar from "../components/sidebar.mjs";
+import toggleSideBar from "../enablers/sidebar.mjs";
 
 // edit page
 import * as posts from "../api/posts/index.mjs";

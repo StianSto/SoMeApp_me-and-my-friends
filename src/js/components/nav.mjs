@@ -1,4 +1,14 @@
 import * as storage from "../storage/index.mjs";
+
+/**
+ * makes a nav as a DOMParsed element that can be inserted into header
+ * @returns nav DOM element
+ * @example
+ * const header = document.querySelector("header")
+ * const nav = insertNavHeader()
+ *
+ * header.append(nav)
+ */
 export default function insertNavHeader() {
   const profile = storage.load("userProfile");
 

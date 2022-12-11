@@ -4,7 +4,7 @@ import { API_SOCIAL_URL, API_SOCIAL_ENDPOINT_REACT } from "../constants.mjs";
 
 /**
  * adds a reaction to a post.
- * @param {number, string} postID post id is required.
+ * @param {number | string} postID post id is required.
  * @param {string} symbol a valid emoji
  * @returns response
  */

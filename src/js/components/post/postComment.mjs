@@ -1,10 +1,10 @@
+import { setCommentFormListener } from "../../handlers/setCommentFormListener.mjs";
+
 /**
  *
- * @param {Object} comment accepts a comment from API endpoint.
+ * @param {{body: string, id: string, postId: string, replyToId: string, created: string, author:{name: string, avatar: string}}} comment accepts a comment from API endpoint
  * @returns
  */
-
-import { setCommentFormListener } from "../../handlers/setCommentFormListener.mjs";
 
 export default function postComment({
   body,

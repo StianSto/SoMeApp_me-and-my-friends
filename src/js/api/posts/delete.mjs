@@ -7,16 +7,18 @@ const action = "posts";
 /**
  * Deletes a post. Post ID is required
  * @param {string | number} postid input id of post to be deletes
- * @returns nothing
+ * @returns nothing unless an error ocurrs
  */
 export async function removePost(postID) {
-  if (!postID) throw new Error("removing a post requires a post ID");
+  try {
+    if (!postID) throw new Error("removing a post requires a post ID");
 
-  const url = `${API_SOCIAL_URL}/${action}/${postID}`;
+    const url = `${API_SOCIAL_URL}/${action}/${postID}`;
 
-  const response = await authFetch(url, {
-    method,
-  });
-
-  return await response.json();
+    await authFetch(url, {
+      method,
+    });
+  } catch (error) {
+    return error;
+  }
 }

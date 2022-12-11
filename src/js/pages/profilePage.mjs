@@ -1,4 +1,4 @@
-import toggleSideBar from "../components/sidebar.mjs";
+import toggleSideBar from "../enablers/sidebar.mjs";
 import * as profile from "../api/profiles/index.mjs";
 // import { setUpdateProfileFormListener } from "../handlers/setUpdateProfileFormListener.mjs";
 import { enableBsPopovers } from "../enablers/enableBsPopovers.mjs";

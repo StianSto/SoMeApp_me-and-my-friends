@@ -6,8 +6,18 @@ const action = "posts";
 
 /**
  * updates a post. Post ID is required
- * @param {*} postData input an object containing id. optional: title, body, tags and media.
- * @returns response as json
+ * @param {Object} postData input an object containing id. optional: title, body, tags and media.
+ * @returns response
+ * @example
+ * const postData = {
+ *  title: "",
+ *  body: "",
+ *  media: "",
+ *  tags: ["", ""],
+ * }
+ *
+ * updatePost(postData)
+ * // returns response
  */
 export async function updatePost(postData) {
   if (!postData.id) throw new Error("update requires a post ID");
@@ -21,3 +31,5 @@ export async function updatePost(postData) {
 
   return await response.json();
 }
+
+upda;
