@@ -12,8 +12,9 @@ import * as storage from "../storage/index.mjs";
 export default function insertNavHeader() {
   const profile = storage.load("userProfile");
 
-  const { name, avatar } = profile;
+  let { name, avatar } = profile;
   let parsedName = name.replace("_", " ");
+  if (!avatar) avatar = "/dist/assets/images/default-avatar.png";
 
   const nav = new DOMParser().parseFromString(
     `
@@ -44,29 +45,11 @@ export default function insertNavHeader() {
 					</button>
 
 					<div class="collapse navbar-collapse bg-primary w-100" id="navbarSupportedContent">
-							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-									<li class="nav-item h-100 d-flex align-items-center">
-											<a class="nav-link active" aria-current="page" href="/">Home</a>
-									</li>
-									<!-- <li class="nav-item">
-											<a class="nav-link" href="#">Link</a>
-									</li>
-									<li class="nav-item dropdown">
-											<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-											Dropdown
-									</a>
-									<li>
-											<ul class="dropdown-menu">
-													<li><a class="dropdown-item" href="#">Action</a></li>
-													<li><a class="dropdown-item" href="#">Another action</a></li>
-													<li><hr class="dropdown-divider"></li>
-													<li><a class="dropdown-item" href="#">Something else here</a></li>
-											</ul>
-									</li>
-									</li>
-									<li class="nav-item">
-											<a class="nav-link disabled">Disabled</a>
-									</li> -->
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center gap-4">
+								<li class="nav-item h-100 ms-1 pe-hover-pointer" id="logOut" style="font-size: smaller;">Log Out</li>
+								<li class="nav-item h-100">
+									<a class="nav-link active" aria-current="page" href="/">Home</a>
+								</li>
 							</ul>
 							<form id="site-search" class="d-flex" role="search">
 									<input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search">
@@ -78,6 +61,13 @@ export default function insertNavHeader() {
 	`,
     "text/html"
   );
+
+  const logOutBtn = nav.querySelector("#logOut");
+  logOutBtn.addEventListener("click", () => {
+    storage.remove("userProfile");
+    storage.remove("accessToken");
+    window.location.replace("/profile/login/");
+  });
 
   return nav;
 }

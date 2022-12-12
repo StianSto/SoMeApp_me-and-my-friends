@@ -6,7 +6,6 @@ import { reactToPost } from "../api/posts/react.mjs";
  * @param {*} element
  */
 export default function setReactionBtnEmojiSelectListener(btn, element) {
-  console.log("firing");
   let emojiPicker;
   if (!document.querySelector("emoji-picker")) {
     emojiPicker = document.createElement("emoji-picker");
