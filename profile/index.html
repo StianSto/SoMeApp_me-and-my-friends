@@ -53,6 +53,15 @@
           <div class="row justify-content-center name m-0">
             <h1 class="p-0 m-0 text-center">Name Nameson</h1>
           </div>
+          <div class="row align-items-center justify-content-center name m-0">
+            <button
+              id="follow"
+              data-followed=""
+              class="btn btn-primary w-auto me-2 mt-2"
+            >
+              <i class="fa-solid fa-user-plus me-2"></i>Follow
+            </button>
+          </div>
         </div>
 
         <div class="container">
@@ -84,7 +93,7 @@
                       class=""
                       aria-label="Friends"
                     >
-                      Friends
+                      Followers
                     </button>
                   </div>
                 </div>
@@ -96,10 +105,20 @@
                     <p class="mx-auto">coming soon</p>
                   </div>
                 </div>
-                <div class="carousel-item py-3" id="friend-list">
+                <div class="carousel-item py-3">
                   <div class="scroll-list">
-                    <div class="d-flex gap-1">
-                      <p class="mx-auto">coming soon</p>
+                    <div
+                      id="followersList"
+                      class="d-flex gap-1"
+                      style="width: 100px"
+                    >
+                      <!-- <p class="mx-auto">coming soon</p> -->
+
+                      <!-- <div class="my-auto">
+                        <button class="btn btn-secondary mx-4">
+                          View Friends
+                        </button>
+                      </div> -->
                     </div>
                   </div>
                 </div>
