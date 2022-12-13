@@ -5,11 +5,11 @@ import * as storage from "../storage/index.mjs";
 import { enableBsPopovers } from "../enablers/enableBsPopovers.mjs";
 import setFollowProfileListener from "../handlers/setFollowProfileListener.mjs";
 
-const userName = storage.load("userProfile").name;
 const params = new URL(document.location).searchParams;
-const name = params.get("name");
+
 
 export async function profilePage() {
+	const name = params.get("name");
   let flags = {
     _author: true,
     _reactions: true,
@@ -33,9 +33,11 @@ export async function profilePage() {
 }
 
 function checkIfFollowing(followers) {
+	const name = params.get("name");
+	const userName = storage.load("userProfile").name;
   const followBtn = document.getElementById("follow");
   if (name === userName) return followBtn.remove();
-  setFollowProfileListener();
+  
 
   const isFollowing = followers.some((user) => {
     if (user.name === userName) return true;
@@ -48,6 +50,7 @@ function checkIfFollowing(followers) {
     followBtn.classList.replace("btn-primary", "btn-outline-primary");
     followBtn.innerHTML = `<i class="fa-solid fa-check me-2"></i>Followed`;
   }
+	setFollowProfileListener();
 }
 
 function insertFollowers(followers) {
