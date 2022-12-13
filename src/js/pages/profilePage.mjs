@@ -37,7 +37,7 @@ function checkIfFollowing(followers) {
 	const userName = storage.load("userProfile").name;
   const followBtn = document.getElementById("follow");
   if (name === userName) return followBtn.remove();
-  setFollowProfileListener();
+  
 
   const isFollowing = followers.some((user) => {
     if (user.name === userName) return true;
@@ -50,6 +50,7 @@ function checkIfFollowing(followers) {
     followBtn.classList.replace("btn-primary", "btn-outline-primary");
     followBtn.innerHTML = `<i class="fa-solid fa-check me-2"></i>Followed`;
   }
+	setFollowProfileListener();
 }
 
 function insertFollowers(followers) {
