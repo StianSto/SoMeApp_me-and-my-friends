@@ -7,21 +7,27 @@ export default async function router() {
   // for specific pages
   switch (path) {
     case "/":
-      pages.homePage(); // home page
+    case "/index.html": // home page
+      pages.homePage();
       break;
-    case "/profile/": //profile page
+    case "/profile/":
+    case "/profile/index.html": //profile page
       pages.profilePage();
       break;
-    case "/profile/posts/": //single post
+    case "/profile/posts/":
+    case "/profile/posts/index.html": //single post
       pages.singlePostPage();
       break;
-    case "/profile/posts/edit/": //edit a single post
+    case "/profile/posts/edit/":
+    case "/profile/posts/edit/index.html": //edit a single post
       pages.editPostPage();
       break;
-    case "/profile/edit/": //edit profile
+    case "/profile/edit/":
+    case "/profile/edit/index.html": //edit profile
       pages.editProfilePage();
       break;
-    case "/profile/login/": //register or login
+    case "/profile/login/":
+    case "/profile/login/index.html": //register or login
       console.log("login");
       pages.loginPage();
       break;
