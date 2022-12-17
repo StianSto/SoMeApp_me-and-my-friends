@@ -10776,8 +10776,15 @@ textarea.form-control-lg {
   color: var(--user-theme-primary-txtClr) !important;
 }
 .theme-btn-primary:hover {
-  background-color: rgba(var(--user-theme-primary));
-  color: var(--user-theme-primary-txtClr) !important;
+  background-color: white !important;
+  color: black !important;
+  outline: 2px solid rgba(var(--user-theme-primary)) !important;
+}
+.theme-btn-primary:active {
+  background-color: white !important;
+  color: black !important;
+  outline: 1px solid rgba(var(--user-theme-primary)) !important;
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 .theme-btn-outline-primary {
   border-color: rgba(var(--user-theme-primary));
