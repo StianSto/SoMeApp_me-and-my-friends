@@ -1,15 +1,16 @@
-
 #profile-bio {
-    & img {
-        background-color: grey;
-        width: 100px;
-        aspect-ratio: 1;
+  & img {
+    background-color: grey;
+    width: 100px;
+    aspect-ratio: 1;
+  }
+
+  & .carousel-indicators .btn {
+    background-color: white;
+
+    &.active {
+      background-color: rgba(var(--user-theme-primary));
+      color: var(--user-theme-primary-txtClr) !important;
     }
-    
-    & .carousel-indicators .btn {
-        background-color: white;
-        
-        &.active {
-            color: color-contrast($user-color) !important;
-            background-color: $user-color;
-}}}
+  }
+}

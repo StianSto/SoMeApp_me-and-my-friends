@@ -10771,6 +10771,40 @@ textarea.form-control-lg {
   cursor: pointer;
 }
 
+.theme-btn-primary {
+  background-color: rgba(var(--user-theme-primary));
+  color: var(--user-theme-primary-txtClr) !important;
+}
+.theme-btn-primary:hover {
+  background-color: rgba(var(--user-theme-primary));
+  color: var(--user-theme-primary-txtClr) !important;
+}
+.theme-btn-outline-primary {
+  border-color: rgba(var(--user-theme-primary));
+  background-color: rgba(var(--user-theme-primary-100));
+  color: black;
+}
+.theme-btn-outline-primary:hover {
+  background-color: rgba(var(--user-theme-primary));
+  color: var(--user-theme-primary-txtClr) !important;
+}
+.theme-bg-primary {
+  background-color: rgba(var(--user-theme-primary));
+  color: var(--user-theme-primary-txtClr) !important;
+}
+.theme-bg-primary-text {
+  color: var(--user-theme-primary-txtClr) !important;
+}
+
+a {
+  color: var(--user-theme-primary-txtClr);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--theme-text-color), #666666;
+  text-decoration: underline;
+}
+
 .bar {
   background: #000;
   width: 100%;
@@ -10800,18 +10834,14 @@ textarea.form-control-lg {
   max-width: 550px;
 }
 .post .card-header {
-  background-color: #ff9e2c;
-  color: #000;
+  background-color: rgba(var(--user-theme-primary));
 }
 .post .profile__img img {
   object-fit: cover;
   object-position: center;
 }
-.post .profile__name {
-  color: #000;
-}
 .post .card-footer {
-  background-color: rgba(255, 158, 44, 0.1);
+  background-color: rgba(var(--user-theme-primary), 0.1);
 }
 .post .card-footer .comment > .comment {
   margin-left: 1rem;
@@ -10837,8 +10867,8 @@ textarea.form-control-lg {
   transition-delay: 0ms;
 }
 .post .card-footer .comment .submit-comment {
-  background: #ff9e2c;
-  color: #000;
+  background: rgba(var(--user-theme-primary));
+  color: var(--user-theme-primary-txtClr);
 }
 .post-comments > .comment:not(:nth-child(1)) {
   position: relative;
@@ -10858,15 +10888,11 @@ textarea.form-control-lg {
 .post--create textarea {
   resize: none;
 }
-.post--create .btn {
-  color: #000;
-}
 .post--create #submitPost .btn {
-  color: #000;
-  border-color: #ff9e2c;
+  border-color: rgba(var(--user-theme-primary));
 }
 .post--create #submitPost .btn[type=submit] {
-  background-color: #ff9e2c;
+  background-color: rgba(var(--user-theme-primary));
 }
 
 emoji-picker {
@@ -10924,18 +10950,24 @@ emoji-picker {
   background-color: white;
 }
 #profile-bio .carousel-indicators .btn.active {
-  color: #000 !important;
-  background-color: #ff9e2c;
+  background-color: rgba(var(--user-theme-primary));
+  color: var(--user-theme-primary-txtClr) !important;
 }
 
 header {
   height: var(--header-height);
 }
 
+.navbar {
+  background-color: rgba(var(--user-theme-primary)) !important;
+}
 .navbar .nav-edit-profile {
   top: 0;
   right: 0;
   filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5));
+}
+.navbar-collapse {
+  background-color: rgba(var(--user-theme-primary)) !important;
 }
 
 #site-search {
@@ -10961,7 +10993,7 @@ header {
   content: "";
   width: 0%;
   height: 1px;
-  background-color: currentColor;
+  background-color: var(--user-theme-primary-txtClr);
   bottom: 0;
   transition: all 200ms ease;
 }
@@ -10977,6 +11009,7 @@ header {
 }
 #site-search .form-control::placeholder {
   color: currentColor;
+  opacity: 0.7;
 }
 #site-search .fa-solid:hover {
   color: white;
@@ -11127,7 +11160,10 @@ main #filterPosts.show {
 
 :root {
   --header-height: 80px;
-  --user-color: $user-color;
+  --user-theme-primary: var(--bs-primary);
+  --user-theme-primary-txtClr: black;
+  --bs-btn-color: var(--user-theme-primary) !important;
+  --bs-btn-border-color: var(--user-theme-primary) !important;
 }
 
 .push-down {

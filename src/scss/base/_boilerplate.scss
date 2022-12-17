@@ -1,0 +1,8 @@
+a {
+  color: var(--user-theme-primary-txtClr);
+  text-decoration: none;
+  &:hover {
+    color: var(--theme-text-color), #666666;
+    text-decoration: underline;
+  }
+}

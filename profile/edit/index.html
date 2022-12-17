@@ -96,104 +96,12 @@
                   <div class="scroll-list">
                     <div class="d-flex gap-1">
                       <p class="mx-auto">coming soon</p>
-                      <!-- <div>
-                                            <img class="" src="https://source.unsplash.com/random/100x100?spiderman" alt="">
-                                            Peter Parker
-                                        </div>
-                                        <div>
-                                            <img class="" src="https://source.unsplash.com/random/100x100?german" alt="">
-                                            Flula Borg
-                                        </div>
-                                        <div>
-                                            <img class="" src="https://source.unsplash.com/random/100x100?vader" alt="">
-                                            James Earl Jones
-                                        </div>
-                                        <div>
-                                            <img class="" src="https://source.unsplash.com/random/100x100?princess" alt="">
-                                            Princess Fiona
-                                        </div>
-                                        <div>
-                                            <img class="" src="https://source.unsplash.com/random/100x100?dog" alt="">
-                                            The Dachshund
-                                        </div>
-                                        <div>
-                                            <img class="" src="https://source.unsplash.com/random/100x100?american" alt="">
-                                            Conan O'Brian
-                                        </div>
-                                        <div>
-                                            <img class="" src="https://source.unsplash.com/random/100x100?gamer" alt="">
-                                            NoobMaster
-                                        </div>
-                                        <div>
-                                            <img class="" src="https://source.unsplash.com/random/100x100?captain" alt="">
-                                            Captain Phillips
-                                        </div>
-                                        <div class="my-auto">
-                                            <button class="btn btn-secondary mx-4">View Friends</button>
-                                        </div> -->
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="container post--container">
-          <form class="post--create row gx-0 p-0 mt-5">
-            <div class="card post mb-2 row mx-1 mx-md-auto p-0">
-              <div class="card-header col p-3">
-                <div
-                  class="profile-header row m-0 align-items-center flex-nowrap"
-                  style="height: 50px"
-                >
-                  <div
-                    class="profile__img h-100 col-auto p-0"
-                    style="aspect-ratio: 1"
-                  >
-                    <img
-                      class="w-100 h-100 rounded-2"
-                      src="/dist/assets/images/temp/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <p class="col m-0 fs-6 profile__name">Name Nameson</p>
-                </div>
-              </div>
-
-              <div class="card body p-0 rounded-0 border-0 border-bottom">
-                <textarea
-                  class="w-100 m-0 border-0 px-4 px-md-5 py-3 py-md-4"
-                  name=""
-                  rows="3"
-                  id="post--create__textarea"
-                ></textarea>
-              </div>
-
-              <div class="card-footer p-0">
-                <div class="btn-group d-flex">
-                  <button
-                    type="button"
-                    class="btn btn-outline-primary border-0 border-end"
-                  >
-                    <i class="fa-solid fa-image"></i> Add Image
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-primary border-0"
-                  >
-                    <i class="fa-solid fa-gear"></i> Other Settings
-                  </button>
-                </div>
-              </div>
-            </div>
-            <button
-              type="submit"
-              class="btn btn-primary px-4 py-2 col-auto ms-auto"
-            >
-              Create Post
-            </button>
-          </form>
         </div>
 
         <div class="container post--container">
@@ -225,6 +133,7 @@
               <i class="fa-solid fa-bars fs-3 my-auto"></i>
             </button>
           </div>
+
           <form class="d-none" id="updateMedia">
             <div class="input-group mt-3">
               <span class="input-group-text">Banner url</span>
@@ -254,10 +163,38 @@
               </button>
               <button
                 type="submit"
-                class="btn btn-primary w-auto"
+                class="btn theme-bg-primary w-auto"
                 id="updateProfile"
               >
                 Update Profile
+              </button>
+            </div>
+          </form>
+          <form class="mt-5 d-none" id="updateUserTheme">
+            <h2>Customize your theme</h2>
+            <div class="d-flex align-items-center">
+              <input
+                type="color"
+                name="--user-theme-primary"
+                id="setUserTheme"
+                width="50px"
+              />
+              <label for="setUserTheme" class="ms-2">Main Color</label>
+            </div>
+            <div class="col mt-4">
+              <button
+                type="button"
+                class="btn btn-outline-secondary w-auto"
+                id="previewTheme"
+              >
+                Preview
+              </button>
+              <button
+                type="submit"
+                class="btn theme-bg-primary w-auto"
+                id="updateTheme"
+              >
+                Update Color Theme
               </button>
             </div>
           </form>

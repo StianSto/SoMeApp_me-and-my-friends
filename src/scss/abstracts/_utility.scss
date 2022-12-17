@@ -4,6 +4,36 @@
   }
 }
 
+.theme {
+  &-btn {
+    &-primary {
+      background-color: rgba(var(--user-theme-primary));
+      color: var(--user-theme-primary-txtClr) !important;
+      &:hover {
+        background-color: rgba(var(--user-theme-primary));
+        color: var(--user-theme-primary-txtClr) !important;
+      }
+    }
+
+    &-outline-primary {
+      border-color: rgba(var(--user-theme-primary));
+      background-color: rgba(var(--user-theme-primary-100));
+      color: black;
+      &:hover {
+        background-color: rgba(var(--user-theme-primary));
+        color: var(--user-theme-primary-txtClr) !important;
+      }
+    }
+  }
+  &-bg-primary {
+    background-color: rgba(var(--user-theme-primary));
+    color: var(--user-theme-primary-txtClr) !important;
+    &-text {
+      color: var(--user-theme-primary-txtClr) !important;
+    }
+  }
+}
+
 $utilities: (
   "height": (
     property: height,
