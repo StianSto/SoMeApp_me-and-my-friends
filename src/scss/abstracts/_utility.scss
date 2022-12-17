@@ -10,8 +10,15 @@
       background-color: rgba(var(--user-theme-primary));
       color: var(--user-theme-primary-txtClr) !important;
       &:hover {
-        background-color: rgba(var(--user-theme-primary));
-        color: var(--user-theme-primary-txtClr) !important;
+        background-color: white !important;
+        color: black !important;
+        outline: 2px solid rgba(var(--user-theme-primary)) !important;
+      }
+      &:active {
+        background-color: white !important;
+        color: black !important;
+        outline: 1px solid rgba(var(--user-theme-primary)) !important;
+        box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.3);
       }
     }
 
