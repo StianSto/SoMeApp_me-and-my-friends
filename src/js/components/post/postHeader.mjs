@@ -31,7 +31,7 @@ export function templatePostHeader({ name = "", avatar }, id) {
         <p class="profile__name | col m-0 ms-2 fs-5">${parsedName}</p>
       </a>
         <button type="button" class="post-options | btn col-auto" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="right" data-bs-html="true" data-bs-content="">
-          <i class="fa fa-solid fa-ellipsis-vertical | ms-auto w-auto fs-3 text-black"></i>
+          <i class="theme-bg-primary-text fa fa-solid fa-ellipsis-vertical | ms-auto w-auto fs-3 text-black"></i>
         </button>
     </div>
   `,

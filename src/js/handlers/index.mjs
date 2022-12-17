@@ -11,3 +11,4 @@ export * from "./setSearchFormListener.mjs";
 export * from "./setSignupFormListener.mjs";
 export * from "./setUpdateProfileFormListener.mjs";
 export * from "./setFollowProfileListener.mjs";
+export * from "./setUpdateColorTheme.mjs";

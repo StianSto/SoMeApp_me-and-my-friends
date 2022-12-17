@@ -2,6 +2,7 @@ import * as storage from "../storage/index.mjs";
 import { setUpdateProfileFormListener } from "../handlers/setUpdateProfileFormListener.mjs";
 import { getProfile } from "../api/profiles/read.mjs";
 import toggleSideBar from "../enablers/sidebar.mjs";
+import { setUpdateColorTheme } from "../handlers/setUpdateColorTheme.mjs";
 
 export async function editProfilePage() {
   const updateForm = document.querySelector("#updateMedia");
@@ -14,8 +15,6 @@ export async function editProfilePage() {
   const userName = storage.load("userProfile").name;
   const profile = await getProfile(userName);
   const { avatar, banner } = profile;
-  console.log(avatar);
-  console.log(banner);
   let parsedName = userName.replace("_", " ");
 
   updateBanner.value = banner;
@@ -36,4 +35,5 @@ export async function editProfilePage() {
 
   setUpdateProfileFormListener(userName);
   toggleSideBar();
+  setUpdateColorTheme();
 }

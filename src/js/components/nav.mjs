@@ -18,7 +18,7 @@ export default function insertNavHeader() {
 
   const nav = new DOMParser().parseFromString(
     `
-	<nav class="navbar navbar-expand-lg bg-primary shadow-sm h-100  ">
+	<nav class="navbar navbar-expand-lg shadow-sm h-100  ">
 			<div class="container p-0 h-100">
 
 					<a class="navbar-brand ms-2" href="/">
@@ -46,14 +46,14 @@ export default function insertNavHeader() {
 
 					<div class="collapse navbar-collapse bg-primary w-100" id="navbarSupportedContent">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center gap-4">
-								<li class="nav-item h-100 ms-1 pe-hover-pointer" id="logOut" style="font-size: smaller;">Log Out</li>
-								<li class="nav-item h-100">
-									<a class="nav-link active" aria-current="page" href="/">Home</a>
+								<li class="nav-item h-100 ms-1 pe-hover-pointer theme-bg-primary-text" id="logOut" style="font-size: smaller;">Log Out</li>
+								<li class="nav-item h-100 ">
+									<a class="nav-link active theme-bg-primary-text" aria-current="page" href="/">Home</a>
 								</li>
 							</ul>
 							<form id="site-search" class="d-flex" role="search">
-									<input class="form-control" name="search" type="search" placeholder="Search" aria-label="Search">
-									<button class="btn" type="submit"><i style="font-size: 1.2em" class="fa-solid fa-magnifying-glass text-dark"></i></button>
+									<input class="form-control theme-bg-primary-text" name="search" type="search" placeholder="Search" aria-label="Search">
+									<button class="btn" type="submit"><i style="font-size: 1.2em" class="theme-bg-primary-text fa-solid fa-magnifying-glass text-dark"></i></button>
 							</form>
 					</div>
 			</div>
