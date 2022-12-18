@@ -11122,6 +11122,7 @@ main #filterPosts.show {
   background: #ff9e2c;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .profile-page__user .banner__spacer {
   height: calc(clamp(min(175px, 50%), 20vw + 0.25rem, 200px) / 3);
@@ -11167,7 +11168,7 @@ main #filterPosts.show {
 
 :root {
   --header-height: 80px;
-  --user-theme-primary: var(--bs-primary);
+  --user-theme-primary: var(--bs-primary-rgb);
   --user-theme-primary-txtClr: black;
   --bs-btn-color: var(--user-theme-primary) !important;
   --bs-btn-border-color: var(--user-theme-primary) !important;
