@@ -2,7 +2,6 @@ import toggleSideBar from "../enablers/sidebar.mjs";
 import * as profile from "../api/profiles/index.mjs";
 import * as storage from "../storage/index.mjs";
 // import { setUpdateProfileFormListener } from "../handlers/setUpdateProfileFormListener.mjs";
-import { enableBsPopovers } from "../enablers/enableBsPopovers.mjs";
 import setFollowProfileListener from "../handlers/setFollowProfileListener.mjs";
 
 const params = new URL(document.location).searchParams;
@@ -24,8 +23,6 @@ export async function profilePage() {
   checkIfFollowing(profileData.followers);
 
   insertFollowers(profileData.followers);
-
-  enableBsPopovers();
   toggleSideBar();
 
   // follow profile

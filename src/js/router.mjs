@@ -1,4 +1,3 @@
-import { enableBsPopovers } from "./enablers/enableBsPopovers.mjs";
 import * as pages from "./pages/index.mjs";
 
 export default async function router() {

@@ -45,7 +45,9 @@ export default function postOptions(name, id, postOptionsElement) {
       </ul>
     `
     );
-  }
+	}
+	
+	new bootstrap.Popover(postOptionsElement)
 
   return postOptions;
 }
