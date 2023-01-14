@@ -19,7 +19,7 @@ export async function profilePage() {
   const profileData = await profile.getProfile(name, flags);
   const profilePosts = await profile.getProfilePosts(name, flags);
 
-	if (checkIfUsersOwnProfile) {
+	if (checkIfUsersOwnProfile()) {
 		document.getElementById("follow").remove();
 		const avatar = document.getElementById("userAvatar")
 		const parser = new DOMParser().parseFromString(`
@@ -38,7 +38,7 @@ export async function profilePage() {
 }
 
 function checkIfFollowing(followers) {
-
+	const followBtn = document.getElementById("follow")
   const isFollowing = followers.some((user) => {
     if (user.name === userName) return true;
   });
@@ -77,6 +77,7 @@ function insertFollowers(followers) {
 
 function checkIfUsersOwnProfile() {
 	const name = params.get("name");
-  const userName = storage.load("userProfile").name;
+	const userName = storage.load("userProfile").name;
+	console.log(name, userName)
   if (name === userName) return true
 }
