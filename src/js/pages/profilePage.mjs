@@ -19,8 +19,17 @@ export async function profilePage() {
   const profileData = await profile.getProfile(name, flags);
   const profilePosts = await profile.getProfilePosts(name, flags);
 
-  console.log(profileData);
-  checkIfFollowing(profileData.followers);
+	if (checkIfUsersOwnProfile) {
+		document.getElementById("follow").remove();
+		const avatar = document.getElementById("userAvatar")
+		const parser = new DOMParser().parseFromString(`
+			<a href="/profile/edit/?name=${name}" class="text-white position-absolute" id="editProfileLink"><i class="fa-solid fa-gear fs-1"></i></a>
+		`, 'text/html')
+		console.log(parser.getElementById("editProfileLink"));
+		avatar.append(parser.getElementById("editProfileLink"));
+	} else {
+		checkIfFollowing(profileData.followers);
+	}
 
   insertFollowers(profileData.followers);
   toggleSideBar();
@@ -29,16 +38,11 @@ export async function profilePage() {
 }
 
 function checkIfFollowing(followers) {
-  const name = params.get("name");
-  const userName = storage.load("userProfile").name;
-  const followBtn = document.getElementById("follow");
-  if (name === userName) return followBtn.remove();
 
   const isFollowing = followers.some((user) => {
     if (user.name === userName) return true;
   });
 
-  console.log(isFollowing);
   followBtn.dataset.followed = isFollowing;
 
   if (isFollowing) {
@@ -69,4 +73,10 @@ function insertFollowers(followers) {
 
     followersList.prepend(followerParser.querySelector(".follower"));
   });
+}
+
+function checkIfUsersOwnProfile() {
+	const name = params.get("name");
+  const userName = storage.load("userProfile").name;
+  if (name === userName) return true
 }

@@ -11127,9 +11127,18 @@ main #filterPosts.show {
 .profile-page__user .banner__spacer {
   height: calc(clamp(min(175px, 50%), 20vw + 0.25rem, 200px) / 3);
 }
-.profile-page__user-img img {
+.profile-page__user-img {
   width: clamp(min(175px, 50%), 20vw + 0.25rem, 200px);
   min-width: 100px;
+}
+.profile-page__user-img img {
+  width: 100%;
+}
+.profile-page__user-img a {
+  top: 0;
+  right: 0;
+  transform: translate(0%, -50%);
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.75));
 }
 .profile-page h1, .profile-page .h1 {
   max-width: min(350px, 60vw) !important;
