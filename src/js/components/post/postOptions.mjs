@@ -28,6 +28,9 @@ export default function postOptions(name, id, postOptionsElement) {
         <li class='list-group-item'>
           <a href='/profile/posts/edit/?id=${id}' class='text-black text-decoration-none'><i class='fa-solid fa-edit | me-2 fs-5 pe-hover-pointer'></i>Edit Post</a>
         </li>
+        <li class='list-group-item' id="remove-post-${id}" >
+          <span class='text-danger text-decoration-none pe-hover-pointer' ><i class='fa-solid fa-trash | me-2 fs-5 pe-hover-pointer'></i>Delete Post</span>
+        </li>
       </ul>
     `
     );
@@ -45,7 +48,9 @@ export default function postOptions(name, id, postOptionsElement) {
       </ul>
     `
     );
-  }
+	}
+	
+	new bootstrap.Popover(postOptionsElement)
 
   return postOptions;
 }

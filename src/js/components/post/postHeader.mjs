@@ -1,3 +1,5 @@
+import createModal from '../../functions/createModal.mjs'
+import {setDeletePostListener} from '../../handlers/setDeletePostListener.mjs'
 /**
  * makes a DOMParsed element for the header of the post.
  * @param {Object} author object containing name and avatar image(url)
@@ -36,6 +38,54 @@ export function templatePostHeader({ name = "", avatar }, id) {
     </div>
   `,
     "text/html"
-  );
+	);
+	
+	const popoverElement = parsedPostHeader.querySelector(".post-options")
+	popoverElement.addEventListener("click", () => {			
+		const deleteBtn = document.getElementById(`remove-post-${id}`)
+		
+		if (deleteBtn) {
+			deleteBtn.addEventListener("click", () => {
+				const modal = createModal(modalElement(id));
+				modal.show()
+				const modalDelBtn = modal._element.querySelector(`[data-delete-post='${id}']`)
+				setDeletePostListener(id, modalDelBtn)
+		})
+	}
+
+	})
+
   return parsedPostHeader;
+}
+
+
+function modalElement(postId) {
+	const modalElement = `
+	<div class="modal fade show" id="modalConfirmDeletePost" tabindex="-1" aria-labelledby="previewPostLabel" aria-modal="true" role="dialog" style="display: block;">
+	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="previewPostLabel">
+					Delete Post
+				</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p class="fs-4">are you sure you want to delete this post?</p>
+				<p>this action is <i>irreversible</i>!</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+					No! take me back!
+				</button>
+				<button type="button" class="btn btn-danger" data-delete-post="${postId}" data-ol-has-click-handler="">
+					<i class="fa-solid fa-trash-can"></i>
+					Delete
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+	`
+	return modalElement
 }

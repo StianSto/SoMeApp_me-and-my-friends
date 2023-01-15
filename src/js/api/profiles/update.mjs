@@ -26,7 +26,7 @@ export async function updateProfile(name, updateBody) {
   const response = await authFetch(url, {
     method,
     body: JSON.stringify(updateBody),
-  });
+	});
 
-  return await response.json();
+  return response
 }

@@ -27,13 +27,14 @@ export async function editProfilePage() {
   })();
 
   (() => {
-    const previewBtn = document.querySelector("#previewUpdateProfile");
-    previewBtn.addEventListener("click", () => {
-      previewBanner.style.backgroundImage = `url("${updateBanner.value}")`;
+		const previewBtnProfile = document.querySelector("#previewUpdateProfile");
+		previewBtnProfile.addEventListener("click", () => {
+			previewBanner.style.backgroundImage = `url("${updateBanner.value}")`;
+			previewAvatar.src = updateAvatar.value;
     });
   })();
 
-  setUpdateProfileFormListener(userName);
+	setUpdateProfileFormListener(userName);
   toggleSideBar();
   setUpdateColorTheme();
 }

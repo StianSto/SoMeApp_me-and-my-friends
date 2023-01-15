@@ -24,10 +24,17 @@
     }
 
     &-img {
+			width: clamp(min(175px, 50%), 20vw + 0.25rem, 200px);
+			min-width: 100px;
       & img {
-        width: clamp(min(175px, 50%), 20vw + 0.25rem, 200px);
-        min-width: 100px;
+				width: 100%;
       }
+			& a {
+				top: 0;
+				right: 0;
+				transform: translate(0%, -50%);
+				filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.75));
+			}
     }
   }
 

@@ -4,7 +4,6 @@ import * as handlers from "../handlers/index.mjs";
 import * as posts from "../api/posts/index.mjs";
 import * as templates from "../templates/index.mjs";
 import { filterByQuery } from "../functions/filterByQuery.mjs";
-import { enableBsPopovers } from "../enablers/enableBsPopovers.mjs";
 
 export async function homePage() {
   const formCreatePost = document.getElementById("form-create-post");
@@ -16,7 +15,6 @@ export async function homePage() {
     postContainer.append(templates.postTemplate(post))
   );
 
-  enableBsPopovers();
   toggleSideBar();
   toggleFilterPostsVisibility();
   handlers.setCreatePostFormListener();

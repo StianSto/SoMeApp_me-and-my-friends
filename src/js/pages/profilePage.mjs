@@ -2,7 +2,6 @@ import toggleSideBar from "../enablers/sidebar.mjs";
 import * as profile from "../api/profiles/index.mjs";
 import * as storage from "../storage/index.mjs";
 // import { setUpdateProfileFormListener } from "../handlers/setUpdateProfileFormListener.mjs";
-import { enableBsPopovers } from "../enablers/enableBsPopovers.mjs";
 import setFollowProfileListener from "../handlers/setFollowProfileListener.mjs";
 
 const params = new URL(document.location).searchParams;
@@ -20,28 +19,29 @@ export async function profilePage() {
   const profileData = await profile.getProfile(name, flags);
   const profilePosts = await profile.getProfilePosts(name, flags);
 
-  console.log(profileData);
-  checkIfFollowing(profileData.followers);
+	if (checkIfUsersOwnProfile()) {
+		document.getElementById("follow").remove();
+		const avatar = document.getElementById("userAvatar")
+		const parser = new DOMParser().parseFromString(`
+			<a href="/profile/edit/?name=${name}" class="text-white position-absolute" id="editProfileLink"><i class="fa-solid fa-gear fs-1"></i></a>
+		`, 'text/html')
+		avatar.append(parser.getElementById("editProfileLink"));
+	} else {
+		checkIfFollowing(profileData.followers);
+	}
 
   insertFollowers(profileData.followers);
-
-  enableBsPopovers();
   toggleSideBar();
 
   // follow profile
 }
 
 function checkIfFollowing(followers) {
-  const name = params.get("name");
-  const userName = storage.load("userProfile").name;
-  const followBtn = document.getElementById("follow");
-  if (name === userName) return followBtn.remove();
-
+	const followBtn = document.getElementById("follow")
   const isFollowing = followers.some((user) => {
     if (user.name === userName) return true;
   });
 
-  console.log(isFollowing);
   followBtn.dataset.followed = isFollowing;
 
   if (isFollowing) {
@@ -72,4 +72,10 @@ function insertFollowers(followers) {
 
     followersList.prepend(followerParser.querySelector(".follower"));
   });
+}
+
+function checkIfUsersOwnProfile() {
+	const name = params.get("name");
+	const userName = storage.load("userProfile").name;
+  if (name === userName) return true
 }
