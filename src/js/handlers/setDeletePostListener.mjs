@@ -9,19 +9,19 @@ export function setDeletePostListener(postID) {
 
   delBtn.addEventListener("click", async () => {
     const response = await posts.removePost(postID);
-    console.log(response);
     // check if deletion was succesful
-    if (200 <= response < 300) confirmDelete();
+		if (200 <= response < 300) {
+			confirmDelete();
+			const deletedPostInDom = document.querySelector(`[data-post-id='${postID}']`)
+			if (deletedPostInDom) deletedPostInDom.remove()
+		}
   });
 }
 
 function confirmDelete() {
-  console.log("it was deleted!");
-  // add confirmation of deletion
 
   // add confirmation of deletion
   const form = document.querySelector("#formEditPost");
-  form.reset();
   const modalContent = document.querySelector(".modal-content");
   const confirmMsg = new DOMParser().parseFromString(
     `
