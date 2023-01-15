@@ -25,7 +25,6 @@ export async function profilePage() {
 		const parser = new DOMParser().parseFromString(`
 			<a href="/profile/edit/?name=${name}" class="text-white position-absolute" id="editProfileLink"><i class="fa-solid fa-gear fs-1"></i></a>
 		`, 'text/html')
-		console.log(parser.getElementById("editProfileLink"));
 		avatar.append(parser.getElementById("editProfileLink"));
 	} else {
 		checkIfFollowing(profileData.followers);
@@ -78,6 +77,5 @@ function insertFollowers(followers) {
 function checkIfUsersOwnProfile() {
 	const name = params.get("name");
 	const userName = storage.load("userProfile").name;
-	console.log(name, userName)
   if (name === userName) return true
 }

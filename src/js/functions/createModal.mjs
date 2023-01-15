@@ -1,9 +1,15 @@
 export default function createModal(modalElement) {
-	const modalParser = new DOMParser().parseFromString(modalElement, "text/html")
+	console.log("create a modal");
+	
+	let modal = document.querySelector(".modal")
+	console.log(modal)
+	if (modal) modal.remove()
 
-	const myModal = modalParser.querySelector(".modal")
-	document.body.append(myModal)
-	var modal = new bootstrap.Modal(myModal)
-	return modal
+	const modalParser = new DOMParser().parseFromString(modalElement, "text/html")
+	modal = modalParser.querySelector(".modal") 
+	var myModal = new bootstrap.Modal(modal)
+	document.body.append(modal)
+
+	return myModal
 
 }

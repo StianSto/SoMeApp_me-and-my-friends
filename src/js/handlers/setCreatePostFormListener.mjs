@@ -35,12 +35,15 @@ export async function setCreatePostFormListener() {
           ...addAuthor,
         };
 
-        console.log(prependNewPost);
 				container.prepend(postTemplate(prependNewPost));
 
 				const modal = createModal(modalElement(response.id));
+				console.log(modal)
+				const deleteBtn = modal._element.querySelector(`[data-delete-post='${response.id}']`)
+				console.log(deleteBtn)
+
 				modal.show()
-				setDeletePostListener(response.id)
+				setDeletePostListener(response.id, deleteBtn)
       }
       console.log(profileData);
     })();
@@ -71,7 +74,7 @@ function modalElement(postId) {
 				</div>
 				<div class="modal-footer">
 					<a href="/profile/posts/edit/?id=${postId}" class="btn btn-secondary"><i class="fa-solid fa-edit"></i> oops, i need to edit this</a>
-					<button type="button" class="btn btn-danger" id="deletePost"><i class="fa-solid fa-trash"></i> oh no! delete this!</button>
+					<button type="button" class="btn btn-danger" data-delete-post="${postId}"><i class="fa-solid fa-trash"></i> oh no! delete this!</button>
 				</div>
 			</div>
 		</div>
