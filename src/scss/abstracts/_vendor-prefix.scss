@@ -1,6 +1,0 @@
-@mixin vendor-prefix($vendor, $code) {
-    -webkit-#{$vendor}: #{$code};
-    -moz-#{$vendor}: #{$code};
-    -o-#{$vendor}: #{$code};
-    #{$vendor}: #{$code};
-}
