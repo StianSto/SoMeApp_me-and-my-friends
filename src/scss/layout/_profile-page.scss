@@ -1,31 +1,44 @@
 .profile-page {
-    &__user {
-        position: relative;
-        height: clamp(250px, 75vmin, 400px);
+  &__user {
+    position: relative;
+    height: clamp(250px, 75vmin, 400px);
 
-        & .banner {
-            $calc-img-translate: calc( clamp(min(175px, 50%), 20vw + 0.25rem, 200px)  /  3);
-            height: 300px;
-            position: absolute;
-            z-index: -1;
+    & .banner {
+      $calc-img-translate: calc(
+        clamp(min(175px, 50%), 20vw + 0.25rem, 200px) / 3
+      );
+      height: 300px;
+      position: absolute;
+      z-index: -1;
 
-            &__img {
-                height: calc(100% - $calc-img-translate);
-                background: $user-color;
-            }
-            &__spacer {
-                height: $calc-img-translate;
-            }
-        }
-
-        
-        &-img {
-            & img {
-                width: clamp(min(175px, 50%), 20vw + 0.25rem, 200px);
-                min-width: 100px;
-            }
-        }
+      &__img {
+        height: calc(100% - $calc-img-translate);
+        background: $user-color;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      &__spacer {
+        height: $calc-img-translate;
+      }
     }
 
-    h1 {max-width: min(350px, 60vw) !important;
-}}
+    &-img {
+			width: clamp(min(175px, 50%), 20vw + 0.25rem, 200px);
+			min-width: 100px;
+      & img {
+				width: 100%;
+      }
+			& a {
+				top: 0;
+				right: 0;
+				transform: translate(0%, -50%);
+				filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.75));
+			}
+    }
+  }
+
+  h1 {
+    max-width: min(350px, 60vw) !important;
+  }
+}

@@ -1,0 +1,52 @@
+.pe-hover {
+  &-pointer:hover {
+    cursor: pointer;
+  }
+}
+
+.theme {
+  &-btn {
+    &-primary {
+      background-color: rgba(var(--user-theme-primary));
+      color: var(--user-theme-primary-txtClr) !important;
+      &:hover {
+        background-color: white !important;
+        color: black !important;
+        outline: 2px solid rgba(var(--user-theme-primary)) !important;
+      }
+      &:active {
+        background-color: white !important;
+        color: black !important;
+        outline: 1px solid rgba(var(--user-theme-primary)) !important;
+        box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &-outline-primary {
+      border-color: rgba(var(--user-theme-primary));
+      background-color: rgba(var(--user-theme-primary-100));
+      color: black;
+      &:hover {
+        background-color: rgba(var(--user-theme-primary));
+        color: var(--user-theme-primary-txtClr) !important;
+      }
+    }
+  }
+  &-bg-primary {
+    background-color: rgba(var(--user-theme-primary));
+    color: var(--user-theme-primary-txtClr) !important;
+    &-text {
+      color: var(--user-theme-primary-txtClr) !important;
+    }
+  }
+}
+
+$utilities: (
+  "height": (
+    property: height,
+    class: h,
+    values: (
+      0: 0px,
+    ),
+  ),
+);

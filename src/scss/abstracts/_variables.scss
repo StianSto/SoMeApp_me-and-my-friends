@@ -1,35 +1,34 @@
 // scss-docs-start color-variables
-$blue:    #0d6efd;
-$indigo:  #6610f2;
-$purple:  #6f42c1;
-$pink:    #d63384;
-$red:     rgb(224, 57, 38);
-$orange:  #FF9E2C;
-$yellow:  #ffc107;
-$green:   #198754;
-$teal:    #20c997;
-$cyan:    #0dcaf0;
+$blue: #0d6efd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #d63384;
+$red: rgb(224, 57, 38);
+$orange: #ff9e2c;
+$yellow: #ffc107;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
 $colors: (
-  "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
 );
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       $orange;
-$user-color:    $primary;
-
+$primary: $orange;
+$user-color: $primary;
 
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
@@ -38,16 +37,20 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px
+  xxl: 1400px,
 );
 // scss-docs-end grid-breakpoints
 
 // font family
-$font-family-sans-serif: "open sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: "open sans", system-ui, -apple-system, "Segoe UI",
+  Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 // font family end
-
 
 // custom variables //
 // menu icon nav bar
 $gap-bars: 25%;
-$height-bars: calc((100% - (2 * $gap-bars)) / 3 );
+$height-bars: calc((100% - (2 * $gap-bars)) / 3);
+
+//header
+$header-height: --header-height;

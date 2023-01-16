@@ -1,10 +1,11 @@
-// imports 
-//import functions 
+// imports
+//import functions
 @import "../../node_modules/bootstrap/scss/functions";
-//import custom variables 
+//import custom variables
 @import "./abstracts/variables";
 //import bootstrap files
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
 // import custom files
 @import "./abstracts";
 @import "./base";
@@ -12,8 +13,31 @@
 @import "./layout";
 @import "./page";
 
-//code 
-.root {
-    --user-color: $user-color;
-    // user-color will be the way to adjust each users post to their color. some JS will be needed, but for now this will be a template. will be fully functional with the api. 
-} 
+// generate utilities
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+//code
+:root {
+  --header-height: 80px;
+  --user-theme-primary: var(--bs-primary-rgb);
+  --user-theme-primary-txtClr: black;
+  --bs-btn-color: var(--user-theme-primary) !important;
+  --bs-btn-border-color: var(--user-theme-primary) !important;
+}
+
+.push-down {
+  margin-top: calc(var($header-height) + 30px);
+}
+
+#navbarSupportedContent {
+  height: 100vh;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+
+  @include media-breakpoint-up(lg) {
+    height: auto;
+    position: static;
+    top: initial;
+  }
+}

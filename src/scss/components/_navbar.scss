@@ -1,38 +1,61 @@
-// navbar on top
-.navbar {z-index: 1000;}
+//navbar
+header {
+  height: var(--header-height);
+}
+
+//navbar
+.navbar {
+  background-color: rgba(var(--user-theme-primary)) !important;
+  & .nav-edit-profile {
+    top: 0;
+    right: 0;
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5));
+  }
+  &-collapse {
+    background-color: rgba(var(--user-theme-primary)) !important;
+  }
+}
 
 // search field navbar
 #site-search {
-    position: relative;
+  position: relative;
 
-    &:hover, &:focus-within {
-        @include pseudo(after, 100%, 2px) {
-            width: 100%;
-        }
-
-        & .form-control{ 
-            @include media-breakpoint-up(lg) {width: 25ch;} 
-            box-shadow: none;
-        }
+  &:hover,
+  &:focus-within {
+    @include pseudo(after, 100%, 2px) {
+      width: 100%;
     }
-
-    @include pseudo(after, 0%, 1px) {
-        background-color: currentColor;
-        bottom: 0;
-        transition: all 200ms ease;
-    }; 
 
     & .form-control {
-        background: transparent;
-        border: none;
-        transition: all 200ms ease;
-        
-        @include media-breakpoint-up(lg) { 
-            width: calc(10ch + $input-padding-x); 
-        }
-        
-        &::placeholder {color: currentColor;}
+      @include media-breakpoint-up(lg) {
+        width: 25ch;
+      }
+      box-shadow: none;
     }
-    & .fa-solid:hover {color: white;}
+  }
+
+  @include pseudo(after, 0%, 1px) {
+    background-color: var(--user-theme-primary-txtClr);
+    bottom: 0;
+    transition: all 200ms ease;
+  }
+
+  & .form-control {
+    background: transparent;
+    border: none;
+    transition: all 200ms ease;
+
+    @include media-breakpoint-up(lg) {
+      width: calc(10ch + $input-padding-x);
+    }
+
+    &::placeholder {
+      color: currentColor;
+      opacity: 0.7;
+    }
+  }
+  & .fa-solid:hover {
+    color: white;
+  }
 }
 // end-- search field navbar
