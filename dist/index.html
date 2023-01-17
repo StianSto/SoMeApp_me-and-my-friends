@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wall | Me & My Friends</title>
+    <script src="https://kit.fontawesome.com/48de792fa6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script> -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js" type="module"></script>
+  <script type="module" crossorigin src="/assets/script-f71c3cfb.js"></script>
+  <link rel="stylesheet" href="/assets/script-5880188c.css">
+</head>
+<body>
+    <header class="fixed-top"></header>
+
+    <main class="push-down">
+      <div class="sidebar | w-100 p-3 py-4" id="filterPosts">
+        <span class="d-flex justify-content-between align-content-center">
+          <h2 class="m-0">Filter</h2>
+          <i class="fa-solid fa-arrow-left | fs-4 my-auto pe-hover-pointer" data-filter-btn-hide></i>
+        </span>
+        <form class="mt-4">
+          <div class="input-group my-1">
+            <label for="filterPostSort" class="
+              input-group-text
+            ">Sort By</label>
+            <select id="filterPostsSort" name="sort" class="form-select" style="min-width: 12ch;">
+              <option value="" hidden ></option>
+              <option value="created">Created</option>
+              <option value="updated">Updated</option>
+              <option value="title">Title</option>
+            </select>
+          </div>
+          <div class="input-group my-1">
+            <label for="filterPostSortOrder" class="
+              input-group-text
+            ">Order By</label>
+            <select id="filterPostsSortOrder" name="sortOrder" class="form-select" style="min-width: 12ch;">
+              <option value="" hidden ></option>
+              <option value="asc">ascending</option>
+              <option value="desc">descending</option>
+            </select>
+          </div>
+          <div class="input-group my-1">
+            <label for="filterPostSortOrder" class="
+            input-group-text
+            ">Author</label>
+            <input type="text" class="form-control" name="name" id="filterByAuthor">
+          </div>
+          <div class="input-group my-1">
+            <label for="filterPostSortOrder" class="
+              input-group-text
+            ">Tag</label>
+            <input type="text" class="form-control" name="_tag">
+          </div>
+          <button type="submit" class="btn btn-outline-dark px-4 w-auto mt-3">Search</button>
+        </form>
+      </div>
+      
+      <div class="main-content">
+          <div class="container post--container">
+              <form id="form-create-post" class="post--create row gx-0 p-0  mt-5">
+                  <div class="card post mb-2 row mx-1 mx-md-auto p-0">
+                      
+                      <div class="card-header col p-3">
+                          <div class="profile-header row m-0 align-items-center flex-nowrap" style="height: 50px;">
+                              <div class="profile__img h-100 col-auto p-0" style="aspect-ratio: 1;">
+                                  <img class="w-100 h-100 rounded-2" src="" alt="">
+                              </div>
+                              <p class="profile__name | theme-bg-primary-text col m-0 fs-6">Name Nameson</p>
+                          </div>
+                      </div>
+                      
+                      <div class="card-body p-0 rounded-0 border-0">
+                          <input class="w-100 m-0 border-0 p-2 px-4 px-md-5 fs-5" name="title" rows="1" id="create-post-title" placeholder="Title"></input>
+                          <textarea class="w-100 m-0 border-0 px-4 px-md-5 pb-3 pb-md-4" name="body" rows="3" id="post--create__textarea" placeholder="write your post here"></textarea>
+                          <div class="input-group border-0 collapse" id="addTags">
+                            <span class="btn btn-light border-secondary border-opacity-25 border-bottom-0 border-start-0 input-group-text rounded-0">Tags</span>
+                            <input type="text" name="tags" id="createPostTags" class="form-control rounded-0 border-bottom-0 border-end-0" placeholder="separate tags with commas or spaces">
+                          </div>
+                          <div class="input-group border-0 collapse" id="addMedia">
+                            <span class="btn btn-light border-secondary border-opacity-25 border-bottom-0 border-start-0 input-group-text rounded-0">Media URL</span>
+                            <input type="text" name="media" id="createPostMedia" class="form-control rounded-0 border-bottom-0 border-end-0" placeholder="Add a valid url to image">
+                          </div>
+                      </div>
+                      
+                      <div class="card-footer p-0">
+                          <div class="btn-group d-flex">
+                              <button type="button" class="btn theme-btn-outline-primary border-0 border-end" data-bs-toggle="collapse" data-bs-target="#addMedia">
+                                  <i class="fa-solid fa-image"></i> Add Image
+                              </button>
+                              <button type="button" class="btn theme-btn-outline-primary border-0" data-bs-toggle="collapse" data-bs-target="#addTags">
+                                  <i class="fa-solid fa-gear"></i> Other Settings
+                              </button>
+                          </div>
+                      </div>                    
+                  </div>
+                  <div class=" ms-auto d-inline-flex" style="max-width: 300px;" id="submitPost" >
+                      <button type="button" class="btn border-0 px-4 py-2 col-4 ms-auto w-auto">preview</button>
+                      <button type="submit" class="theme-btn-primary btn btn-primary px-4 py-2 col-4 w-auto">Create Post</button>
+                  </div>
+              </form>
+          </div>
+          
+          <div class="container post--container mt-5 d-flex justify-content-between">
+            <h1>My Wall</h1>
+            <span class="fs-2 pe-hover-pointer" id="filterPostsBtn" ><i class="fa-solid fa-filter"></i></span>
+          </div>      
+          <div id="posts-wall" class="container post--container post--example | mt-5">
+          </div>
+        </div>
+
+        <div id="sidebar" 
+          class="sidebar flex-column"
+          >
+            <div class="container mt-2">
+                <div class="row flex-nowrap justify-content-between align-content-center">
+                    <h3 class="col-auto m-0 my-auto">Friends</h3>
+                    
+                    <button 
+                        class="btn d-flex justify-content-center py-0 px-auto"
+                        id="sidebar-btn"
+                        aria-expanded="true" 
+                        aria-controls="sidebar"
+                        style="
+                          width: calc(var(--sidebar-width-closed) + 0.5rem);
+                          margin-left: auto;
+                          aspect-ratio: 1.5;
+                        "
+                    >
+                        <i class="fa-solid fa-bars fs-3 my-auto"></i>
+                    </button>
+                </div>
+
+            </div>
+            <ul class="col p-0 ps-1 list-unstyled">
+
+                <li class="w-100">
+                    <a href="/profile" class="row flex-nowrap friend m-0 bg-light my-1 text-bg-light text-decoration-none">
+                        <div class="friend__img p-0">
+                            <img class="h-100" style="object-fit: cover; aspect-ratio: 1;" src="/assets/stefan-stefancik-QXevDflbl8A-unsplash-cd00b44b.jpg" alt="">
+                        </div>
+                        <span class="friend__name col-auto my-auto px-2">Name Nameson</span>
+                    </a>
+                </li>
+                <li class="w-100 ">
+                    <a href="/profile" class="row flex-nowrap friend m-0 bg-light my-1 text-bg-light text-decoration-none">
+                        <div class="friend__img p-0">
+                            <img class="h-100" style="object-fit: cover; aspect-ratio: 1;" src="/assets/stefan-stefancik-QXevDflbl8A-unsplash-cd00b44b.jpg" alt="">
+                        </div>
+                        <span class="friend__name col-auto my-auto px-2">Name Nameson</span>
+                    </a>
+                </li>
+                <li class="w-100 ">
+                    <a href="/profile" class="row flex-nowrap friend m-0 bg-light my-1 text-bg-light text-decoration-none">
+                        <div class="friend__img p-0">
+                            <img class="h-100" style="object-fit: cover; aspect-ratio: 1;" src="/assets/stefan-stefancik-QXevDflbl8A-unsplash-cd00b44b.jpg" alt="">
+                        </div>
+                        <span class="friend__name col-auto my-auto px-2">Name Nameson</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
