@@ -1,0 +1,54 @@
+# this workflow will build a dist folder with vite. 
+
+name: Build production files
+
+on: 
+  push: 
+    branches: 
+      - vite
+  workflow_dispatch:
+
+jobs: 
+  build: 
+    name: Build dist
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 16
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload Prod-ready files
+        uses: actions/upload-artifact@v3
+        with: 
+          name: dist-files
+          path: ./dist
+
+  deploy: 
+    name: Deploy files to gh-pages branch
+    needs: build
+    runs-on: ubuntu-latest
+    # if: github.ref == 'refs/heads/main'
+
+    steps: 
+      - name: Download Dist from artifacts
+        uses: actions/download-artifact@v3
+        with: 
+          name: dist-files
+          path: ./dist
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
