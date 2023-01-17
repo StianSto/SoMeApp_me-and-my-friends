@@ -38,9 +38,14 @@ jobs:
     name: Deploy files to gh-pages branch
     needs: build
     runs-on: ubuntu-latest
-    # if: github.ref == 'refs/heads/main'
+    
+    
 
-    steps: 
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          
       - name: Download Dist from artifacts
         uses: actions/download-artifact@v3
         with: 
