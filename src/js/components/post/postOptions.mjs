@@ -1,5 +1,7 @@
 import * as storage from "../../storage/index.mjs";
 
+import { Popover } from "bootstrap";
+
 /**
  * function checks if user is author of post. returns an element that conatins options that user can interact with. returns generel options if user is not the author. post options uses Bootstrap Popover and this function will return html inside a "data-bs-content" attribute
  * @param {string} name name of author
@@ -50,7 +52,7 @@ export default function postOptions(name, id, postOptionsElement) {
     );
 	}
 	
-	new bootstrap.Popover(postOptionsElement)
+	new Popover(postOptionsElement)
 
   return postOptions;
 }

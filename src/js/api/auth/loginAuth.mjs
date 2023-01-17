@@ -17,6 +17,8 @@ import * as constants from "../../api/constants.mjs";
  * login(profileData, APIUrl)
  */
 export default async function login(profileData) {
+	console.log("executed logIn auth");
+
   const errMsgContainer = document.querySelector(".error-msg-login");
   const APIUrl = constants.API_SOCIAL_URL + "/auth/login";
 
@@ -40,11 +42,12 @@ export default async function login(profileData) {
     const { accessToken, ...userProfile } = result;
 
     storage.save("accessToken", accessToken);
-    storage.save("userProfile", userProfile);
+		storage.save("userProfile", userProfile);
+		
 
     // redirect to home page on succesful homepage
-    if (response.ok === true) {
-      window.location.replace("/");
+		if (response.ok === true) {
+			window.location.replace("/")
     }
   } catch (error) {
     console.log(error);

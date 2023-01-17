@@ -7,9 +7,15 @@ import { setSearchFormListener } from "./handlers/setSearchFormListener.mjs";
 import router from "./router.mjs";
 import * as storage from "./storage/index.mjs";
 
+// Import our custom CSS
+import '../scss/styles.scss'
+
+// Import all of Bootstrap's JS
+import * as bootstrap from '/node_modules/bootstrap'
+
 // check if user is logged in
 
-if (window.location.pathname !== "/profile/login/") isUserLoggedIn();
+if (window.location.pathname !== "/profile/login/" || window.location.pathname !== "/dist/profile/login/") isUserLoggedIn();
 // insert navbar
 (() => {
   const header = document.querySelector("header");

@@ -3,7 +3,7 @@
     width: 100%;
     height: $height-bars;
     border-radius: 100px;
-    @include vendor-prefix(transition, all 200ms ease-in-out);
+
     
     &-rotate {
         position: absolute;

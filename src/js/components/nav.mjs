@@ -1,4 +1,5 @@
 import * as storage from "../storage/index.mjs";
+import logoUrl from '../../logo.svg'
 
 /**
  * makes a nav as a DOMParsed element that can be inserted into header
@@ -22,7 +23,7 @@ export default function insertNavHeader() {
 			<div class="container p-0 h-100">
 
 					<a class="navbar-brand ms-2" href="/">
-							<img src="/dist/assets/logo.svg" height="50"> 
+							<img src="${logoUrl}" height="50"> 
 					</a>
 
 					<div class="h-100 position-relative nav-profile">

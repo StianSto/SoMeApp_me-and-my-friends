@@ -5,5 +5,5 @@ import * as storage from "../storage/index.mjs";
  */
 export default function isUserLoggedIn() {
   const token = storage.load("accessToken");
-  if (!token) window.location.replace("/profile/login");
+	// if (!token) location.href = "/profile/login/";
 }

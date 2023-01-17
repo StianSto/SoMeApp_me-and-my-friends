@@ -1,5 +1,6 @@
 import createModal from '../../functions/createModal.mjs'
-import {setDeletePostListener} from '../../handlers/setDeletePostListener.mjs'
+import { setDeletePostListener } from '../../handlers/setDeletePostListener.mjs'
+import defaultAvatarUrl from '../../../images/default-avatar.png'
 /**
  * makes a DOMParsed element for the header of the post.
  * @param {Object} author object containing name and avatar image(url)
@@ -18,7 +19,7 @@ import {setDeletePostListener} from '../../handlers/setDeletePostListener.mjs'
  */
 export function templatePostHeader({ name = "", avatar }, id) {
   if (!avatar || avatar.length === 0)
-    avatar = "/dist/assets/images/default-avatar.png";
+    avatar = defaultAvatarUrl;
 
   let parsedName = name.replace("_", " ");
 
