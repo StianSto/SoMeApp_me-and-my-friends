@@ -1,12 +1,14 @@
 import * as createPostComponents from "../components/post/index.mjs";
 import * as storage from "../storage/index.mjs";
+import defaultAvatarUrl from '../../images/default-avatar.png'
+
 
 export function createPostTemplate() {
   const formCreatePost = document.getElementById("form-create-post");
 
   const userData = storage.load("userProfile");
   let { avatar, name } = userData;
-  if (!avatar) avatar = "/dist/assets/images/default-avatar.png";
+  if (!avatar) avatar = defaultAvatarUrl;
   name = name.replace("_", " ");
 
   const createPostUserAvatar = formCreatePost.querySelector(".profile__img");

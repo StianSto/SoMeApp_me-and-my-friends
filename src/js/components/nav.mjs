@@ -1,5 +1,7 @@
 import * as storage from "../storage/index.mjs";
 import logoUrl from '../../logo.svg'
+import defaultAvatarUrl from '../../images/default-avatar.png'
+
 
 /**
  * makes a nav as a DOMParsed element that can be inserted into header
@@ -15,7 +17,7 @@ export default function insertNavHeader() {
 
   let { name, avatar } = profile;
   let parsedName = name.replace("_", " ");
-  if (!avatar) avatar = "/dist/assets/images/default-avatar.png";
+  if (!avatar) avatar = defaultAvatarUrl;
 
   const nav = new DOMParser().parseFromString(
     `

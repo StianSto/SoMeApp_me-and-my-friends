@@ -12,7 +12,8 @@ export default defineConfig({
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
     }
   },
-  build: {
+	build: {
+		sourcemap: true,
     rollupOptions: {
       input: {
 				main: resolve(__dirname, "index.html"),
@@ -25,6 +26,6 @@ export default defineConfig({
 				// images: resolve(__dirname, "images")
       },
     },
-  },
-  // base: "/dist"
+	},
+	base: "/SoMeApp_me-and-my-friends/"
 });

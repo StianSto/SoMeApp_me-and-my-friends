@@ -35,6 +35,12 @@ export async function profilePage() {
 
   // follow profile
 }
+const name = params.get("name");
+const userName = storage.load("userProfile").name;
+
+function checkIfUsersOwnProfile() {
+  if (name === userName) return true
+}
 
 function checkIfFollowing(followers) {
 	const followBtn = document.getElementById("follow")
@@ -74,8 +80,3 @@ function insertFollowers(followers) {
   });
 }
 
-function checkIfUsersOwnProfile() {
-	const name = params.get("name");
-	const userName = storage.load("userProfile").name;
-  if (name === userName) return true
-}

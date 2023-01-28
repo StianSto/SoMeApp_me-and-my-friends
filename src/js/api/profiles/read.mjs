@@ -2,6 +2,7 @@ import { authFetch } from "../authFetch.mjs";
 import { API_SOCIAL_URL, API_SOCIAL_ENDPOINT_PROFILES } from "../constants.mjs";
 import * as templates from "../../templates/postTemplate.mjs";
 import createFlagString from "../../functions/createFlagString.mjs";
+import defaultAvatarUrl from '../../../images/default-avatar.png'
 
 const method = "GET";
 const action = API_SOCIAL_ENDPOINT_PROFILES;
@@ -96,7 +97,7 @@ function insertProfile({
     bannerBackground.style.backgroundImage = `url(${banner})`;
   }
 
-  if (!avatar) avatar = "/dist/assets/images/default-avatar.png";
+  if (!avatar) avatar = defaultAvatarUrl;
   const avatarImg = document.querySelector("#userAvatar img");
   avatarImg.src = avatar;
 

@@ -1,4 +1,6 @@
 import { setCommentFormListener } from "../../handlers/setCommentFormListener.mjs";
+import defaultAvatarUrl from '../../../images/default-avatar.png'
+
 
 /**
  *
@@ -16,7 +18,7 @@ export default function postComment({
 }) {
   let parsedName = name.replace("_", " ");
   if (!avatar || avatar.length === 0)
-    avatar = "/dist/assets/images/default-avatar.png";
+    avatar = defaultAvatarUrl;
   const parser = new DOMParser();
   const parsedComment = parser.parseFromString(
     `
