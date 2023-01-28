@@ -34,24 +34,24 @@ jobs:
           name: github-pages
           path: ./dist
           
-  # Deploy job
+  # Single deploy job since we're just deploying
   deploy:
-    # Add a dependency to the build job
-    needs: build
-
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
-    # Deploy to the github-pages environment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: github-pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          name: 'github-pages'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1          
+        uses: actions/deploy-pages@v1
+     
