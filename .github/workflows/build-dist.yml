@@ -22,36 +22,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs: 
-  build: 
-    name: Build dist
-    runs-on: ubuntu-latest
-
-    steps: 
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with: 
-          node-version: 16
-
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-
-      - name: Build project
-        run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload dist files
-          path: "/dist"
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
           
   deploy:
     environment:
@@ -71,7 +41,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: "."
+          path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
