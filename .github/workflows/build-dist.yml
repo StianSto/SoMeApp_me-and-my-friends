@@ -33,3 +33,18 @@ jobs:
         with: 
           name: github-pages
           path: ./dist
+  deploy: 
+      name: Deploy files to gh-pages branch
+      needs: build
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v3
+          with:
+            ref: gh-pages
+
+        - name: Download Dist from artifacts
+          uses: actions/download-artifact@v3
+          with: 
+            name: dist-files
+            path: ./dist
