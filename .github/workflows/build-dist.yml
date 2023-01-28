@@ -52,6 +52,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           name: github-pages
+          path: /home/runner/work/SoMeApp_me-and-my-friends/SoMeApp_me-and-my-friends
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
