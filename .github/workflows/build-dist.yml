@@ -28,31 +28,36 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload Prod-ready files
-        uses: actions/upload-artifact@v3
-        with: 
+      # - name: Upload Prod-ready files
+        # uses: actions/upload-artifact@v3
+        # with: 
+          # name: github-pages
+          # path: ./dist
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
           name: github-pages
           path: ./dist
           
   # Single deploy job since we're just deploying
   deploy:
     needs: build
+    
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write 
+      
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.2
-        with:
-          name: github-pages
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          name: github-pages
-          path: /home/runner/work/SoMeApp_me-and-my-friends/SoMeApp_me-and-my-friends
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
