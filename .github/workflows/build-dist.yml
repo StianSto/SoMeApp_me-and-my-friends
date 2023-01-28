@@ -34,17 +34,23 @@ jobs:
           name: github-pages
           path: ./dist
   deploy: 
-      name: Deploy files to gh-pages branch
-      needs: build
-      runs-on: ubuntu-latest
+    name: Deploy files to gh-pages branch
+    needs: build
+    runs-on: ubuntu-latest
 
-      steps:
-        - uses: actions/checkout@v3
-          with:
-            ref: gh-pages
-
-        - name: Download Dist from artifacts
-          uses: actions/download-artifact@v3
-          with: 
-            name: github-pages
-            path: ./dist
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          
+      - name: Download Dist from artifacts
+        uses: actions/download-artifact@v3
+        with: 
+          name: dist-files
+          path: ./dist
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
